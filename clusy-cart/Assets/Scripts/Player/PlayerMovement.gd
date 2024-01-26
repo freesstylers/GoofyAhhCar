@@ -23,6 +23,8 @@ var turningLeft : bool = false
 var used_acceleration : float = 0
 var used_andular_acceleration : float = 0
 
+var imagen : Sprite2D = null
+
 func _ready():
 	boostTimer = $BoostTimer
 	driftingTimer = $DriftingTimer

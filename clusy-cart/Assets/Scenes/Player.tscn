@@ -13,7 +13,7 @@ position = Vector2(44, 327)
 gravity_scale = 0.0
 center_of_mass_mode = 1
 linear_damp = 5.0
-angular_damp = 10.0
+angular_damp = 3.0
 script = ExtResource("1_a0fay")
 ACCELERATION = 10000.0
 MAX_SPEED = 100.0
@@ -36,3 +36,5 @@ script = ExtResource("4_am62n")
 [node name="BoostTimer" type="Timer" parent="."]
 
 [node name="DriftingTimer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

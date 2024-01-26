@@ -1,5 +1,5 @@
 class_name NPC
-extends CharacterBody2D
+extends Node2D
 
 @export var points : int = 100
 @export var bonus :String = ""
@@ -8,8 +8,8 @@ extends CharacterBody2D
 var goTo: Node2D = null
 var pointBehaviour : PointsB = null
 
-func _init():
-	pointBehaviour = $PointsBehaviour as PointsB
+func _ready():
+	pointBehaviour = $PointsBehaviour
 	goTo = pointBehaviour.get_actual_point()
 
 func is_min_dist(d):
