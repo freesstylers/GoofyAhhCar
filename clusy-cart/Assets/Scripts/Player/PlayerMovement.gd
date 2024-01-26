@@ -25,64 +25,64 @@ var used_andular_acceleration : float = 0
 
 var imagen : Sprite2D = null
 
+var speed : float = 0.0
+
 func _ready():
 	boostTimer = $BoostTimer
 	driftingTimer = $DriftingTimer
 	
 	Globals.ThePlayer = self
-	Globals.player_input.connect(PlayerInput)
 	Globals.player_death.connect(PlayerDeath)
 	Globals.game_init_everything.connect(on_game_init_everything)
 	used_acceleration = ACCELERATION
 	used_andular_acceleration = ANGULAR_ACCELERATION
 	
 func _process(_delta):
+	
+	if Input.is_action_pressed("up"):
+		if speed <= 1.0:
+			speed+=0.1
+	else:
+		if speed >= 0.1:
+			speed-=0.1
+	if Input.is_action_pressed("back"):
+		if speed >= -1.0:
+			speed -= 0.1
+	else:
+		if speed <= -0.1:
+			speed += 0.1
+	if Input.is_action_pressed("right") or Input.is_action_pressed("left"):
+		if Input.is_action_pressed("right"):
+			turningRight = true
+			turningLeft = false
+		elif Input.is_action_pressed("left"):
+			turningRight = false
+			turningLeft = true
+	else:
+		turningRight = false
+		turningLeft = false
+		
+	
 	var steering_input = 0
-	if turningRight:
+	if turningRight and not turningLeft:
 		steering_input = 1.0
-		#rotation = rotation + ((ANGULAR_ANGLES*(PI*2)/360)*_delta)
-		#print(rotation)
-	if turningLeft:
+	if turningLeft and not turningRight:
 		steering_input = -1.0
-		#rotation = rotation - ((ANGULAR_ANGLES*(PI*2)/360)*_delta)
-		#print(rotation)
 
 	# Rotate the body based on the steering input
 	apply_torque(used_andular_acceleration * steering_input)
+	
 	if abs(angular_velocity) > MAX_ANGULAR_VELOCITY:
 		set_angular_velocity(sign(angular_velocity) * MAX_ANGULAR_VELOCITY)
 		#angular_velocity = sign(angular_velocity) * MAX_ANGULAR_VELOCITY
 	
 	#Accelerate towards the direction the player is facing
-	var steering_direction = Vector2(1, 0).rotated(rotation)
-	#steering_direction = Vector2(0,-1)
+	var steering_direction = Vector2(1.0, 0).rotated(rotation)
+	
 	if linear_velocity.length() > MAX_SPEED:
 		linear_velocity = linear_velocity.normalized() * MAX_SPEED
-	apply_force(steering_direction * used_acceleration)
-
-func PlayerInput(right:bool, pressed:bool):
-	#Input just pressed	
-	if pressed:
-		turningRight = right
-		turningLeft = not right
-	#Input just released
-	else:
-		if right and turningRight:
-			turningRight = false
-			driftingTimer.stop()
-			if boostAvailable:
-				StartBoosting()
-		elif not right and turningLeft:
-			turningLeft = false
-			driftingTimer.stop()
-			if boostAvailable:
-				StartBoosting()
-		else:
-			turningRight = false
-			turningLeft = false
-			driftingTimer.stop()
-			if boostAvailable:
-				StartBoosting()
+		
+	apply_force(steering_direction * used_acceleration * speed)
 
 #Rotate the player so that it "bounces" away from the wall
 func PlayerCollidedWithWall(wall:Node2D):
