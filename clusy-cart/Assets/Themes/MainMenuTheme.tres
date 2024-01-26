@@ -62,4 +62,4 @@ MarginContainer/constants/margin_left = 5
 MarginContainer/constants/margin_right = 5
 MarginContainer/constants/margin_top = 5
 Panel/styles/panel = SubResource("StyleBoxFlat_055lk")
-VBoxContainer/constants/separation = 50
+VBoxContainer/constants/separation = 108
