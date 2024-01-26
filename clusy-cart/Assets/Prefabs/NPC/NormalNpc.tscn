@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cokidu12u7300"]
 
-[ext_resource type="Script" path="res://Scenes/NormalNpcMovement.gd" id="1_hrrqi"]
-[ext_resource type="Texture2D" uid="uid://xwabevdjnvbg" path="res://Sprites/Paisano6.png" id="1_tp004"]
-[ext_resource type="Script" path="res://Scenes/PointsBehaviour.gd" id="2_5fohp"]
+[ext_resource type="Script" path="res://Assets/Prefabs/NPC/NormalNpcMovement.gd" id="1_hrrqi"]
+[ext_resource type="Texture2D" uid="uid://xwabevdjnvbg" path="res://Assets/Sprites/Paisano6.png" id="1_tp004"]
+[ext_resource type="Script" path="res://Assets/Prefabs/NPC/PointsBehaviour.gd" id="2_5fohp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1k27a"]
 

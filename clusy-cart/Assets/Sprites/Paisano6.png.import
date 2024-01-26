@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xwabevdjnvbg"
-path="res://.godot/imported/Paisano6.png-5ee5b526dbe35f1f77ff6d6c9e32031e.ctex"
+path="res://.godot/imported/Paisano6.png-4a0b7b26225a5cb8b7e56b2fa085970b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Paisano6.png"
-dest_files=["res://.godot/imported/Paisano6.png-5ee5b526dbe35f1f77ff6d6c9e32031e.ctex"]
+source_file="res://Assets/Sprites/Paisano6.png"
+dest_files=["res://.godot/imported/Paisano6.png-4a0b7b26225a5cb8b7e56b2fa085970b.ctex"]
 
 [params]
 
