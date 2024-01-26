@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://72xl7ikt6puf"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Player/PlayerMovement.gd" id="1_a0fay"]
+[ext_resource type="Texture2D" uid="uid://dl4slsob4ep4c" path="res://Square.png" id="2_nndn3"]
+[ext_resource type="Script" path="res://Assets/Scripts/Player/PlayerVisualizer.gd" id="3_ppvnt"]
+[ext_resource type="Script" path="res://Assets/Scripts/Player/PlayerInput.gd" id="4_am62n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxf08"]
+size = Vector2(44, 32)
+
+[node name="Player" type="RigidBody2D"]
+position = Vector2(44, 327)
+gravity_scale = 0.0
+center_of_mass_mode = 1
+linear_damp = 5.0
+angular_damp = 10.0
+script = ExtResource("1_a0fay")
+ACCELERATION = 10000.0
+MAX_SPEED = 100.0
+ANGULAR_ACCELERATION = 10000.0
+MAX_ANGULAR_VELOCITY = 1000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dxf08")
+
+[node name="PlayerVisualizer" type="Sprite2D" parent="."]
+scale = Vector2(1.3, 1)
+texture = ExtResource("2_nndn3")
+script = ExtResource("3_ppvnt")
+
+[node name="BlinkTimer" type="Timer" parent="PlayerVisualizer"]
+
+[node name="PlayerInput" type="Node2D" parent="."]
+script = ExtResource("4_am62n")
+
+[node name="BoostTimer" type="Timer" parent="."]
+
+[node name="DriftingTimer" type="Timer" parent="."]
