@@ -1,5 +1,6 @@
-class_name  PointsB
-extends Node
+extends Node2D
+
+class_name PointsB
 
 @export var points : Array = []
 

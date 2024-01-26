@@ -49,11 +49,6 @@ packet_sequence = SubResource("OggPacketSequence_p5rrj")
 [node name="SceneManager" type="Node2D"]
 script = ExtResource("1_d07kg")
 MaxLevels = 3
-WinMenu = null
-WinText = null
-NextLevelButton = null
-LoseMenu = null
-LoseText = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(640, 360)
