@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://csms6l2yxn245"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Player/PlayerMovement.gd" id="1_a0fay"]
-[ext_resource type="Texture2D" uid="uid://dl4slsob4ep4c" path="res://Square.png" id="2_nndn3"]
 [ext_resource type="SpriteFrames" uid="uid://cy23rbgoxbhds" path="res://Assets/Animations/MonoTricicloMotorizado3000/PlayerAnimation.tres" id="2_ulsy8"]
 [ext_resource type="Script" path="res://Assets/Scripts/Player/PlayerVisualizer.gd" id="3_ppvnt"]
+[ext_resource type="Texture2D" uid="uid://oeouuoxlor4b" path="res://Assets/Sprites/DriftParticle.png" id="4_36bf4"]
 [ext_resource type="Script" path="res://Assets/Scripts/Player/PlayerInput.gd" id="4_am62n"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_igi41"]
-size = Vector2(44, 34)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmsee"]
+size = Vector2(60, 26)
 
 [sub_resource type="Curve" id="Curve_m3yul"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -4.52685, 0.0, 0, 0]
@@ -21,7 +21,8 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.403922, 1, 1, 1, 0)
 script = ExtResource("1_a0fay")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_igi41")
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_fmsee")
 
 [node name="PlayerVisualizer" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
@@ -33,13 +34,12 @@ script = ExtResource("3_ppvnt")
 [node name="BlinkTimer" type="Timer" parent="PlayerVisualizer"]
 
 [node name="LeftDrigtingParticles" type="CPUParticles2D" parent="PlayerVisualizer"]
-position = Vector2(-25, 35)
+position = Vector2(-23.9999, 23.9999)
 rotation = -6.28319
-scale = Vector2(1, 1)
 emitting = false
 amount = 20
 lifetime = 0.25
-texture = ExtResource("2_nndn3")
+texture = ExtResource("4_36bf4")
 spread = 90.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 25.0
@@ -52,12 +52,11 @@ scale_amount_curve = SubResource("Curve_m3yul")
 color_ramp = SubResource("Gradient_b6too")
 
 [node name="RightDriftingParticles" type="CPUParticles2D" parent="PlayerVisualizer"]
-position = Vector2(22, 35)
-scale = Vector2(1, 1)
+position = Vector2(23.0001, 23.9999)
 emitting = false
 amount = 20
 lifetime = 0.25
-texture = ExtResource("2_nndn3")
+texture = ExtResource("4_36bf4")
 spread = 90.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 25.0
