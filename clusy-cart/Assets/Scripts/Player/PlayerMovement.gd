@@ -1,8 +1,6 @@
 extends CharacterBody2D
 class_name Player
 
-var imagen : Sprite2D = null
-
 ###########################################NUEVO SISTEMA
 @export var wheel_base : float = 70  # Distance from front to rear wheel
 @export var steering_angle : float = 15  # Amount that front wheel turns, in degrees
@@ -23,9 +21,15 @@ var acceleration : Vector2 = Vector2.ZERO
 var maxVelGotten : bool = false
 var drifting : bool = false
 
+var BounceSoundPlayer : AudioStreamPlayer = null
+var MaxVelAchievedSoundPlayer : AudioStreamPlayer = null
+
 func _ready():	
 	Globals.ThePlayer = self
 	Globals.game_init_everything.connect(on_game_init_everything)
+	
+	BounceSoundPlayer = $BounceSoundPlayer
+	MaxVelAchievedSoundPlayer = $MaxVelAchievedSoundPlayer
 	
 func _process(_delta):
 	pass
@@ -58,7 +62,10 @@ func _physics_process(delta):
 	
 	var collision = move_and_collide(velocity*delta)
 	if collision:
-		#TODO SONIDO
+		var vel = velocity.length()
+		#Solo haces el sonidito si tienes una velocidad "significativa"
+		if(vel > max_speed_reverse):
+			BounceSoundPlayer.play()
 		velocity = velocity.bounce(collision.get_normal())
 
 func apply_friction():
@@ -78,11 +85,10 @@ func apply_friction():
 	#Cuando llega a velocidad maxima hace sonido, y hasta que no vuelve a llegar no vuelve a sonar
 	if acceleration.length() < 0.1:
 		if not maxVelGotten: 
-			#TODO SONIDO
+			MaxVelAchievedSoundPlayer.play()
 			maxVelGotten = true
 	else: 
-		maxVelGotten = false
-		
+		maxVelGotten = false	
 	
 func calculate_steering(delta):
 	var rear_wheel = position - transform.x * wheel_base / 2.0
@@ -103,11 +109,7 @@ func calculate_steering(delta):
 #####GLOBAL SIGNALS#####
 			
 func on_game_init_everything():
-	#Position the player right in the middle of the screen
-	var screen_size = get_viewport().size
-	var center_screen = Vector2(screen_size.x / 2, screen_size.y / 2)
-	self.global_position = center_screen
-
+	pass
 
 func _on_plusfriction_pressed():
 	friction += 0.1

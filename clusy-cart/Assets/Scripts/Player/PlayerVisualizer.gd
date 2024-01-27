@@ -14,8 +14,6 @@ func _ready():
 	rightPart = $RightDriftingParticles
 	#boostParticles = $BoostParticles
 	#boostParticles.emitting = false
-	
-	Globals.player_boosting_state_changed.connect(PlayerBoostingStateChanged)
 	Globals.game_init_everything.connect(on_game_init_everything)
 
 #Start or stop the blinking 

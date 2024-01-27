@@ -1,10 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://csms6l2yxn245"]
+[gd_scene load_steps=18 format=3 uid="uid://csms6l2yxn245"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Player/PlayerMovement.gd" id="1_a0fay"]
 [ext_resource type="SpriteFrames" uid="uid://cy23rbgoxbhds" path="res://Assets/Animations/MonoTricicloMotorizado3000/PlayerAnimation.tres" id="2_ulsy8"]
 [ext_resource type="Script" path="res://Assets/Scripts/Player/PlayerVisualizer.gd" id="3_ppvnt"]
 [ext_resource type="Texture2D" uid="uid://oeouuoxlor4b" path="res://Assets/Sprites/DriftParticle.png" id="4_36bf4"]
-[ext_resource type="Script" path="res://Assets/Scripts/Player/PlayerInput.gd" id="4_am62n"]
+[ext_resource type="AudioStream" uid="uid://xbsi4ik7lst6" path="res://Assets/Sound/SFX/Boing/Boing1.wav" id="4_boyct"]
+[ext_resource type="AudioStream" uid="uid://b3n0jgr4rdouf" path="res://Assets/Sound/SFX/Boing/Boing2.wav" id="5_lbc8e"]
+[ext_resource type="AudioStream" uid="uid://bb3holt5dfm4b" path="res://Assets/Sound/SFX/Boing/Boing3.wav" id="6_8mxci"]
+[ext_resource type="AudioStream" uid="uid://sb14yj1d41m6" path="res://Assets/Sound/SFX/Boing/Boing4.wav" id="7_y1112"]
+[ext_resource type="AudioStream" uid="uid://c48f5usek4o8e" path="res://Assets/Sound/SFX/Boing/Boing5.wav" id="8_ixva0"]
+[ext_resource type="AudioStream" uid="uid://b1u5vw5grljxx" path="res://Assets/Sound/SFX/Boing/Boing6.wav" id="9_n6743"]
+[ext_resource type="AudioStream" uid="uid://bc6bms54v8tvb" path="res://Assets/Sound/SFX/Boing/Boing7.wav" id="10_22pih"]
+[ext_resource type="AudioStream" uid="uid://m5l3c6vx28tc" path="res://Assets/Sound/SFX/Boing/Boing8.wav" id="11_8bywq"]
+[ext_resource type="AudioStream" uid="uid://fctqkdjeghxq" path="res://Assets/Sound/SFX/Boing/Boing9.wav" id="12_6atgo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmsee"]
 size = Vector2(60, 26)
@@ -16,6 +24,28 @@ point_count = 2
 [sub_resource type="Gradient" id="Gradient_b6too"]
 offsets = PackedFloat32Array(0, 0.0666667, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.403922, 1, 1, 1, 0)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_87beg"]
+random_pitch = 1.5
+streams_count = 9
+stream_0/stream = ExtResource("4_boyct")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("5_lbc8e")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("6_8mxci")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("7_y1112")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("8_ixva0")
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("9_n6743")
+stream_5/weight = 1.0
+stream_6/stream = ExtResource("10_22pih")
+stream_6/weight = 1.0
+stream_7/stream = ExtResource("11_8bywq")
+stream_7/weight = 1.0
+stream_8/stream = ExtResource("12_6atgo")
+stream_8/weight = 1.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_a0fay")
@@ -68,9 +98,8 @@ scale_amount_max = 0.65
 scale_amount_curve = SubResource("Curve_m3yul")
 color_ramp = SubResource("Gradient_b6too")
 
-[node name="PlayerInput" type="Node2D" parent="."]
-script = ExtResource("4_am62n")
+[node name="BounceSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_87beg")
+max_polyphony = 5
 
-[node name="BoostTimer" type="Timer" parent="."]
-
-[node name="DriftingTimer" type="Timer" parent="."]
+[node name="MaxVelAchievedSoundPlayer" type="AudioStreamPlayer" parent="."]
