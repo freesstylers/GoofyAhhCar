@@ -16,9 +16,6 @@ script = ExtResource("2_gwepd")
 Rect = NodePath("speed stick thing")
 MinAngle = -231.0
 MaxAngle = 38.2
-MaxSpeed = 200.0
-Accel = 20.0
-Decel = 10.0
 metadata/_edit_use_anchors_ = true
 
 [node name="speed stick thing" type="ColorRect" parent="."]

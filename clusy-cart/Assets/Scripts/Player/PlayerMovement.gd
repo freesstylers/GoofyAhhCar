@@ -1,5 +1,5 @@
-extends CharacterBody2D
 class_name Player
+extends CharacterBody2D
 
 ###########################################NUEVO SISTEMA
 @export var wheel_base : float = 70  # Distance from front to rear wheel
@@ -28,6 +28,7 @@ var MaxVelAchievedSoundPlayer : AudioStreamPlayer = null
 func _ready():	
 	Globals.ThePlayer = self
 	
+	Globals.change_face.emit(0)
 	BounceSoundPlayer = $BounceSoundPlayer
 	MaxVelAchievedSoundPlayer = $MaxVelAchievedSoundPlayer
 	
@@ -77,6 +78,7 @@ func _physics_process(delta):
 		#Solo haces el sonidito si tienes una velocidad "significativa"
 		if(vel > max_speed_reverse):
 			BounceSoundPlayer.play()
+			Globals.change_face.emit(2)
 		velocity = velocity.bounce(collision.get_normal())
 
 func apply_friction():
@@ -93,9 +95,10 @@ func apply_friction():
 			$PlayerVisualizer.ChangeDrift(false)
 	
 	acceleration += drag_force + friction_force
-	#Cuando llega a velocidad maxima hace sonido, y hasta que no vuelve a llegar no vuelve a sonar
-	if acceleration.length() < 0.1:
-		if not maxVelGotten: 
+	#Cuando llega a cierta velocidad hace sonido, y hasta que no vuelve a llegar no vuelve a sonar
+	if acceleration.length() < 10:
+		if not maxVelGotten and velocity.length() > 20: 
+			Globals.change_face.emit(1)
 			MaxVelAchievedSoundPlayer.play()
 			maxVelGotten = true
 	else: 

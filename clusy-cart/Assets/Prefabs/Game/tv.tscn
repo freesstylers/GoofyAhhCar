@@ -1,0 +1,89 @@
+[gd_scene load_steps=11 format=3 uid="uid://bv131o76lgvv5"]
+
+[ext_resource type="Texture2D" uid="uid://dectekjqjbnee" path="res://Assets/Sprites/MonkeyTV/monkeyAngry.png" id="1_ekkm7"]
+[ext_resource type="Texture2D" uid="uid://dtnaaiyoaplcr" path="res://Assets/Sprites/MonkeyTV/idle.png" id="1_rn30u"]
+[ext_resource type="Texture2D" uid="uid://c7ubrual6jmhe" path="res://Assets/Sprites/MonkeyTV/tv.png" id="2_rx4n3"]
+[ext_resource type="Texture2D" uid="uid://cjli028fxdc3l" path="res://Assets/Sprites/MonkeyTV/monkeylaugh.png" id="3_18uwb"]
+[ext_resource type="Texture2D" uid="uid://dx3xb54ihro50" path="res://Assets/Sprites/MonkeyTV/monkeyLaugh2.png" id="4_j02a5"]
+[ext_resource type="Texture2D" uid="uid://cesgllks8iwk7" path="res://Assets/Sprites/MonkeyTV/monkeyLaugh3.png" id="5_dvtqj"]
+[ext_resource type="Texture2D" uid="uid://dlarih3g3crww" path="res://Assets/Sprites/MonkeyTV/monkeyMischief.png" id="6_i06a3"]
+[ext_resource type="Texture2D" uid="uid://cj5ynkw0mjpgk" path="res://Assets/Sprites/MonkeyTV/monkeyPOG.png" id="7_3sdco"]
+[ext_resource type="Script" path="res://Assets/Scripts/gameUI/monkeyFace.gd" id="9_65hds"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dxsxa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ekkm7")
+}],
+"loop": true,
+"name": &"angry1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_i06a3")
+}],
+"loop": true,
+"name": &"angry2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rn30u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_18uwb")
+}],
+"loop": true,
+"name": &"laugh1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_j02a5")
+}],
+"loop": true,
+"name": &"laugh2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_dvtqj")
+}],
+"loop": true,
+"name": &"laugh3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_3sdco")
+}],
+"loop": true,
+"name": &"pog",
+"speed": 5.0
+}]
+
+[node name="TV" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TV" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 62.0
+offset_right = 666.0
+offset_bottom = 442.0
+texture = ExtResource("2_rx4n3")
+expand_mode = 1
+
+[node name="Monkey" type="AnimatedSprite2D" parent="TV"]
+position = Vector2(226, 192)
+scale = Vector2(0.668, 0.556)
+sprite_frames = SubResource("SpriteFrames_dxsxa")
+script = ExtResource("9_65hds")
