@@ -1,4 +1,4 @@
-extends Sprite2D
+extends AnimatedSprite2D
 
 var playerSprite : Sprite2D = null
 var blinkTimer : Timer = null
@@ -9,7 +9,6 @@ var rightPart : CPUParticles2D = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	playerSprite = self
 	blinkTimer = $BlinkTimer
 	leftPart = $LeftDrigtingParticles
 	rightPart = $RightDriftingParticles

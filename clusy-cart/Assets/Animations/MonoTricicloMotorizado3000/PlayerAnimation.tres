@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://cy23rbgoxbhds"]
+
+[ext_resource type="Texture2D" uid="uid://cl8ahstinivbg" path="res://Assets/Sprites/El Machango/Machango1.png" id="1_fdkn3"]
+[ext_resource type="Texture2D" uid="uid://v751li4df2jx" path="res://Assets/Sprites/El Machango/Machango2.png" id="2_e4ni2"]
+[ext_resource type="Texture2D" uid="uid://vjtvo6ykvqa2" path="res://Assets/Sprites/El Machango/Machango3.png" id="3_a356j"]
+[ext_resource type="Texture2D" uid="uid://bsmtc0q1d88m1" path="res://Assets/Sprites/El Machango/Machango4.png" id="4_i6oxy"]
+[ext_resource type="Texture2D" uid="uid://chwjmg41vovt2" path="res://Assets/Sprites/El Machango/Machango5.png" id="5_qtxnr"]
+[ext_resource type="Texture2D" uid="uid://dha3go51yw3km" path="res://Assets/Sprites/El Machango/Machango6.png" id="6_8mtym"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 0.2,
+"texture": ExtResource("1_fdkn3")
+}, {
+"duration": 0.2,
+"texture": ExtResource("2_e4ni2")
+}, {
+"duration": 0.2,
+"texture": ExtResource("3_a356j")
+}, {
+"duration": 0.2,
+"texture": ExtResource("4_i6oxy")
+}, {
+"duration": 0.2,
+"texture": ExtResource("5_qtxnr")
+}, {
+"duration": 0.2,
+"texture": ExtResource("6_8mtym")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
