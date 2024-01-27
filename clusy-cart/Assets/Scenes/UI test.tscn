@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bkt3u3yo0vskc" path="res://Assets/Prefabs/Game/exp_bar.tscn" id="3_t2hj1"]
 [ext_resource type="PackedScene" uid="uid://bn0e6vrb0rly7" path="res://Assets/Prefabs/Game/Level Up Panel.tscn" id="4_ry28i"]
 [ext_resource type="PackedScene" uid="uid://bstnh7hielj7e" path="res://Assets/Prefabs/Game/point_particle.tscn" id="6_m35xq"]
-[ext_resource type="Script" path="res://Assets/Scripts/test/testParticlesPoints.gd" id="7_1al6i"]
+[ext_resource type="Script" path="res://Assets/Scripts/test/ParticlesPoints.gd" id="7_1al6i"]
 
 [node name="Node" type="Node"]
 
@@ -62,12 +62,12 @@ offset_right = -77.0
 text = "?????????????"
 metadata/_edit_use_anchors_ = true
 
-[node name="Control" type="Control" parent="Game UI"]
+[node name="ParticleSpawner" type="Control" parent="Game UI"]
 layout_mode = 1
-anchor_left = 0.415625
-anchor_top = 0.153906
-anchor_right = 0.446875
-anchor_bottom = 0.185156
+anchor_left = 0.499219
+anchor_top = 0.165625
+anchor_right = 0.530469
+anchor_bottom = 0.196875
 script = ExtResource("7_1al6i")
 particle = ExtResource("6_m35xq")
 metadata/_edit_use_anchors_ = true
