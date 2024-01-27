@@ -23,7 +23,10 @@ func move(delta):
 	look_at(goTo.global_position)
 	if is_min_dist(distanceThreshold):
 		goTo = pointBehaviour.get_next_point()
+		finish_move()
 
+func finish_move():
+	pass
 
 func _process(delta):
 	move(delta)
