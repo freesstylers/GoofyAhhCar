@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://df8e5sy3ga16" path="res://Assets/Prefabs/Game/gasMeter.tscn" id="1_7lnja"]
 [ext_resource type="Theme" uid="uid://ccsfly34nw0wv" path="res://Assets/Themes/MainMenuTheme.tres" id="1_bjny1"]
 [ext_resource type="PackedScene" uid="uid://c57gjs6f7y1rs" path="res://Assets/Prefabs/Game/speed_meter.tscn" id="2_ybaca"]
-[ext_resource type="PackedScene" uid="uid://bkt3u3yo0vskc" path="res://Assets/Prefabs/Game/exp_bar.tscn" id="3_t2hj1"]
+[ext_resource type="PackedScene" path="res://Assets/Prefabs/Game/exp_bar.tscn" id="3_t2hj1"]
 [ext_resource type="PackedScene" uid="uid://bn0e6vrb0rly7" path="res://Assets/Prefabs/Game/Level Up Panel.tscn" id="4_ry28i"]
-[ext_resource type="PackedScene" uid="uid://bstnh7hielj7e" path="res://Assets/Prefabs/Game/point_particle.tscn" id="6_m35xq"]
+[ext_resource type="PackedScene" path="res://Assets/Prefabs/Game/point_particle.tscn" id="6_m35xq"]
 [ext_resource type="Script" path="res://Assets/Scripts/test/ParticlesPoints.gd" id="7_1al6i"]
 
 [node name="Node" type="Node"]

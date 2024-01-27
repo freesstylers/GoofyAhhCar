@@ -18,6 +18,7 @@ var acceleration : Vector2 = Vector2.ZERO
 @export var traction_slow : float = 0.7  # Low-speed traction
 ###############################################
 
+var used_engine_power : float = engine_power
 var maxVelGotten : bool = false
 var drifting : bool = false
 
@@ -26,10 +27,20 @@ var MaxVelAchievedSoundPlayer : AudioStreamPlayer = null
 
 func _ready():	
 	Globals.ThePlayer = self
-	Globals.game_init_everything.connect(on_game_init_everything)
 	
 	BounceSoundPlayer = $BounceSoundPlayer
 	MaxVelAchievedSoundPlayer = $MaxVelAchievedSoundPlayer
+	
+	Globals.game_init_everything.connect(on_game_init_everything)
+	Globals.kill_modifier_obtained.connect(on_kill_modifier_obtained)
+	#
+	#var localTween : Tween = create_tween()
+	#localTween.tween_callback(func():
+			#Globals.kill_modifier_obtained.emit(Globals.KillModifier.SpeedBoost)).set_delay(2)
+	#localTween.tween_callback(func():
+			#Globals.kill_modifier_obtained.emit(Globals.KillModifier.SpeedLoss)).set_delay(5)
+	#localTween.tween_callback(func():
+			#Globals.game_init_everything.emit()).set_delay(5)
 	
 func _process(_delta):
 	pass
@@ -43,7 +54,7 @@ func get_input():
 	steer_angle = turn * steering_angle
 	if Input.is_action_pressed("up"):
 		#TODO SONIDO
-		acceleration = transform.x * engine_power
+		acceleration = transform.x * used_engine_power
 	if Input.is_action_pressed("back"):
 		acceleration = transform.x * braking
 	if Input.is_action_pressed("drift"):
@@ -105,12 +116,7 @@ func calculate_steering(delta):
 	if d < 0:
 		velocity = -new_heading * min(velocity.length(), max_speed_reverse)
 	rotation = new_heading.angle()
-
-#####GLOBAL SIGNALS#####
 			
-func on_game_init_everything():
-	pass
-
 func _on_plusfriction_pressed():
 	friction += 0.1
 
@@ -128,8 +134,27 @@ func _on_plusdrag_pressed():
 
 
 func _on_minusengine_pressed():
-	engine_power-=100
+	used_engine_power-=100
 
 
 func _on_plusengine_pressed():
-	engine_power+=100
+	used_engine_power+=100
+
+func on_speed_timer_ended():
+	used_engine_power = engine_power
+
+#####GLOBAL SIGNALS####
+
+func on_game_init_everything():
+	used_engine_power = engine_power
+	pass
+
+func on_kill_modifier_obtained(modifier : Globals.KillModifier):
+	match modifier:
+		Globals.KillModifier.SpeedBoost:
+			used_engine_power = engine_power * 2
+			$SpeedTimer.start()
+			
+		Globals.KillModifier.SpeedLoss:
+			used_engine_power = engine_power / 2
+			$SpeedTimer.start()

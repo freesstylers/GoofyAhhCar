@@ -7,5 +7,13 @@ var ThePlayer : Player = null
 #Gameplay loop
 signal game_init_everything()
 signal game_start_playing()
+
 signal player_won()
 signal player_lost()
+
+signal kill_modifier_obtained(modifier : KillModifier)
+
+enum KillModifier {
+	SpeedBoost,
+	SpeedLoss
+}

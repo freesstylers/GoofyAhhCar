@@ -57,9 +57,9 @@ shape = SubResource("RectangleShape2D_fmsee")
 [node name="PlayerVisualizer" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
 sprite_frames = ExtResource("2_ulsy8")
+autoplay = "default"
+frame_progress = 0.0755935
 script = ExtResource("3_ppvnt")
-
-[node name="BlinkTimer" type="Timer" parent="PlayerVisualizer"]
 
 [node name="LeftDrigtingParticles" type="CPUParticles2D" parent="PlayerVisualizer"]
 position = Vector2(-23.9999, 23.9999)
@@ -101,3 +101,7 @@ stream = SubResource("AudioStreamRandomizer_87beg")
 max_polyphony = 5
 
 [node name="MaxVelAchievedSoundPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="SpeedTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="SpeedTimer" to="." method="on_speed_timer_ended"]
