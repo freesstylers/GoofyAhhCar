@@ -13,7 +13,7 @@ var speed = 0.0;
 
 func _ready():
 	#Rect.pivot_offset.y = Rect.size.x / 2.0
-	Rect.rotation = MinAngle
+	Rect.rotation_degrees = MinAngle
 	pass
 	
 func _input(event):
