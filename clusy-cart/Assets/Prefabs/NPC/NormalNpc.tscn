@@ -7,20 +7,22 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_1k27a"]
 
 [node name="NormalNPC" type="CharacterBody2D"]
+position = Vector2(511, 378)
 script = ExtResource("1_hrrqi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1k27a")
 
 [node name="AnimatedSprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
 texture = ExtResource("1_tp004")
 
 [node name="PointsBehaviour" type="Node" parent="." node_paths=PackedStringArray("points")]
 script = ExtResource("2_5fohp")
-points = [NodePath("Node2D"), NodePath("Node2D2")]
+points = [NodePath("Point1"), NodePath("Point2")]
 
-[node name="Node2D" type="Node2D" parent="PointsBehaviour"]
-position = Vector2(-99.28, 0)
+[node name="Point1" type="Node2D" parent="PointsBehaviour"]
+position = Vector2(386.72, 267)
 
-[node name="Node2D2" type="Node2D" parent="PointsBehaviour"]
-position = Vector2(94.055, 0)
+[node name="Point2" type="Node2D" parent="PointsBehaviour"]
+position = Vector2(900, 412)
