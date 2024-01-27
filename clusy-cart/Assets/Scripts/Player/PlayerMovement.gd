@@ -26,6 +26,7 @@ var BounceSoundPlayer : AudioStreamPlayer = null
 var MaxVelAchievedSoundPlayer : AudioStreamPlayer = null
 var DriftSoundPlayer : AudioStreamPlayer = null
 var InitDriftSoundPlayer : AudioStreamPlayer = null
+var HornSoundPlayer : AudioStreamPlayer = null
 
 var currentLife : int = Globals.MAX_PLAYER_LIFE
 
@@ -39,6 +40,7 @@ func _ready():
 	MaxVelAchievedSoundPlayer = $MaxVelAchievedSoundPlayer
 	DriftSoundPlayer = $DriftSoundPlayer
 	InitDriftSoundPlayer = $InitDriftSoundPlayer
+	HornSoundPlayer = $HornSoundPlayer
 	
 	Globals.game_init_everything.connect(on_game_init_everything)
 	Globals.kill_modifier_obtained.connect(on_kill_modifier_obtained)
@@ -70,6 +72,9 @@ func get_input():
 	if Input.is_action_just_released("drift"):
 		InitDriftSoundPlayer.stop()
 		DriftSoundPlayer.play()
+		
+	if Input.is_action_just_released("horny"):
+		HornSoundPlayer.play()
 		
 func _physics_process(delta):
 	acceleration = Vector2.ZERO
@@ -109,6 +114,8 @@ func apply_friction():
 			maxVelGotten = true
 	else: 
 		maxVelGotten = false	
+	
+func getMaxVelocity(value): return log(value) / log(1.3)
 	
 func calculate_steering(delta):
 	var rear_wheel = position - transform.x * wheel_base / 2.0

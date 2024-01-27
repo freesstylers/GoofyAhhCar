@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://csms6l2yxn245"]
+[gd_scene load_steps=20 format=3 uid="uid://csms6l2yxn245"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Player/PlayerMovement.gd" id="1_a0fay"]
 [ext_resource type="SpriteFrames" uid="uid://cy23rbgoxbhds" path="res://Assets/Animations/MonoTricicloMotorizado3000/PlayerAnimation.tres" id="2_ulsy8"]
@@ -13,6 +13,9 @@
 [ext_resource type="AudioStream" uid="uid://bc6bms54v8tvb" path="res://Assets/Sound/SFX/Boing/Boing7.wav" id="10_22pih"]
 [ext_resource type="AudioStream" uid="uid://m5l3c6vx28tc" path="res://Assets/Sound/SFX/Boing/Boing8.wav" id="11_8bywq"]
 [ext_resource type="AudioStream" uid="uid://fctqkdjeghxq" path="res://Assets/Sound/SFX/Boing/Boing9.wav" id="12_6atgo"]
+[ext_resource type="AudioStream" uid="uid://44hum133cn7k" path="res://Assets/Sound/SFX/Misc/initdrift.mp3" id="14_0qhaw"]
+[ext_resource type="AudioStream" uid="uid://cg44o6lqquwor" path="res://Assets/Sound/SFX/Misc/drift.mp3" id="14_q7f2t"]
+[ext_resource type="AudioStream" uid="uid://bq1w6y4fmsjn4" path="res://Assets/Sound/SFX/Misc/horn.wav" id="16_fdmgb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmsee"]
 size = Vector2(60, 26)
@@ -103,5 +106,14 @@ max_polyphony = 5
 [node name="MaxVelAchievedSoundPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="SpeedTimer" type="Timer" parent="."]
+
+[node name="InitDriftSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_0qhaw")
+
+[node name="DriftSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_q7f2t")
+
+[node name="HornSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_fdmgb")
 
 [connection signal="timeout" from="SpeedTimer" to="." method="on_speed_timer_ended"]
