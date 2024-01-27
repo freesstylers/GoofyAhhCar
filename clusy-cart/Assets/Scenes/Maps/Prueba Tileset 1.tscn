@@ -435,6 +435,7 @@ sources/0 = SubResource("TileSetAtlasSource_6c7ai")
 [node name="PruebaTileset1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2(1400, 1688)
 scale = Vector2(5, 5)
 tile_set = SubResource("TileSet_abpjm")
 format = 2
@@ -448,5 +449,7 @@ layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(-1572868, 0, 13, -1507332, 0, 13, -1441796, 0, 13, -196608, 65536, 12, -196607, 65536, 12, -196606, 65536, 12, -196605, 65536, 12, -1703922, 65536, 12, -1703921, 65536, 12, -1703920, 65536, 12, -1966091, 0, 13, -1900555, 0, 13, -1835019, 0, 13, -131051, 0, 13, -65515, 0, 13, 21, 0, 13)
 
 [node name="Player" parent="." instance=ExtResource("2_qr6q7")]
+position = Vector2(262, 422)
+drag = -0.001
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
