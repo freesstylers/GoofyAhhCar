@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://cjpv8shu8ggj6"]
 
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/PointsBehaviour.gd" id="1_c4lcu"]
-[ext_resource type="Script" path="res://Assets/Prefabs/NPC/CiclistaNPC.gd" id="1_d67bn"]
-[ext_resource type="Texture2D" uid="uid://lcakrf08wpqc" path="res://Assets/Sprites/PerroGordoBachicha/PerroSalchicha1.png" id="2_o1ja5"]
-[ext_resource type="Script" path="res://Assets/Prefabs/NPC/Zigzag.gd" id="2_ys6lk"]
+[ext_resource type="Script" path="res://Assets/Prefabs/NPC/Ciclista/CiclistaNPC.gd" id="1_d67bn"]
+[ext_resource type="Texture2D" uid="uid://bx0nsvim2dnti" path="res://Assets/Sprites/PerroGordoBachicha/PerroSalchicha1.png" id="2_o1ja5"]
+[ext_resource type="Script" path="res://Assets/Prefabs/NPC/Ciclista/Zigzag.gd" id="2_ys6lk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6f2gb"]
 
