@@ -7,6 +7,7 @@ extends Control
 func _ready():
 	Globals.level_up.connect(levelUp)
 	LevelUpMenu.visible = false
+	LevelUpMenu.WakeUp()
 	pass # Replace with function body.
 
 

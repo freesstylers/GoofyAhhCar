@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Assets/Scripts/gameUI/Level Up Panel.gd" id="1_nhm8p"]
 
-[node name="level up menu" type="Panel"]
+[node name="level up menu" type="Panel" node_paths=PackedStringArray("hpButton")]
 process_mode = 3
 anchors_preset = -1
 anchor_left = 0.209375
@@ -12,6 +12,7 @@ anchor_bottom = 0.711719
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nhm8p")
+hpButton = NodePath("option container/levelUpOption4")
 metadata/_edit_use_anchors_ = true
 
 [node name="title" type="Label" parent="."]
@@ -51,6 +52,11 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="levelUpOption4" type="Button" parent="option container"]
+layout_mode = 2
+size_flags_vertical = 3
+
 [connection signal="pressed" from="option container/levelUpOption" to="." method="buttonPress" binds= [0.0]]
 [connection signal="pressed" from="option container/levelUpOption2" to="." method="buttonPress" binds= [1.0]]
 [connection signal="pressed" from="option container/levelUpOption3" to="." method="buttonPress" binds= [2.0]]
+[connection signal="pressed" from="option container/levelUpOption4" to="." method="buttonPress" binds= [3.0]]
