@@ -22,3 +22,4 @@ enum KillModifier {
 signal exp_gain(exp : float)
 signal exp_update()
 signal level_up()
+signal change_face(num:int)
