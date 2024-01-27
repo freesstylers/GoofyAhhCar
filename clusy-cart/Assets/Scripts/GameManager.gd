@@ -1,6 +1,7 @@
 class_name GameManager
 extends Node
 
+var Points = 0
 var Experience = 0
 var ExpNextLevel = 0
 var Level = 0
@@ -18,7 +19,8 @@ func _init():
 func _ready():
 	Globals.GameMan = self
 
-func expGain(exp : float):
+func expGain(exp : float, points : float):
+	Points += points
 	Experience += exp
 	if(Experience >= ExpNextLevel):
 		Level += 1

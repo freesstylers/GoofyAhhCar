@@ -1,18 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://c650k1eh1suet"]
+[gd_scene load_steps=11 format=3 uid="uid://c650k1eh1suet"]
 
 [ext_resource type="PackedScene" uid="uid://df8e5sy3ga16" path="res://Assets/Prefabs/Game/gasMeter.tscn" id="1_7lnja"]
 [ext_resource type="Theme" uid="uid://ccsfly34nw0wv" path="res://Assets/Themes/MainMenuTheme.tres" id="1_bjny1"]
 [ext_resource type="Script" path="res://Assets/Scripts/gameUI/GameUIManager.gd" id="2_kqik8"]
 [ext_resource type="PackedScene" uid="uid://c57gjs6f7y1rs" path="res://Assets/Prefabs/Game/speed_meter.tscn" id="2_ybaca"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/Game/exp_bar.tscn" id="3_t2hj1"]
+[ext_resource type="PackedScene" uid="uid://bkt3u3yo0vskc" path="res://Assets/Prefabs/Game/exp_bar.tscn" id="3_t2hj1"]
 [ext_resource type="PackedScene" uid="uid://bn0e6vrb0rly7" path="res://Assets/Prefabs/Game/Level Up Panel.tscn" id="4_ry28i"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/Game/point_particle.tscn" id="6_m35xq"]
+[ext_resource type="PackedScene" uid="uid://bstnh7hielj7e" path="res://Assets/Prefabs/Game/point_particle.tscn" id="6_m35xq"]
 [ext_resource type="Script" path="res://Assets/Scripts/test/ParticlesPoints.gd" id="7_1al6i"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/game_manager.tscn" id="9_en646"]
+[ext_resource type="Script" path="res://Assets/Scripts/gameUI/pointsIndicator.gd" id="8_8nore"]
+[ext_resource type="PackedScene" uid="uid://df5a7fpwactp3" path="res://Assets/Prefabs/game_manager.tscn" id="9_en646"]
 
 [node name="Node" type="Node"]
 
-[node name="Game UI" type="Control" parent="." node_paths=PackedStringArray("LevelUpMenu")]
+[node name="GameManager" parent="." instance=ExtResource("9_en646")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Game UI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("LevelUpMenu")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,7 +29,7 @@ script = ExtResource("2_kqik8")
 LevelUpMenu = NodePath("level up menu")
 metadata/_edit_use_anchors_ = true
 
-[node name="Gasolina" parent="Game UI" instance=ExtResource("1_7lnja")]
+[node name="Gasolina" parent="CanvasLayer/Game UI" instance=ExtResource("1_7lnja")]
 layout_mode = 1
 anchor_left = 0.420312
 anchor_top = 0.925
@@ -35,45 +40,50 @@ offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="EXP bar" parent="Game UI" instance=ExtResource("3_t2hj1")]
+[node name="EXP bar" parent="CanvasLayer/Game UI" instance=ExtResource("3_t2hj1")]
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 0.0398437
 offset_bottom = 0.0
 metadata/_edit_use_anchors_ = true
 
-[node name="speed meter" parent="Game UI" instance=ExtResource("2_ybaca")]
+[node name="speed meter" parent="CanvasLayer/Game UI" instance=ExtResource("2_ybaca")]
 layout_mode = 1
 anchor_top = 0.800781
 anchor_right = 0.249875
 anchor_bottom = 1.00078
 grow_vertical = 1
 
-[node name="level up menu" parent="Game UI" instance=ExtResource("4_ry28i")]
+[node name="level up menu" parent="CanvasLayer/Game UI" instance=ExtResource("4_ry28i")]
 visible = false
+z_index = 60
 layout_mode = 1
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="points" type="Label" parent="Game UI"]
+[node name="points" type="Label" parent="CanvasLayer/Game UI"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.610937
-anchor_top = 0.009375
-anchor_right = 0.702344
-anchor_bottom = 0.0265625
-offset_right = -77.0
+anchor_left = 0.457031
+anchor_top = 0.0734375
+anchor_right = 0.548437
+anchor_bottom = 0.090625
 text = "?????????????"
+script = ExtResource("8_8nore")
 metadata/_edit_use_anchors_ = true
 
-[node name="ParticleSpawner" type="Control" parent="Game UI"]
+[node name="ParticleSpawner" type="Control" parent="CanvasLayer/Game UI"]
 layout_mode = 1
-anchor_left = 0.499219
-anchor_top = 0.165625
-anchor_right = 0.530469
-anchor_bottom = 0.196875
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -38.0
+offset_right = -64.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("7_1al6i")
 particle = ExtResource("6_m35xq")
-metadata/_edit_use_anchors_ = true
-
-[node name="GameManager" parent="." instance=ExtResource("9_en646")]

@@ -2,16 +2,18 @@ extends Control
 
 @export var particle : Resource
 
-var rng = RandomNumberGenerator.new()
+func _init():
+	Globals.exp_gain.connect(pointReceive)
+	pass
 
-func _input(event):
-	#TEST
-	if event.is_action_pressed("Accelerate"):
-		SpawnParticle(rng.randi_range(0, 999))
+func pointReceive(exp : float, points: float):
+	SpawnParticle(points)
 	pass
 
 func SpawnParticle(amount):
-	var text = particle.instantiate()
+	var text : Label
+	text = particle.instantiate()
+	var t = text.get_global_transform()
 	text.amount = amount
 	add_child(text)
 	pass

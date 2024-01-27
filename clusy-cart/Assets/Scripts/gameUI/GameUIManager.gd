@@ -13,7 +13,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _input(event):
 	if event.is_action_pressed("Accelerate"):
-		Globals.exp_gain.emit(1)
+		Globals.exp_gain.emit(1, Globals.RNG.randi_range(0, 999))
 		pass
 	pass
 	

@@ -10,14 +10,11 @@ var amount : float
 var t = 0.0
 var vel : Vector2
 
-var rng
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	text = "+{0}".format([amount])
 	
-	rng = RandomNumberGenerator.new()
-	var angle = rng.randf_range(-AngleRange, AngleRange)
+	var angle = Globals.RNG.randf_range(-AngleRange, AngleRange)
 	vel = InitialDir.rotated(deg_to_rad(angle)) * InitialVel
 	pass # Replace with function body.
 

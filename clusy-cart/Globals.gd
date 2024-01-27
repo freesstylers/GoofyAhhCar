@@ -2,6 +2,7 @@ extends Node
 
 ###################CONSTANTS###################
 const WINDOW_BASE_SIZE = Vector2(1280,1280)
+var RNG = RandomNumberGenerator.new()
 var ThePlayer : Player = null
 var GameMan : GameManager = null
 
@@ -18,7 +19,7 @@ enum KillModifier {
 	SpeedLoss
 }
 
-signal exp_gain(exp : float)
+signal exp_gain(exp : float, points : float)
 signal exp_update()
 signal level_up()
 signal change_face(num:int)
