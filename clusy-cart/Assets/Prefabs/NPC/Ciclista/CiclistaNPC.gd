@@ -15,9 +15,11 @@ func  finish_move():
 	canMove = false
 	var z = $Zigzag as ZigZag
 	z.realocate = true
+	var dist = z.position.distance_to(Vector2(0,0))
+	var t = dist/speed
 	
 	var tween = get_tree().create_tween()
-	tween.tween_property(z, "position", Vector2(0,0), 1)
+	tween.tween_property(z, "position", Vector2(0,0), t)
 	tween.tween_callback(start_move)
 	
 func start_move():

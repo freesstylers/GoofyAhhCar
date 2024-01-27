@@ -20,5 +20,3 @@ func return_origin(delta):
 	if position.y < 0:
 		rot = 90
 	rotation = deg_to_rad(rot)
-	var dir = -position
-	position = position + dir*delta
