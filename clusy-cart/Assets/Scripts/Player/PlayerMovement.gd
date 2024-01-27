@@ -86,7 +86,7 @@ func _physics_process(delta):
 	if collision:
 		var vel = velocity.length()
 		#Solo haces el sonidito si tienes una velocidad "significativa"
-		if(vel > max_speed_reverse):
+		if(vel > max_speed_reverse*2):
 			BounceSoundPlayer.play()
 			Globals.change_face.emit(2)
 		velocity = velocity.bounce(collision.get_normal())
