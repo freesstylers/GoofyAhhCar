@@ -27,6 +27,8 @@ var MaxVelAchievedSoundPlayer : AudioStreamPlayer = null
 var DriftSoundPlayer : AudioStreamPlayer = null
 var InitDriftSoundPlayer : AudioStreamPlayer = null
 
+var currentLife : int = Globals.MAX_PLAYER_LIFE
+
 func _ready():	
 	Globals.ThePlayer = self
 	
@@ -38,14 +40,6 @@ func _ready():
 	
 	Globals.game_init_everything.connect(on_game_init_everything)
 	Globals.kill_modifier_obtained.connect(on_kill_modifier_obtained)
-	#
-	#var localTween : Tween = create_tween()
-	#localTween.tween_callback(func():
-			#Globals.kill_modifier_obtained.emit(Globals.KillModifier.SpeedBoost)).set_delay(2)
-	#localTween.tween_callback(func():
-			#Globals.kill_modifier_obtained.emit(Globals.KillModifier.SpeedLoss)).set_delay(5)
-	#localTween.tween_callback(func():
-			#Globals.game_init_everything.emit()).set_delay(5)
 	
 func _process(_delta):
 	pass
@@ -129,10 +123,16 @@ func calculate_steering(delta):
 	if d < 0:
 		velocity = -new_heading * min(velocity.length(), max_speed_reverse)
 	rotation = new_heading.angle()
-			
+
+func ChangeLife(lifeDelta : float):
+	currentLife = clampi(currentLife + lifeDelta, 0, 100)
+	Globals.hp_change.emit(lifeDelta)
+	Globals.hp_update.emit(currentLife)
+	if currentLife == 0:
+		Globals.game_over.emit(true)
+		
 func _on_plusfriction_pressed():
 	friction += 0.1
-
 
 func _on_minusfriction_pressed():
 	friction -= 0.1
@@ -160,7 +160,7 @@ func on_speed_timer_ended():
 
 func on_game_init_everything():
 	used_engine_power = engine_power
-	pass
+	currentLife = Globals.MAX_PLAYER_LIFE
 
 func on_kill_modifier_obtained(modifier : Globals.KillModifier):
 	match modifier:

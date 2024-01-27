@@ -19,13 +19,5 @@ func StartGame():
 	endTimer.start()
 	Globals.game_start_playing.emit()
 
-func EndTimerFinished():
-	Globals.player_lost.emit()
-
-func EnemyKilled():
-	numEnemiesLeft = numEnemiesLeft - 1
-	if numEnemiesLeft <= 0:
-		Globals.player_won.emit()
-
 func on_game_init_everything():
 	numEnemiesLeft = numStartingEnemies
