@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://0rdny0tw0ky4"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/LevelManager.gd" id="1_7u1n7"]
+
+[node name="LevelManager" type="Node2D"]
+script = ExtResource("1_7u1n7")
+
+[node name="LevelTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="LevelTimer" to="." method="EndTimerFinished"]

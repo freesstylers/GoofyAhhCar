@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Assets/Scripts/Player/DebugDragLabel.gd" id="2_0578h"]
 [ext_resource type="PackedScene" uid="uid://csms6l2yxn245" path="res://Assets/Scenes/Player.tscn" id="2_q35he"]
 [ext_resource type="Script" path="res://Assets/Scripts/Player/DebugEngineLabel.gd" id="3_u6oi0"]
-[ext_resource type="PackedScene" uid="uid://bv131o76lgvv5" path="res://Assets/Prefabs/Game/tv.tscn" id="6_k0utx"]
+[ext_resource type="PackedScene" path="res://Assets/Prefabs/Game/tv.tscn" id="6_k0utx"]
 
 [node name="Scene" type="Node2D"]
 
