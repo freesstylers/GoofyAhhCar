@@ -107,3 +107,27 @@ func on_game_init_everything():
 	var screen_size = get_viewport().size
 	var center_screen = Vector2(screen_size.x / 2, screen_size.y / 2)
 	self.global_position = center_screen
+
+
+func _on_plusfriction_pressed():
+	friction += 0.1
+
+
+func _on_minusfriction_pressed():
+	friction -= 0.1
+
+
+func _on_minusdrag_pressed():
+	drag-=0.001
+
+
+func _on_plusdrag_pressed():
+	drag+=0.001
+
+
+func _on_minusengine_pressed():
+	engine_power-=100
+
+
+func _on_plusengine_pressed():
+	engine_power+=100
