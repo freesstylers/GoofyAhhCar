@@ -1,5 +1,5 @@
-extends CharacterBody2D
 class_name Player
+extends CharacterBody2D
 
 ###########################################NUEVO SISTEMA
 @export var wheel_base : float = 70  # Distance from front to rear wheel

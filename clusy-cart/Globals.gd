@@ -3,6 +3,7 @@ extends Node
 ###################CONSTANTS###################
 const WINDOW_BASE_SIZE = Vector2(1280,1280)
 var ThePlayer : Player = null
+var GameMan : GameManager = null
 
 #Gameplay loop
 signal game_init_everything()
@@ -17,3 +18,7 @@ enum KillModifier {
 	SpeedBoost,
 	SpeedLoss
 }
+
+signal exp_gain(exp : float)
+signal exp_update()
+signal level_up()

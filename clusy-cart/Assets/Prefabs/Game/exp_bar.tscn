@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bkt3u3yo0vskc"]
+[gd_scene load_steps=2 format=3 uid="uid://bkt3u3yo0vskc"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/gameUI/exp_bar.gd" id="1_au2jd"]
 
 [node name="EXP bar" type="ProgressBar"]
 anchors_preset = 10
@@ -6,3 +8,4 @@ anchor_right = 1.0
 offset_bottom = 49.0
 grow_horizontal = 2
 show_percentage = false
+script = ExtResource("1_au2jd")
