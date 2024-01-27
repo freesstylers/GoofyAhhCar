@@ -29,6 +29,8 @@ var InitDriftSoundPlayer : AudioStreamPlayer = null
 
 var currentLife : int = Globals.MAX_PLAYER_LIFE
 
+var reverse = false
+
 func _ready():	
 	Globals.ThePlayer = self
 	
@@ -120,8 +122,10 @@ func calculate_steering(delta):
 	var d = new_heading.dot(velocity.normalized())
 	if d > 0:
 		velocity = velocity.lerp(new_heading * velocity.length(), traction)
+		reverse = false
 	if d < 0:
 		velocity = -new_heading * min(velocity.length(), max_speed_reverse)
+		reverse = true
 	rotation = new_heading.angle()
 
 func ChangeLife(lifeDelta : float):

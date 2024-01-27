@@ -29,6 +29,6 @@ offset_right = -0.160019
 offset_bottom = -0.160019
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 0.666716
+rotation = 1.25838
 pivot_offset = Vector2(0, 5)
 metadata/_edit_use_anchors_ = true

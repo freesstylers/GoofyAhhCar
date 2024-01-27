@@ -21,11 +21,19 @@ func _process(delta):
 	if(Globals.ThePlayer == null):
 		return
 	
-	var speed = Globals.ThePlayer.velocity
-	var maxSpeed = 550
+	var speed = Globals.ThePlayer.velocity.length()
 	
-	Rect.rotation_degrees = lerp(MinAngle, MaxAngle, speed / 550)
+	var deg : float
 	
-	#print("speed: {0} || angle: {1}".format([speed, Rect.rotation]))
+	if(Globals.ThePlayer.reverse):
+		deg = lerp(MinAngle + 360, MaxAngle, speed / Globals.ThePlayer.max_speed_reverse)
+		pass
+	else:
+		deg = lerp(MinAngle, MaxAngle, speed / 550)
+		pass
+		
+	Rect.rotation_degrees = deg
+	
+	print("speed: {0} || angle: {1}".format([speed, deg]))
 	
 	pass
