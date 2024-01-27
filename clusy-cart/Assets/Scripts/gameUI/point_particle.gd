@@ -12,7 +12,11 @@ var vel : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	text = "+{0}".format([amount])
+	
+	if(amount >= 0):
+		text = "+{0}".format([amount])
+	else:
+		text = "{0}".format([amount])
 	
 	var angle = Globals.RNG.randf_range(-AngleRange, AngleRange)
 	vel = InitialDir.rotated(deg_to_rad(angle)) * InitialVel
