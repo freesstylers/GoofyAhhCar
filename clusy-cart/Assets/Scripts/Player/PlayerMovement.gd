@@ -17,6 +17,8 @@ var acceleration : Vector2 = Vector2.ZERO
 @export var slip_speed : float = 400  # Speed where traction is reduced
 @export var traction_fast : float = 0.1  # High-speed traction
 @export var traction_slow : float = 0.7  # Low-speed traction
+
+@export var accelThreshold : float = 260.0
 ###############################################
 
 var used_engine_power : float = engine_power
@@ -101,7 +103,7 @@ func apply_friction():
 		velocity = Vector2.ZERO
 	var friction_force = velocity * friction
 	var drag_force = velocity * velocity.length() * drag
-	if velocity.length() < 260:
+	if velocity.length() < accelThreshold:
 		friction_force *= 3
 		if velocity.length() > 20:
 			$PlayerVisualizer.ChangeDrift(true)
