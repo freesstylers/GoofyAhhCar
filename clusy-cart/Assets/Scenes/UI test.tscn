@@ -36,11 +36,11 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="EXP bar" parent="Game UI" instance=ExtResource("3_t2hj1")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-offset_right = 4.0
-grow_horizontal = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.0398437
+offset_bottom = 0.0
+metadata/_edit_use_anchors_ = true
 
 [node name="speed meter" parent="Game UI" instance=ExtResource("2_ybaca")]
 layout_mode = 1
@@ -52,7 +52,6 @@ grow_vertical = 1
 [node name="level up menu" parent="Game UI" instance=ExtResource("4_ry28i")]
 visible = false
 layout_mode = 1
-anchors_preset = -1
 grow_horizontal = 1
 grow_vertical = 1
 

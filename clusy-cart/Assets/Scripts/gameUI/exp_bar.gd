@@ -4,6 +4,7 @@ extends ProgressBar
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Globals.exp_update.connect(expUpdate)
+	Globals.level_up.connect(levelUp)
 	max_value = Globals.GameMan.ExpNextLevel
 	pass # Replace with function body.
 
