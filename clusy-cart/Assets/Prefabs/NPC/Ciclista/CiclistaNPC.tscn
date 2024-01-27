@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/PointsBehaviour.gd" id="1_c4lcu"]
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/Ciclista/CiclistaNPC.gd" id="1_d67bn"]
-[ext_resource type="Texture2D" uid="uid://bx0nsvim2dnti" path="res://Assets/Sprites/PerroGordoBachicha/PerroSalchicha1.png" id="2_o1ja5"]
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/Ciclista/Zigzag.gd" id="2_ys6lk"]
+[ext_resource type="SpriteFrames" uid="uid://cfeonokj17msd" path="res://Assets/Animations/Ciclista/Ciclista.tres" id="3_lk1m0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6f2gb"]
+radius = 13.0
 
 [node name="CiclistaNpc" type="CharacterBody2D"]
 position = Vector2(442, 191)
@@ -19,9 +20,10 @@ script = ExtResource("2_ys6lk")
 amplitude = 5.0
 frecuency = 10.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Zigzag"]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Zigzag"]
 rotation = 1.5708
-texture = ExtResource("2_o1ja5")
+sprite_frames = ExtResource("3_lk1m0")
+frame_progress = 0.889745
 
 [node name="PointsBehaviour" type="Node" parent="." node_paths=PackedStringArray("points")]
 script = ExtResource("1_c4lcu")
