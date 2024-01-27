@@ -7,6 +7,10 @@ var ThePlayer : Player = null
 var MAX_PLAYER_LIFE : int = 100
 var GameMan : GameManager = null
 
+const LEVEL_UP_MAX_VEL = 100
+const LEVEL_UP_HANDLING = 2.5
+const LEVEL_UP_ACCEL = 25
+
 #Gameplay loop
 signal game_init_everything()
 signal game_start_playing()

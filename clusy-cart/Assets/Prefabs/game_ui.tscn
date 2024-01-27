@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dwb23gaj5yft2"]
+[gd_scene load_steps=14 format=3 uid="uid://dwb23gaj5yft2"]
 
 [ext_resource type="Theme" uid="uid://ccsfly34nw0wv" path="res://Assets/Themes/MainMenuTheme.tres" id="1_soq82"]
 [ext_resource type="Script" path="res://Assets/Scripts/gameUI/GameUIManager.gd" id="2_dukw8"]
@@ -8,12 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://c57gjs6f7y1rs" path="res://Assets/Prefabs/Game/speed_meter.tscn" id="5_fsn16"]
 [ext_resource type="PackedScene" uid="uid://bn0e6vrb0rly7" path="res://Assets/Prefabs/Game/Level Up Panel.tscn" id="6_4cnsr"]
 [ext_resource type="Script" path="res://Assets/Scripts/gameUI/pointsIndicator.gd" id="7_ck5ba"]
+[ext_resource type="Script" path="res://Assets/Scripts/gameUI/game over.gd" id="8_roufx"]
 [ext_resource type="Script" path="res://Assets/Scripts/gameUI/timer.gd" id="8_xwcvf"]
 [ext_resource type="Script" path="res://Assets/Scripts/test/ParticlesPoints.gd" id="9_mtrn8"]
 [ext_resource type="PackedScene" uid="uid://bstnh7hielj7e" path="res://Assets/Prefabs/Game/point_particle.tscn" id="10_iu3rp"]
 [ext_resource type="PackedScene" uid="uid://bste7jyrt8w8n" path="res://Assets/Prefabs/Game/TV_UI.tscn" id="11_jkdus"]
 
-[node name="Game UI" type="Control" node_paths=PackedStringArray("LevelUpMenu")]
+[node name="Game UI" type="Control" node_paths=PackedStringArray("LevelUpMenu", "GameOverMenu")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,6 +24,7 @@ grow_vertical = 2
 theme = ExtResource("1_soq82")
 script = ExtResource("2_dukw8")
 LevelUpMenu = NodePath("level up menu")
+GameOverMenu = NodePath("game over")
 metadata/_edit_use_anchors_ = true
 
 [node name="HP_Bar" parent="." instance=ExtResource("3_utivj")]
@@ -58,6 +60,61 @@ z_index = 60
 layout_mode = 1
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="game over" type="Panel" parent="." node_paths=PackedStringArray("Title", "TotalPoints", "MaxLevel", "MaxSpeed", "Accel", "Handling", "NPCsKilled", "TimesCrashed")]
+process_mode = 3
+visible = false
+z_index = 70
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.209375
+anchor_top = 0.288281
+anchor_right = 0.790625
+anchor_bottom = 0.711719
+script = ExtResource("8_roufx")
+Title = NodePath("title")
+TotalPoints = NodePath("title2")
+MaxLevel = NodePath("title2")
+MaxSpeed = NodePath("title2")
+Accel = NodePath("title2")
+Handling = NodePath("title2")
+NPCsKilled = NodePath("title2")
+TimesCrashed = NodePath("title2")
+metadata/_edit_use_anchors_ = true
+
+[node name="title" type="Label" parent="game over"]
+layout_mode = 2
+anchor_left = 0.0215054
+anchor_top = 0.0258302
+anchor_right = 0.978495
+anchor_bottom = 0.206642
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 90
+text = "Level up!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="title2" type="Label" parent="game over"]
+layout_mode = 2
+anchor_left = 0.0215054
+anchor_top = 0.0258302
+anchor_right = 0.978495
+anchor_bottom = 0.206642
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 90
+text = "Level up!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="levelUpOption" type="Button" parent="game over"]
+layout_mode = 2
+offset_left = 212.0
+offset_top = 444.0
+offset_right = 532.0
+offset_bottom = 523.0
+size_flags_vertical = 3
 
 [node name="points" type="Label" parent="."]
 layout_mode = 1

@@ -4,13 +4,12 @@ extends Node
 @export var GameTime : int
 
 var Points = 0
+var TotalDead = 0
 var Experience = 0
 var ExpNextLevel = 0
 var Level = 0
 
 var TimeLeft = 0
-
-
 
 func NextLevelCalc():
 	return (Level * 10) + 5
@@ -36,6 +35,7 @@ func _process(delta):
 func expGain(exp : float, points : float):
 	Points += points
 	Experience += exp
+	TotalDead += 1
 	if(Experience >= ExpNextLevel):
 		Level += 1
 		Experience -= ExpNextLevel

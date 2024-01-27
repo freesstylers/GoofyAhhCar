@@ -31,11 +31,16 @@ var DriftSoundPlayer : AudioStreamPlayer = null
 var InitDriftSoundPlayer : AudioStreamPlayer = null
 var HornSoundPlayer : AudioStreamPlayer = null
 
-var currentLife : int = Globals.MAX_PLAYER_LIFE
+var currentLife : int
 
 var reverse = false
 
+var timesCrashed = 0
+
 func _ready():	
+	timesCrashed = 0
+	currentLife = Globals.MAX_PLAYER_LIFE
+	
 	Globals.ThePlayer = self
 	
 	Globals.change_face.emit(0)
@@ -47,6 +52,7 @@ func _ready():
 	
 	Globals.game_init_everything.connect(on_game_init_everything)
 	Globals.kill_modifier_obtained.connect(on_kill_modifier_obtained)
+	Globals.hp_change.connect(ChangeLife)
 			
 func get_input():
 	var turn = 0
@@ -93,6 +99,9 @@ func _physics_process(delta):
 		var vel = velocity.length()
 		#Solo haces el sonidito si tienes una velocidad "significativa"
 		if(vel > max_speed_reverse*2):
+			timesCrashed += 1
+			Globals.hp_change.emit(-10)
+			
 			if(not BounceSoundPlayer.playing):
 				BounceSoundPlayer.play()
 				Globals.change_face.emit(2)
@@ -121,7 +130,8 @@ func apply_friction():
 	else: 
 		maxVelGotten = false	
 	
-func getMaxVelocity(value): return log(value) / log(1.3)
+func getMaxVelocity():
+	return log(engine_power) / log(1.3)
 	
 func calculate_steering(delta):
 	var rear_wheel = position - transform.x * wheel_base / 2.0
@@ -143,7 +153,6 @@ func calculate_steering(delta):
 
 func ChangeLife(lifeDelta : float):
 	currentLife = clampi(currentLife + lifeDelta, 0, 100)
-	Globals.hp_change.emit(lifeDelta)
 	Globals.hp_update.emit(currentLife)
 	if currentLife == 0:
 		Globals.game_over.emit(true)

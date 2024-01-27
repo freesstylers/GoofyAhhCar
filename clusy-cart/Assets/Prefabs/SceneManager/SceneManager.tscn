@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bk43jhsw5sywy"]
 
 [ext_resource type="PackedScene" uid="uid://wytauolwph72" path="res://Assets/Scenes/MainMenu.tscn" id="1_3ccln"]
-[ext_resource type="Script" path="res://Assets/Prefabs/SceneManager/GlobalManager.gd" id="1_d07kg"]
+[ext_resource type="Script" path="res://Assets/Prefabs/SceneManager/SceneManager.gd" id="1_d07kg"]
 [ext_resource type="PackedScene" uid="uid://c6kwux5euwagh" path="res://Assets/Prefabs/TransitionScreen/Transition.tscn" id="1_glc8e"]
 [ext_resource type="Theme" uid="uid://ccsfly34nw0wv" path="res://Assets/Themes/MainMenuTheme.tres" id="4_gu21e"]
 [ext_resource type="FontFile" uid="uid://bnu0s2kb4sfvc" path="res://Assets/Fonts/Larceny.ttf" id="5_vhnd0"]
