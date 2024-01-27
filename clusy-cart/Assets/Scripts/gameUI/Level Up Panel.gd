@@ -5,7 +5,7 @@ enum Skills { MAX_SPEED, ACCEL, HANDLING, HP }
 @export var hpButton : Button
 
 func WakeUp():
-	hpButton.visible = true
+	hpButton.visible = Globals.ThePlayer.currentLife < Globals.MAX_PLAYER_LIFE
 	pass
 
 func buttonPress(btn : int):
