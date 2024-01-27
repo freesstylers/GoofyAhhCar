@@ -1,9 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cokidu12u7300"]
+[gd_scene load_steps=5 format=3 uid="uid://cokidu12u7300"]
 
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/NormalNpcMovement.gd" id="1_hrrqi"]
 [ext_resource type="Texture2D" uid="uid://xwabevdjnvbg" path="res://Assets/Sprites/Paisano6.png" id="1_tp004"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1k27a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uxrsf"]
 
 [node name="NormalNPC" type="CharacterBody2D"]
 position = Vector2(511, 378)
@@ -16,3 +18,10 @@ shape = SubResource("CircleShape2D_1k27a")
 [node name="AnimatedSprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
 texture = ExtResource("1_tp004")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_uxrsf")
+
+[connection signal="body_entered" from="Area2D" to="." method="on_collision"]

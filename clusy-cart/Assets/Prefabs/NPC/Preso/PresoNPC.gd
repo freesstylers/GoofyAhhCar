@@ -10,7 +10,6 @@ var timeWaitingInterval : Vector2 = Vector2()
 var timer : Timer = null
 
 func _ready():
-	super._ready()
 	timer = Timer.new()
 	add_child(timer)
 	timer.timeout.connect(togle_move)

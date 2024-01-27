@@ -1,15 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://cekqety4c6v4k"]
+[gd_scene load_steps=5 format=3 uid="uid://cekqety4c6v4k"]
 
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/NormalNpcMovement.gd" id="1_py2nk"]
 [ext_resource type="SpriteFrames" uid="uid://3lnyo31q57fn" path="res://Assets/Animations/CangrejoButanero/CangrejoButanero.tres" id="2_243k6"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rppj4"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7bujn"]
+height = 42.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wq4n3"]
+height = 42.0
 
 [node name="ButaneroNpc" type="CharacterBody2D"]
 script = ExtResource("1_py2nk")
+npcType = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_rppj4")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_7bujn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+rotation = -1.5708
 sprite_frames = ExtResource("2_243k6")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_wq4n3")
+
+[connection signal="body_entered" from="Area2D" to="." method="on_collision"]

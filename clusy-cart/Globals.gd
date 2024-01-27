@@ -25,3 +25,13 @@ signal level_up()
 signal change_face(num:int)
 signal hp_change(num:int)
 signal hp_update(currentHP : int)
+
+signal npc_hit(whichNPC : NPCType)
+enum NPCType {
+	CIVIL,
+	CICLISTA,
+	ABUELA,
+	CANGREJO,
+	PRESO,
+	CANINO
+}

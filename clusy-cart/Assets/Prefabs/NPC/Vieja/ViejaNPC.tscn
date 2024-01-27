@@ -1,14 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://ce4pc01ywv3oi"]
+[gd_scene load_steps=5 format=3 uid="uid://ce4pc01ywv3oi"]
 
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/NormalNpcMovement.gd" id="1_s0j2i"]
 [ext_resource type="SpriteFrames" uid="uid://cy2v5wou6pwdm" path="res://Assets/Animations/AncianaInofensiva/AncianaInofensiva.tres" id="2_xfohl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hgwgr"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_vtcta"]
+
 [node name="ViejaNpc" type="CharacterBody2D"]
 position = Vector2(249, 76)
 script = ExtResource("1_s0j2i")
 speed = 150.0
+npcType = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -16,3 +19,10 @@ shape = SubResource("CircleShape2D_hgwgr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
 sprite_frames = ExtResource("2_xfohl")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_vtcta")
+
+[connection signal="body_entered" from="Area2D" to="." method="on_collision"]

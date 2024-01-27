@@ -5,6 +5,7 @@ extends Node2D
 @export var bonus :String = ""
 @export var speed := 300.0
 @export var distanceThreshold := 5
+@export var npcType : Globals.NPCType = Globals.NPCType.CIVIL
 
 var goTo: Node2D = null
 var pointBehaviour : PointsB = null
@@ -34,7 +35,13 @@ func _process(delta):
 		move(delta)
 
 func die():
+	free()
 	pass
 
 func spawn():
 	pass
+
+func on_collision(other):
+	if other.is_in_group("player"):
+		Globals.npc_hit.emit(npcType)
+		die()
