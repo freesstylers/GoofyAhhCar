@@ -17,9 +17,8 @@ shape = SubResource("CircleShape2D_1k27a")
 rotation = 1.5708
 texture = ExtResource("1_tp004")
 
-[node name="PointsBehaviour" type="Node" parent="." node_paths=PackedStringArray("points")]
+[node name="PointsBehaviour" type="Node" parent="."]
 script = ExtResource("2_5fohp")
-points = [NodePath("Point1"), NodePath("Point2"), NodePath("Point3")]
 
 [node name="Point1" type="Node2D" parent="PointsBehaviour"]
 position = Vector2(386.72, 267)

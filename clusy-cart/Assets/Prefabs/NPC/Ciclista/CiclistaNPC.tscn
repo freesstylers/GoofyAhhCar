@@ -23,11 +23,10 @@ frecuency = 10.0
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Zigzag"]
 rotation = 1.5708
 sprite_frames = ExtResource("3_lk1m0")
-frame_progress = 0.889745
+frame_progress = 0.427819
 
-[node name="PointsBehaviour" type="Node" parent="." node_paths=PackedStringArray("points")]
+[node name="PointsBehaviour" type="Node" parent="."]
 script = ExtResource("1_c4lcu")
-points = [NodePath("Point1"), NodePath("Point2"), NodePath("Point3")]
 
 [node name="Point1" type="Node2D" parent="PointsBehaviour"]
 position = Vector2(40, 345)
