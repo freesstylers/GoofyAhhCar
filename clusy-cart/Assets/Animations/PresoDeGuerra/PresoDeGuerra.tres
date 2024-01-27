@@ -1,0 +1,50 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://cxvnr724ina32"]
+
+[ext_resource type="Texture2D" uid="uid://bc76mhok8sv16" path="res://Assets/Sprites/Preso/Preso1.png" id="1_myx2w"]
+[ext_resource type="Texture2D" uid="uid://c2iis5niqx8f7" path="res://Assets/Sprites/Preso/Preso2.png" id="2_o43td"]
+[ext_resource type="Texture2D" uid="uid://bveu6exekpiff" path="res://Assets/Sprites/Preso/Preso3.png" id="3_tjcux"]
+[ext_resource type="Texture2D" uid="uid://cjesnwjhh7731" path="res://Assets/Sprites/Preso/Preso4.png" id="4_xq2fu"]
+[ext_resource type="Texture2D" uid="uid://co6nrx7qyv4h8" path="res://Assets/Sprites/Preso/Preso5.png" id="5_p5iu3"]
+[ext_resource type="Texture2D" uid="uid://biwuk21xy2uhh" path="res://Assets/Sprites/Preso/Preso6.png" id="6_5slbo"]
+[ext_resource type="Texture2D" uid="uid://bj5eaelq6psnx" path="res://Assets/Sprites/Preso/Preso7.png" id="7_hnkj7"]
+[ext_resource type="Texture2D" uid="uid://b28thhxifjupl" path="res://Assets/Sprites/Preso/Preso8.png" id="8_evj4u"]
+[ext_resource type="Texture2D" uid="uid://0ro22qlpqg21" path="res://Assets/Sprites/Preso/Preso9.png" id="9_xrg80"]
+[ext_resource type="Texture2D" uid="uid://dwl30sdb2vive" path="res://Assets/Sprites/Preso/Preso10.png" id="10_rkpt8"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.2,
+"texture": ExtResource("1_myx2w")
+}, {
+"duration": 1.2,
+"texture": ExtResource("2_o43td")
+}, {
+"duration": 1.2,
+"texture": ExtResource("3_tjcux")
+}, {
+"duration": 1.2,
+"texture": ExtResource("4_xq2fu")
+}, {
+"duration": 1.2,
+"texture": ExtResource("5_p5iu3")
+}, {
+"duration": 1.2,
+"texture": ExtResource("6_5slbo")
+}, {
+"duration": 1.2,
+"texture": ExtResource("7_hnkj7")
+}, {
+"duration": 1.2,
+"texture": ExtResource("8_evj4u")
+}, {
+"duration": 1.2,
+"texture": ExtResource("9_xrg80")
+}, {
+"duration": 1.2,
+"texture": ExtResource("10_rkpt8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]

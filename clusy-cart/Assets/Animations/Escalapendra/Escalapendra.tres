@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://dt5kq1xcldnrh"]
+
+[ext_resource type="Texture2D" uid="uid://cwcutgqdywwhi" path="res://Assets/Sprites/PerroGordoBachicha/PerroSalchicha1.png" id="1_mbxrq"]
+[ext_resource type="Texture2D" uid="uid://ckfedwlvjunek" path="res://Assets/Sprites/PerroGordoBachicha/PerroSalchicha2.png" id="2_8cqrc"]
+[ext_resource type="Texture2D" uid="uid://ddcu0xfjofhnb" path="res://Assets/Sprites/PerroGordoBachicha/PerroSalchicha3.png" id="3_2ul2c"]
+[ext_resource type="Texture2D" uid="uid://bxs3f57aapmul" path="res://Assets/Sprites/PerroGordoBachicha/PerroSalchicha4.png" id="4_8s6mw"]
+[ext_resource type="Texture2D" uid="uid://bew0r2b7e1xhl" path="res://Assets/Sprites/PerroGordoBachicha/PerroSalchicha5.png" id="5_6is7l"]
+[ext_resource type="Texture2D" uid="uid://b61d6f1yx56ty" path="res://Assets/Sprites/PerroGordoBachicha/PerroSalchicha6.png" id="6_s7yjq"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("1_mbxrq")
+}, {
+"duration": 0.5,
+"texture": ExtResource("2_8cqrc")
+}, {
+"duration": 0.5,
+"texture": ExtResource("3_2ul2c")
+}, {
+"duration": 0.5,
+"texture": ExtResource("4_8s6mw")
+}, {
+"duration": 0.5,
+"texture": ExtResource("5_6is7l")
+}, {
+"duration": 0.5,
+"texture": ExtResource("6_s7yjq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]

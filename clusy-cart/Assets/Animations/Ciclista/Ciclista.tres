@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://cfeonokj17msd"]
+
+[ext_resource type="Texture2D" uid="uid://c53lnkewyoqqt" path="res://Assets/Sprites/Ciclista/Ciclista1.png" id="1_vb56p"]
+[ext_resource type="Texture2D" uid="uid://bvgo3fi6og7tc" path="res://Assets/Sprites/Ciclista/Ciclista2.png" id="2_8ppme"]
+[ext_resource type="Texture2D" uid="uid://cumdgx48lxdpl" path="res://Assets/Sprites/Ciclista/Ciclista3.png" id="3_82551"]
+[ext_resource type="Texture2D" uid="uid://b4jf085c2t7t0" path="res://Assets/Sprites/Ciclista/Ciclista4.png" id="4_hq3j3"]
+[ext_resource type="Texture2D" uid="uid://bxpb87dpayy55" path="res://Assets/Sprites/Ciclista/Ciclista5.png" id="5_2j8wr"]
+[ext_resource type="Texture2D" uid="uid://ueac0tb62ooj" path="res://Assets/Sprites/Ciclista/Ciclista6.png" id="6_hpsa7"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("1_vb56p")
+}, {
+"duration": 0.5,
+"texture": ExtResource("2_8ppme")
+}, {
+"duration": 0.5,
+"texture": ExtResource("3_82551")
+}, {
+"duration": 0.5,
+"texture": ExtResource("4_hq3j3")
+}, {
+"duration": 0.5,
+"texture": ExtResource("5_2j8wr")
+}, {
+"duration": 0.5,
+"texture": ExtResource("6_hpsa7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]

@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://cy2v5wou6pwdm"]
+
+[ext_resource type="Texture2D" uid="uid://bfl8a5ulqkdsn" path="res://Assets/Sprites/Vieja/Vieja1.png" id="1_wc155"]
+[ext_resource type="Texture2D" uid="uid://ceaef1apldski" path="res://Assets/Sprites/Vieja/Vieja2.png" id="2_l3ubn"]
+[ext_resource type="Texture2D" uid="uid://drn87a862i8mf" path="res://Assets/Sprites/Vieja/Vieja3.png" id="3_08uhg"]
+[ext_resource type="Texture2D" uid="uid://dtptvd85p3f1w" path="res://Assets/Sprites/Vieja/Vieja4.png" id="4_7llpa"]
+[ext_resource type="Texture2D" uid="uid://cy7tf2bvpc13x" path="res://Assets/Sprites/Vieja/Vieja5.png" id="5_cxpkx"]
+[ext_resource type="Texture2D" uid="uid://o16yp2yhs0j7" path="res://Assets/Sprites/Vieja/Vieja6.png" id="6_keomd"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wc155")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_l3ubn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_08uhg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7llpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cxpkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_keomd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
