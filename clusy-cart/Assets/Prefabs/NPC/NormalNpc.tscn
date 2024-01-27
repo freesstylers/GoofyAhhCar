@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cokidu12u7300"]
+[gd_scene load_steps=4 format=3 uid="uid://cokidu12u7300"]
 
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/NormalNpcMovement.gd" id="1_hrrqi"]
 [ext_resource type="Texture2D" uid="uid://xwabevdjnvbg" path="res://Assets/Sprites/Paisano6.png" id="1_tp004"]
-[ext_resource type="Script" path="res://Assets/Prefabs/NPC/PointsBehaviour.gd" id="2_5fohp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1k27a"]
 
 [node name="NormalNPC" type="CharacterBody2D"]
 position = Vector2(511, 378)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_hrrqi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -16,15 +16,3 @@ shape = SubResource("CircleShape2D_1k27a")
 [node name="AnimatedSprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
 texture = ExtResource("1_tp004")
-
-[node name="PointsBehaviour" type="Node" parent="."]
-script = ExtResource("2_5fohp")
-
-[node name="Point1" type="Node2D" parent="PointsBehaviour"]
-position = Vector2(386.72, 267)
-
-[node name="Point2" type="Node2D" parent="PointsBehaviour"]
-position = Vector2(900, 412)
-
-[node name="Point3" type="Node2D" parent="PointsBehaviour"]
-position = Vector2(460, 479)

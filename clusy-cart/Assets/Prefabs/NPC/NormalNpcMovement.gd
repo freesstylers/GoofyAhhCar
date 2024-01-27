@@ -4,14 +4,15 @@ extends Node2D
 @export var points : int = 100
 @export var bonus :String = ""
 @export var speed := 300.0
-@export var distanceThreshold := 20
+@export var distanceThreshold := 5
 
 var goTo: Node2D = null
 var pointBehaviour : PointsB = null
 
-func _ready():
-	pointBehaviour = $PointsBehaviour
+func setReady():
+	pointBehaviour = get_child(get_child_count()-1)
 	goTo = pointBehaviour.get_actual_point()
+	global_position = goTo.global_position
 
 func is_min_dist(d):
 	return global_position.distance_to(goTo.global_position) <= d
@@ -29,7 +30,8 @@ func finish_move():
 	pass
 
 func _process(delta):
-	move(delta)
+	if goTo != null:
+		move(delta)
 
 func die():
 	pass

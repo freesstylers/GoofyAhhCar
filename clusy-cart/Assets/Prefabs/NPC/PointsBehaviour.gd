@@ -1,11 +1,12 @@
 extends Node
 class_name PointsB
 
-var points : Array[Node] = []
+@export var points : Array[Node]
 var actualPoint : int = 0
 
 func _ready():
 	points = get_children()
+	pass
 
 func get_actual_point():
 	return points[actualPoint]
