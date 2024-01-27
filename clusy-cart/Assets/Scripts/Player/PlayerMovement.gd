@@ -4,6 +4,7 @@ extends CharacterBody2D
 ###########################################NUEVO SISTEMA
 @export var wheel_base : float = 70  # Distance from front to rear wheel
 @export var steering_angle : float = 15  # Amount that front wheel turns, in degrees
+@export var drifting_angle : float = 45  # Amount that front wheel turns, in degrees
 
 @export var steer_angle : float = 0.0
 @export var engine_power : float = 800  # Forward acceleration force.
@@ -42,17 +43,19 @@ func _ready():
 	
 	Globals.game_init_everything.connect(on_game_init_everything)
 	Globals.kill_modifier_obtained.connect(on_kill_modifier_obtained)
-	
-func _process(_delta):
-	pass
 			
 func get_input():
 	var turn = 0
 	if Input.is_action_pressed("right"):
-		turn += 1
+		turn = 1
 	if Input.is_action_pressed("left"):
-		turn -= 1
-	steer_angle = turn * steering_angle
+		turn = -1
+	#Angulo de giro	
+	if drifting:
+		steer_angle = turn * (drifting_angle*(2*PI)/360)
+	else:
+		steer_angle = turn * (steering_angle*(2*PI)/360)
+		
 	if Input.is_action_pressed("up"):
 		#TODO SONIDO
 		acceleration = transform.x * used_engine_power

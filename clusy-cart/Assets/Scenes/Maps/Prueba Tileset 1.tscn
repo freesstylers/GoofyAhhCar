@@ -450,6 +450,8 @@ layer_2/tile_data = PackedInt32Array(-1572868, 0, 13, -1507332, 0, 13, -1441796,
 
 [node name="Player" parent="." instance=ExtResource("2_qr6q7")]
 position = Vector2(262, 422)
+steering_angle = 20.0
 drag = -0.001
+traction_slow = 0.5
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
