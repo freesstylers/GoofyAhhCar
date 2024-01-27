@@ -55,6 +55,7 @@ position = Vector2(-1, -1)
 shape = SubResource("RectangleShape2D_fmsee")
 
 [node name="PlayerVisualizer" type="AnimatedSprite2D" parent="."]
+z_index = 1
 rotation = 1.5708
 sprite_frames = ExtResource("2_ulsy8")
 autoplay = "default"
@@ -62,9 +63,9 @@ frame_progress = 0.0755935
 script = ExtResource("3_ppvnt")
 
 [node name="LeftDrigtingParticles" type="CPUParticles2D" parent="PlayerVisualizer"]
+z_index = -1
 position = Vector2(-23.9999, 23.9999)
 rotation = -6.28319
-emitting = false
 amount = 20
 lifetime = 0.25
 texture = ExtResource("4_36bf4")
@@ -80,8 +81,8 @@ scale_amount_curve = SubResource("Curve_m3yul")
 color_ramp = SubResource("Gradient_b6too")
 
 [node name="RightDriftingParticles" type="CPUParticles2D" parent="PlayerVisualizer"]
+z_index = -1
 position = Vector2(23.0001, 23.9999)
-emitting = false
 amount = 20
 lifetime = 0.25
 texture = ExtResource("4_36bf4")
