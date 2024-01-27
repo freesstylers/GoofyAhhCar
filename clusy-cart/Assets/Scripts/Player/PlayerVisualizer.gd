@@ -2,6 +2,8 @@ extends Sprite2D
 
 var playerSprite : Sprite2D = null
 var blinkTimer : Timer = null
+var leftPart : CPUParticles2D = null
+var rightPart : CPUParticles2D = null
 #var boostParticles : GPUParticles2D = null
 @export var DeathParticles : PackedScene = null
 
@@ -9,6 +11,8 @@ var blinkTimer : Timer = null
 func _ready():
 	playerSprite = self
 	blinkTimer = $BlinkTimer
+	leftPart = $LeftDrigtingParticles
+	rightPart = $RightDriftingParticles
 	#boostParticles = $BoostParticles
 	#boostParticles.emitting = false
 	
@@ -26,6 +30,10 @@ func PlayerSwitchesFromBeingHit(starting:bool):
 
 func BlinkTimerEnded():
 	playerSprite.visible = not playerSprite.visible
+	
+func ChangeDrift(drift:bool):
+	leftPart.emitting = drift
+	rightPart.emitting = drift
 
 #######GLOBAL SIGNALS#######
 

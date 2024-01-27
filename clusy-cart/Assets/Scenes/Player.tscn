@@ -29,41 +29,45 @@ script = ExtResource("3_ppvnt")
 
 [node name="BlinkTimer" type="Timer" parent="PlayerVisualizer"]
 
+[node name="LeftDrigtingParticles" type="CPUParticles2D" parent="PlayerVisualizer"]
+position = Vector2(-14.6154, -11)
+scale = Vector2(0.769231, 1)
+emitting = false
+amount = 20
+lifetime = 0.25
+texture = ExtResource("2_nndn3")
+spread = 90.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 50.0
+angular_velocity_min = -90.0
+angular_velocity_max = 90.0
+scale_amount_min = 0.45
+scale_amount_max = 0.65
+scale_amount_curve = SubResource("Curve_m3yul")
+color_ramp = SubResource("Gradient_b6too")
+
+[node name="RightDriftingParticles" type="CPUParticles2D" parent="PlayerVisualizer"]
+position = Vector2(-13.8462, 8)
+scale = Vector2(0.769231, 1)
+emitting = false
+amount = 20
+lifetime = 0.25
+texture = ExtResource("2_nndn3")
+spread = 90.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 50.0
+angular_velocity_min = -90.0
+angular_velocity_max = 90.0
+scale_amount_min = 0.45
+scale_amount_max = 0.65
+scale_amount_curve = SubResource("Curve_m3yul")
+color_ramp = SubResource("Gradient_b6too")
+
 [node name="PlayerInput" type="Node2D" parent="."]
 script = ExtResource("4_am62n")
 
 [node name="BoostTimer" type="Timer" parent="."]
 
 [node name="DriftingTimer" type="Timer" parent="."]
-
-[node name="LeftDrigtingParticles" type="CPUParticles2D" parent="."]
-position = Vector2(-19, -11)
-amount = 20
-lifetime = 0.25
-texture = ExtResource("2_nndn3")
-spread = 90.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 25.0
-initial_velocity_max = 50.0
-angular_velocity_min = -90.0
-angular_velocity_max = 90.0
-scale_amount_min = 0.45
-scale_amount_max = 0.65
-scale_amount_curve = SubResource("Curve_m3yul")
-color_ramp = SubResource("Gradient_b6too")
-
-[node name="RightDriftingParticles" type="CPUParticles2D" parent="."]
-position = Vector2(-18, 8)
-amount = 20
-lifetime = 0.25
-texture = ExtResource("2_nndn3")
-spread = 90.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 25.0
-initial_velocity_max = 50.0
-angular_velocity_min = -90.0
-angular_velocity_max = 90.0
-scale_amount_min = 0.45
-scale_amount_max = 0.65
-scale_amount_curve = SubResource("Curve_m3yul")
-color_ramp = SubResource("Gradient_b6too")

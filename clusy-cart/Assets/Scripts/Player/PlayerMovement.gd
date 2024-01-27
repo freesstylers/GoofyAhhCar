@@ -21,6 +21,7 @@ var acceleration : Vector2 = Vector2.ZERO
 ###############################################
 
 var maxVelGotten : bool = false
+var drifting : bool = false
 
 func _ready():	
 	Globals.ThePlayer = self
@@ -41,6 +42,12 @@ func get_input():
 		acceleration = transform.x * engine_power
 	if Input.is_action_pressed("back"):
 		acceleration = transform.x * braking
+	if Input.is_action_pressed("drift"):
+		drifting = true
+		$PlayerVisualizer.ChangeDrift(drifting)
+	else:
+		drifting = false		
+		$PlayerVisualizer.ChangeDrift(drifting)
 		
 func _physics_process(delta):
 	acceleration = Vector2.ZERO
@@ -59,8 +66,13 @@ func apply_friction():
 		velocity = Vector2.ZERO
 	var friction_force = velocity * friction
 	var drag_force = velocity * velocity.length() * drag
-	if velocity.length() < 100:
+	if velocity.length() < 260:
 		friction_force *= 3
+		if velocity.length() > 20:
+			$PlayerVisualizer.ChangeDrift(true)
+	else:
+		if not drifting:
+			$PlayerVisualizer.ChangeDrift(false)
 	
 	acceleration += drag_force + friction_force
 	#Cuando llega a velocidad maxima hace sonido, y hasta que no vuelve a llegar no vuelve a sonar
@@ -79,7 +91,7 @@ func calculate_steering(delta):
 	front_wheel += velocity.rotated(steer_angle) * delta
 	var new_heading = (front_wheel - rear_wheel).normalized()
 	var traction = traction_slow
-	if velocity.length() > slip_speed:
+	if drifting:
 		traction = traction_fast
 	var d = new_heading.dot(velocity.normalized())
 	if d > 0:
