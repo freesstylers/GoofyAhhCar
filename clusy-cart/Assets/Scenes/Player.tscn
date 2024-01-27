@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://csms6l2yxn245"]
+[gd_scene load_steps=8 format=3 uid="uid://csms6l2yxn245"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Player/PlayerMovement.gd" id="1_a0fay"]
 [ext_resource type="Texture2D" uid="uid://dl4slsob4ep4c" path="res://Square.png" id="2_nndn3"]
@@ -8,8 +8,16 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_l1kpm"]
 radius = 25.0
 
+[sub_resource type="Curve" id="Curve_m3yul"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -4.52685, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_b6too"]
+offsets = PackedFloat32Array(0, 0.0666667, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.403922, 1, 1, 1, 0)
+
 [node name="Player" type="RigidBody2D"]
-position = Vector2(44, 327)
+position = Vector2(599, 660)
 gravity_scale = 0.0
 center_of_mass_mode = 1
 linear_damp = 5.0
@@ -36,3 +44,35 @@ script = ExtResource("4_am62n")
 [node name="BoostTimer" type="Timer" parent="."]
 
 [node name="DriftingTimer" type="Timer" parent="."]
+
+[node name="LeftDrigtingParticles" type="CPUParticles2D" parent="."]
+position = Vector2(-19, -11)
+amount = 20
+lifetime = 0.25
+texture = ExtResource("2_nndn3")
+spread = 90.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 50.0
+angular_velocity_min = -90.0
+angular_velocity_max = 90.0
+scale_amount_min = 0.45
+scale_amount_max = 0.65
+scale_amount_curve = SubResource("Curve_m3yul")
+color_ramp = SubResource("Gradient_b6too")
+
+[node name="RightDriftingParticles" type="CPUParticles2D" parent="."]
+position = Vector2(-18, 8)
+amount = 20
+lifetime = 0.25
+texture = ExtResource("2_nndn3")
+spread = 90.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 50.0
+angular_velocity_min = -90.0
+angular_velocity_max = 90.0
+scale_amount_min = 0.45
+scale_amount_max = 0.65
+scale_amount_curve = SubResource("Curve_m3yul")
+color_ramp = SubResource("Gradient_b6too")
