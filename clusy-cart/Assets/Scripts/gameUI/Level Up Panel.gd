@@ -25,7 +25,7 @@ func buttonPress(btn : int):
 			
 			pass
 		Skills.HP:
-			
+			Globals.hp_change.emit(1)
 			pass
 	
 	get_tree().paused = false

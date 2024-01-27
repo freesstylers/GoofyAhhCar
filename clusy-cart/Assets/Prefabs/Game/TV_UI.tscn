@@ -1,0 +1,88 @@
+[gd_scene load_steps=12 format=3 uid="uid://bste7jyrt8w8n"]
+
+[ext_resource type="Texture2D" uid="uid://c7ubrual6jmhe" path="res://Assets/Sprites/MonkeyTV/tv.png" id="1_6tnxy"]
+[ext_resource type="Script" path="res://Assets/Scripts/gameUI/TVMove.gd" id="2_2w2fi"]
+[ext_resource type="Texture2D" uid="uid://dectekjqjbnee" path="res://Assets/Sprites/MonkeyTV/monkeyAngry.png" id="3_x5b2l"]
+[ext_resource type="Texture2D" uid="uid://dlarih3g3crww" path="res://Assets/Sprites/MonkeyTV/monkeyMischief.png" id="4_ddo7g"]
+[ext_resource type="Texture2D" uid="uid://dtnaaiyoaplcr" path="res://Assets/Sprites/MonkeyTV/idle.png" id="5_ibkdu"]
+[ext_resource type="Texture2D" uid="uid://cjli028fxdc3l" path="res://Assets/Sprites/MonkeyTV/monkeylaugh.png" id="6_o7gxp"]
+[ext_resource type="Texture2D" uid="uid://dx3xb54ihro50" path="res://Assets/Sprites/MonkeyTV/monkeyLaugh2.png" id="7_4r2xu"]
+[ext_resource type="Texture2D" uid="uid://cesgllks8iwk7" path="res://Assets/Sprites/MonkeyTV/monkeyLaugh3.png" id="8_a01lb"]
+[ext_resource type="Texture2D" uid="uid://cj5ynkw0mjpgk" path="res://Assets/Sprites/MonkeyTV/monkeyPOG.png" id="9_e8d4x"]
+[ext_resource type="Script" path="res://Assets/Scripts/gameUI/monkeyFace.gd" id="10_x0qgq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dxsxa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x5b2l")
+}],
+"loop": true,
+"name": &"angry1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ddo7g")
+}],
+"loop": true,
+"name": &"angry2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ibkdu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_o7gxp")
+}],
+"loop": true,
+"name": &"laugh1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_4r2xu")
+}],
+"loop": true,
+"name": &"laugh2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_a01lb")
+}],
+"loop": true,
+"name": &"laugh3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_e8d4x")
+}],
+"loop": true,
+"name": &"pog",
+"speed": 5.0
+}]
+
+[node name="TV" type="TextureRect"]
+anchors_preset = -1
+anchor_right = 0.428125
+anchor_bottom = 0.296875
+pivot_offset = Vector2(274, 190)
+texture = ExtResource("1_6tnxy")
+expand_mode = 1
+script = ExtResource("2_2w2fi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Monkey" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(226, 186)
+scale = Vector2(0.7, 0.582635)
+sprite_frames = SubResource("SpriteFrames_dxsxa")
+script = ExtResource("10_x0qgq")

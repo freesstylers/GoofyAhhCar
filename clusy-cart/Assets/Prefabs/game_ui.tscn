@@ -1,0 +1,110 @@
+[gd_scene load_steps=12 format=3 uid="uid://dwb23gaj5yft2"]
+
+[ext_resource type="Theme" uid="uid://ccsfly34nw0wv" path="res://Assets/Themes/MainMenuTheme.tres" id="1_soq82"]
+[ext_resource type="Script" path="res://Assets/Scripts/gameUI/GameUIManager.gd" id="2_dukw8"]
+[ext_resource type="PackedScene" uid="uid://df8e5sy3ga16" path="res://Assets/Prefabs/Game/gasMeter.tscn" id="3_utivj"]
+[ext_resource type="PackedScene" uid="uid://bkt3u3yo0vskc" path="res://Assets/Prefabs/Game/exp_bar.tscn" id="4_2ejo6"]
+[ext_resource type="PackedScene" uid="uid://c57gjs6f7y1rs" path="res://Assets/Prefabs/Game/speed_meter.tscn" id="5_fsn16"]
+[ext_resource type="PackedScene" uid="uid://bn0e6vrb0rly7" path="res://Assets/Prefabs/Game/Level Up Panel.tscn" id="6_4cnsr"]
+[ext_resource type="Script" path="res://Assets/Scripts/gameUI/pointsIndicator.gd" id="7_ck5ba"]
+[ext_resource type="Script" path="res://Assets/Scripts/gameUI/timer.gd" id="8_xwcvf"]
+[ext_resource type="Script" path="res://Assets/Scripts/test/ParticlesPoints.gd" id="9_mtrn8"]
+[ext_resource type="PackedScene" uid="uid://bstnh7hielj7e" path="res://Assets/Prefabs/Game/point_particle.tscn" id="10_iu3rp"]
+[ext_resource type="PackedScene" uid="uid://bste7jyrt8w8n" path="res://Assets/Prefabs/Game/TV_UI.tscn" id="11_jkdus"]
+
+[node name="Game UI" type="Control" node_paths=PackedStringArray("LevelUpMenu")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_soq82")
+script = ExtResource("2_dukw8")
+LevelUpMenu = NodePath("level up menu")
+metadata/_edit_use_anchors_ = true
+
+[node name="HP_Bar" parent="." instance=ExtResource("3_utivj")]
+layout_mode = 1
+anchor_left = 0.420312
+anchor_top = 0.925
+anchor_right = 0.985156
+anchor_bottom = 0.975781
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="EXP bar" parent="." instance=ExtResource("4_2ejo6")]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.0398437
+offset_bottom = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="speed meter" parent="." instance=ExtResource("5_fsn16")]
+layout_mode = 1
+anchor_left = 0.639844
+anchor_top = 0.611719
+anchor_right = 0.889719
+anchor_bottom = 0.811719
+grow_vertical = 1
+
+[node name="level up menu" parent="." instance=ExtResource("6_4cnsr")]
+visible = false
+z_index = 60
+layout_mode = 1
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="points" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.796875
+anchor_top = 0.0523437
+anchor_right = 0.996094
+anchor_bottom = 0.0898438
+theme_override_font_sizes/font_size = 51
+text = "?????????????"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_ck5ba")
+metadata/_edit_use_anchors_ = true
+
+[node name="timer" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.271094
+anchor_top = 0.0484375
+anchor_right = 0.728906
+anchor_bottom = 0.172656
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 141
+text = "00:00"
+horizontal_alignment = 1
+script = ExtResource("8_xwcvf")
+metadata/_edit_use_anchors_ = true
+
+[node name="ParticleSpawner" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.45
+anchor_top = 0.470313
+anchor_right = 0.45
+anchor_bottom = 0.470313
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_mtrn8")
+particle = ExtResource("10_iu3rp")
+metadata/_edit_use_anchors_ = true
+
+[node name="TV" parent="." instance=ExtResource("11_jkdus")]
+layout_mode = 1
+anchor_left = 0.0154688
+anchor_top = 0.74375
+anchor_right = 0.357969
+anchor_bottom = 0.98125
+offset_left = -54.8
+offset_top = -38.0
+offset_right = 54.8
+offset_bottom = 38.0
+scale = Vector2(0.8, 0.8)

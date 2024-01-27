@@ -2,7 +2,7 @@ extends Label
 
 
 # Called when the node enters the scene tree for the first time.
-func _init():
+func _ready():
 	Globals.exp_gain.connect(expGain)
 	text = str(Globals.GameMan.Points)
 	pass # Replace with function body.

@@ -1,10 +1,14 @@
 class_name GameManager
 extends Node
 
+@export var GameTime : int
+
 var Points = 0
 var Experience = 0
 var ExpNextLevel = 0
 var Level = 0
+
+var TimeLeft = 0
 
 
 
@@ -13,11 +17,21 @@ func NextLevelCalc():
 
 # Called when the node enters the scene tree for the first time.
 func _init():
-	ExpNextLevel = NextLevelCalc()
-	Globals.exp_gain.connect(expGain)
-
-func _ready():
 	Globals.GameMan = self
+	Globals.exp_gain.connect(expGain)
+	pass
+	
+func _ready():
+	TimeLeft = GameTime
+	ExpNextLevel = NextLevelCalc()
+	pass
+
+func _process(delta):
+	TimeLeft -= delta
+	if(TimeLeft <= 0):
+		Globals.game_over.emit(false)
+		pass
+	pass
 
 func expGain(exp : float, points : float):
 	Points += points
