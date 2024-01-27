@@ -24,6 +24,8 @@ var drifting : bool = false
 
 var BounceSoundPlayer : AudioStreamPlayer = null
 var MaxVelAchievedSoundPlayer : AudioStreamPlayer = null
+var DriftSoundPlayer : AudioStreamPlayer = null
+var InitDriftSoundPlayer : AudioStreamPlayer = null
 
 func _ready():	
 	Globals.ThePlayer = self
@@ -31,6 +33,8 @@ func _ready():
 	Globals.change_face.emit(0)
 	BounceSoundPlayer = $BounceSoundPlayer
 	MaxVelAchievedSoundPlayer = $MaxVelAchievedSoundPlayer
+	DriftSoundPlayer = $DriftSoundPlayer
+	InitDriftSoundPlayer = $InitDriftSoundPlayer
 	
 	Globals.game_init_everything.connect(on_game_init_everything)
 	Globals.kill_modifier_obtained.connect(on_kill_modifier_obtained)
@@ -64,6 +68,12 @@ func get_input():
 	else:
 		drifting = false		
 		$PlayerVisualizer.ChangeDrift(drifting)
+		
+	if Input.is_action_just_pressed("drift"):
+		InitDriftSoundPlayer.play()
+	if Input.is_action_just_released("drift"):
+		InitDriftSoundPlayer.stop()
+		DriftSoundPlayer.play()
 		
 func _physics_process(delta):
 	acceleration = Vector2.ZERO
