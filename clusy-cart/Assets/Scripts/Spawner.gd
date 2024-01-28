@@ -16,9 +16,7 @@ func _ready():
 	PointsStackers = get_children()
 	spawnReady()
 	Globals.npc_hit.connect(spawnDesired)
-	
-	Globals.npc_hit.emit(Globals.NPCType.CIVIL)
-	
+		
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

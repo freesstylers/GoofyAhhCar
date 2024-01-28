@@ -39,3 +39,5 @@ enum NPCType {
 	PRESO,
 	CANINO
 }
+
+signal loadLevel()
