@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://dwb23gaj5yft2"]
 
-[ext_resource type="Theme" uid="uid://djuh55oqusisb" path="res://Assets/Themes/GameUITheme.tres" id="1_8o1ty"]
+[ext_resource type="Theme" uid="uid://r36jadpqieh6" path="res://Assets/Themes/GameUITheme.tres" id="1_8o1ty"]
 [ext_resource type="Script" path="res://Assets/Scripts/gameUI/GameUIManager.gd" id="2_dukw8"]
 [ext_resource type="PackedScene" uid="uid://df8e5sy3ga16" path="res://Assets/Prefabs/Game/gasMeter.tscn" id="3_utivj"]
 [ext_resource type="Script" path="res://Assets/Scripts/gameUI/HPBar.gd" id="4_0x68p"]
