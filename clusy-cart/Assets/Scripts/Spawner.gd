@@ -3,7 +3,7 @@ class_name Spawner
 
 @export var PointsStackers : Array[Node]
 
-@export var NPC : Array[PackedScene]
+@export var SpawnableNPC : Array[PackedScene]
 
 @export var type : Globals.NPCType
 
@@ -29,7 +29,7 @@ func spawnReady():
 	var totalSpawned = get_child_count() * spawnerInitialSpawnProb
 	
 	while n < totalSpawned:	
-		var spawned = NPC.pick_random().instantiate()
+		var spawned = SpawnableNPC.pick_random().instantiate()
 		
 		var randomRandy = rng.randi_range(0, get_child_count())
 		
@@ -52,7 +52,7 @@ func spawnDesired(selected:Globals.NPCType):
 		
 		await timer.timeout
 
-		var spawned = NPC.pick_random().instantiate()		
+		var spawned = SpawnableNPC.pick_random().instantiate()		
 		var aux = PointsStackers.pick_random().duplicate()
 		Globals.add_child(spawned)
 		spawned.add_child(aux)
