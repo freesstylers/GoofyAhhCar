@@ -23,7 +23,7 @@ func TurnOn(dead : bool):
 		
 	TotalPoints.text = str(gm.Points)
 	MaxLevel.text = str(gm.Level)
-	MaxSpeed.text = str(pl.getMaxVelocity())
+	MaxSpeed.text = str("%.2f" % pl.getMaxVelocity())
 	Accel.text = str(pl.accelThreshold)
 	Handling.text = str(pl.steering_angle)
 	NPCsKilled.text = str(gm.TotalDead)
