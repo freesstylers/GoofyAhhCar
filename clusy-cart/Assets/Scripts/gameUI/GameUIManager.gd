@@ -18,7 +18,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _input(event):
 	#if event.is_action_pressed("Accelerate"):
-		#Globals.hp_change.emit(-100)
+		#Globals.GameMan.TimeLeft = 0
 	pass
 	
 func levelUp():

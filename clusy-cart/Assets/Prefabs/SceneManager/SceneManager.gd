@@ -16,6 +16,10 @@ func loadLevel():
 
 	$CurrentScene.get_child(0).queue_free()
 	
+		
+	if get_tree().paused:
+		get_tree().paused = false
+	
 	if menu:
 		$CurrentScene.add_child(mainMenu.instantiate())
 		return
@@ -38,7 +42,4 @@ func startGame():
 func backToMenu():
 	menu = true
 	$TransitionScreen.transition()
-		
-	if get_tree().paused:
-		get_tree().paused = false
 	pass
