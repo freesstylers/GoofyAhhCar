@@ -509,6 +509,9 @@ texture = ExtResource("1_cocvp")
 7:18/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:18/0/physics_layer_0/angular_velocity = 0.0
 7:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:12/0 = 0
+2:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:12/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_abpjm"]
 physics_layer_0/collision_layer = 1
@@ -532,7 +535,7 @@ layer_1/name = "Capa 2"
 layer_1/tile_data = PackedInt32Array(-262146, 196608, 10, -196610, 196608, 11, -262145, 262144, 10, -196609, 262144, 11, -655373, 196608, 10, -589837, 196608, 11, -655372, 262144, 10, -589836, 262144, 11, 65534, 0, 10, 131070, 0, 11, 65535, 65536, 10, 131071, 65536, 11, -655353, 0, 10, -589817, 0, 11, -655352, 65536, 10, -589816, 65536, 11, -1638405, 131072, 10, -1638401, 131072, 10, -2097162, 196608, 10, -2031626, 196608, 11, -2097161, 262144, 10, -2031625, 262144, 11, -1835026, 196608, 10, -1769490, 196608, 11, -1835025, 262144, 10, -1769489, 262144, 11, -1179666, 196608, 10, -1114130, 196608, 11, -1179665, 262144, 10, -1114129, 262144, 11, -327698, 0, 10, -262162, 0, 11, -327697, 65536, 10, -262161, 65536, 11, 65520, 0, 10, 131056, 0, 11, 65521, 65536, 10, 131057, 65536, 11, 196617, 131072, 10, -262125, 196608, 10, -196589, 196608, 11, -262124, 262144, 10, -196588, 262144, 11, -1048559, 0, 10, -983023, 0, 11, -1048558, 65536, 10, -983022, 65536, 11, -1376235, 0, 10, -1376234, 65536, 10, -1310699, 0, 11, -1310698, 65536, 11, -1900523, 0, 10, -1834987, 0, 11, -1900522, 65536, 10, -1834986, 65536, 11, -1376244, 196608, 10, -1310708, 196608, 11, -1376243, 262144, 10, -1310707, 262144, 11, -1245179, 196608, 10, -1179643, 196608, 11, -1245178, 262144, 10, -1179642, 262144, 11, -2097121, 0, 10, -2031585, 0, 11, -2097120, 65536, 10, -2031584, 65536, 11, -589797, 0, 10, -524261, 0, 11, -589796, 65536, 10, -524260, 65536, 11, -589792, 196608, 10, -524256, 196608, 11, -589791, 262144, 10, -524255, 262144, 11, -262112, 196608, 10, -196576, 196608, 11, -262111, 262144, 10, -196575, 262144, 11, 65560, 196608, 10, 131096, 196608, 11, 65561, 262144, 10, 131097, 262144, 11, -1048536, 196608, 10, -983000, 196608, 11, -1048535, 262144, 10, -982999, 262144, 11, -1638360, 196608, 10, -1572824, 196608, 11, -1638359, 262144, 10, -1572823, 262144, 11, -1376216, 0, 10, -1310680, 0, 11, -1376215, 65536, 10, -1310679, 65536, 11, -851959, 262144, 14, -786423, 262144, 15, -851958, 327680, 14, -786422, 327680, 15, -1376251, 196608, 12, -1048575, 196608, 12, -917502, 327680, 11, -1048589, 262144, 12, -983053, 262144, 13, -1048588, 327680, 12, -983052, 327680, 13, -1572880, 262144, 14, -1507344, 262144, 15, -1572879, 327680, 14, -1507343, 327680, 15, -262159, 262144, 12, -196623, 262144, 13, -262158, 327680, 12, -196622, 327680, 13, -1703936, 262144, 14, -1638400, 262144, 15, -1703935, 327680, 14, -1638399, 327680, 15, -1966074, 262144, 12, -1900538, 262144, 13, -1966073, 327680, 12, -1900537, 327680, 13, -1179631, 262144, 14, -1179630, 327680, 14, -1114095, 262144, 15, -1114094, 327680, 15, -1376233, 262144, 12, -1310697, 262144, 13, -1376232, 327680, 12, -1310696, 327680, 13, -1834982, 262144, 14, -1769446, 262144, 15, -1834981, 327680, 14, -1769445, 327680, 15, -1966042, 262144, 14, -1900506, 262144, 15, -1966041, 327680, 14, -1900505, 327680, 15, -1179612, 262144, 14, -1114076, 262144, 15, -1179611, 327680, 14, -1114075, 327680, 15, -786392, 393216, 12, -589800, 393216, 12, -786419, 393216, 12, -589821, 393216, 12, -1114116, 393216, 12, -720913, 393216, 12, -18, 393216, 12, -393229, 393216, 12, -1376260, 0, 12, -1638404, 0, 12, -1769483, 0, 12, -2031627, 0, 12, -1703923, 0, 12, -1703919, 0, 12, 65557, 0, 12, -196587, 0, 12, -1048581, 393216, 3, -524289, 393216, 3, -1572847, 393216, 3, -1638378, 393216, 3, -262148, 393216, 3, -1376261, 393216, 2, -1638397, 393216, 2, -1310701, 393216, 2, -2031589, 393216, 2, -589784, 393216, 2, -2031576, 393216, 2, -1310681, 458752, 2, -589785, 458752, 0, -983014, 458752, 0, -1114093, 458752, 0, -524275, 458752, 0, -524268, 458752, 3, -262133, 458752, 3, -262138, 458752, 3, -589819, 458752, 3, -1245189, 458752, 3, -1703946, 458752, 3, -1703948, 458752, 3, -917514, 458752, 4, -1441797, 458752, 4, -1441794, 458752, 4, -1310694, 458752, 4, -1769436, 458752, 4, -131085, 196608, 12, -196607, 196608, 14, 65537, 196608, 12, 65542, 262144, 14, 131078, 262144, 15, 65543, 327680, 14, 131079, 327680, 15, -983026, 327680, 10, -917491, 327680, 10, -720882, 327680, 11, -720876, 327680, 11, -983018, 327680, 11, -1507309, 327680, 10, -1572846, 327680, 10, -1769451, 327680, 11, -1441780, 327680, 11, -1703931, 327680, 10, -1310719, 327680, 10, -1310721, 327680, 11, -1703941, 327680, 11, -1179658, 327680, 10, -1245197, 327680, 10, -1703947, 327680, 10, -524300, 327680, 11, -720908, 327680, 11, -1572848, 196608, 14, -458739, 262144, 14, -393203, 262144, 15, -458738, 327680, 14, -393202, 327680, 15, -524271, 196608, 14, -196590, 196608, 14, -786440, 196608, 14, -655323, 196608, 14, -917465, 196608, 14, -458723, 196608, 14, -983047, 196608, 12, -786431, 262144, 12, -720895, 262144, 13, -786430, 327680, 12, -720894, 327680, 13, -1441799, 262144, 13, -1507335, 262144, 12, -1507334, 327680, 12, -1441798, 327680, 13, -1507340, 0, 10, -1441804, 0, 11, -1507339, 65536, 10, -1441803, 65536, 11, -1310731, 196608, 10, -1245195, 196608, 11, -1310730, 262144, 10, -1245194, 262144, 11, -1245188, 196608, 10, -1179652, 196608, 11, -1245187, 262144, 10, -1179651, 262144, 11, -262137, 196608, 10, -196601, 196608, 11, -262136, 262144, 10, -196600, 262144, 11, -327692, 196608, 10, -262156, 196608, 11, -327691, 262144, 10, -262155, 262144, 11, -1048542, 0, 10, -983006, 0, 11, -1048541, 65536, 10, -983005, 65536, 11, -1507296, 458752, 0, -1376226, 458752, 0, -1114080, 458752, 0, -983010, 458752, 0, -1245176, 458752, 0, -524293, 458752, 0, -2031621, 458752, 0, -1245153, 458752, 4, -196599, 458752, 4, -458764, 458752, 4, -393183, 458752, 4, -131081, 458752, 4, -1900560, 458752, 4, -196596, 0, 12, -1638369, 327680, 10, -1245156, 327680, 11, -851981, 393216, 2)
 layer_2/name = "Capa 3"
 layer_2/z_index = 1
-layer_2/tile_data = PackedInt32Array(-1572868, 0, 13, -1507332, 0, 13, -1441796, 0, 13, -196608, 65536, 12, -196607, 65536, 12, -196606, 65536, 12, -196605, 65536, 12, -1703922, 65536, 12, -1703921, 65536, 12, -1703920, 65536, 12, -1966091, 0, 13, -1900555, 0, 13, -1835019, 0, 13, -131051, 0, 13, -65515, 0, 13, 21, 0, 13, -589797, 0, 10, -524261, 0, 11, -589796, 65536, 10, -524260, 65536, 11, -1048542, 0, 10, -983006, 0, 11, -1048541, 65536, 10, -983005, 65536, 11, -1376216, 0, 10, -1310680, 0, 11, -1376215, 65536, 10, -1310679, 65536, 11, -1376235, 0, 10, -1310699, 0, 11, -1376234, 65536, 10, -1310698, 65536, 11, -1900523, 0, 10, -1834987, 0, 11, -1900522, 65536, 10, -1834986, 65536, 11, -1048559, 0, 10, -983023, 0, 11, -1048558, 65536, 10, -983022, 65536, 11, -1507340, 0, 10, -1441804, 0, 11, -1507339, 65536, 10, -1441803, 65536, 11, -327698, 0, 10, -262162, 0, 11, -327697, 65536, 10, -262161, 65536, 11, 65520, 0, 10, 131056, 0, 11, 65521, 65536, 10, 131057, 65536, 11, 65534, 0, 10, 131070, 0, 11, 65535, 65536, 10, 131071, 65536, 11, -655353, 0, 10, -589817, 0, 11, -655352, 65536, 10, -589816, 65536, 11, -1376244, 196608, 10, -1310708, 196608, 11, -1376243, 262144, 10, -1310707, 262144, 11, -1245179, 196608, 10, -1179643, 196608, 11, -1245178, 262144, 10, -1179642, 262144, 11, -1245188, 196608, 10, -1179652, 196608, 11, -1245187, 262144, 10, -1179651, 262144, 11, -1310731, 196608, 10, -1245195, 196608, 11, -1310730, 262144, 10, -1245194, 262144, 11, -1179666, 196608, 10, -1114130, 196608, 11, -1179665, 262144, 10, -1114129, 262144, 11, -1835026, 196608, 10, -1769490, 196608, 11, -1835025, 262144, 10, -1769489, 262144, 11, -655373, 196608, 10, -589837, 196608, 11, -655372, 262144, 10, -589836, 262144, 11, -327692, 196608, 10, -262156, 196608, 11, -327691, 262144, 10, -262155, 262144, 11, -262146, 196608, 10, -196610, 196608, 11, -262145, 262144, 10, -196609, 262144, 11, -262137, 196608, 10, -196601, 196608, 11, -262136, 262144, 10, -196600, 262144, 11, 65560, 196608, 10, 131096, 196608, 11, 65561, 262144, 10, 131097, 262144, 11, -262125, 196608, 10, -196589, 196608, 11, -262124, 262144, 10, -196588, 262144, 11, -589792, 196608, 10, -524256, 196608, 11, -589791, 262144, 10, -524255, 262144, 11, -262112, 196608, 10, -196576, 196608, 11, -262111, 262144, 10, -196575, 262144, 11, -1048536, 196608, 10, -983000, 196608, 11, -1048535, 262144, 10, -982999, 262144, 11, -1638360, 196608, 10, -1572824, 196608, 11, -1638359, 262144, 10, -1572823, 262144, 11, -2097121, 0, 10, -2031585, 0, 11, -2097120, 65536, 10, -2031584, 65536, 11, -2097162, 196608, 10, -2031626, 196608, 11, -2097161, 262144, 10, -2031625, 262144, 11, -1638405, 131072, 10, -1638401, 131072, 10)
+layer_2/tile_data = PackedInt32Array(-589797, 0, 10, -524261, 0, 11, -589796, 65536, 10, -524260, 65536, 11, -1048542, 0, 10, -983006, 0, 11, -1048541, 65536, 10, -983005, 65536, 11, -1376216, 0, 10, -1310680, 0, 11, -1376215, 65536, 10, -1310679, 65536, 11, -1376235, 0, 10, -1310699, 0, 11, -1376234, 65536, 10, -1310698, 65536, 11, -1900523, 0, 10, -1834987, 0, 11, -1900522, 65536, 10, -1834986, 65536, 11, -1048559, 0, 10, -983023, 0, 11, -1048558, 65536, 10, -983022, 65536, 11, -1507340, 0, 10, -1441804, 0, 11, -1507339, 65536, 10, -1441803, 65536, 11, -327698, 0, 10, -262162, 0, 11, -327697, 65536, 10, -262161, 65536, 11, 65520, 0, 10, 131056, 0, 11, 65521, 65536, 10, 131057, 65536, 11, 65534, 0, 10, 131070, 0, 11, 65535, 65536, 10, 131071, 65536, 11, -655353, 0, 10, -589817, 0, 11, -655352, 65536, 10, -589816, 65536, 11, -1376244, 196608, 10, -1310708, 196608, 11, -1376243, 262144, 10, -1310707, 262144, 11, -1245179, 196608, 10, -1179643, 196608, 11, -1245178, 262144, 10, -1179642, 262144, 11, -1245188, 196608, 10, -1179652, 196608, 11, -1245187, 262144, 10, -1179651, 262144, 11, -1310731, 196608, 10, -1245195, 196608, 11, -1310730, 262144, 10, -1245194, 262144, 11, -1179666, 196608, 10, -1114130, 196608, 11, -1179665, 262144, 10, -1114129, 262144, 11, -1835026, 196608, 10, -1769490, 196608, 11, -1835025, 262144, 10, -1769489, 262144, 11, -655373, 196608, 10, -589837, 196608, 11, -655372, 262144, 10, -589836, 262144, 11, -327692, 196608, 10, -262156, 196608, 11, -327691, 262144, 10, -262155, 262144, 11, -262146, 196608, 10, -196610, 196608, 11, -262145, 262144, 10, -196609, 262144, 11, -262137, 196608, 10, -196601, 196608, 11, -262136, 262144, 10, -196600, 262144, 11, 65560, 196608, 10, 131096, 196608, 11, 65561, 262144, 10, 131097, 262144, 11, -262125, 196608, 10, -196589, 196608, 11, -262124, 262144, 10, -196588, 262144, 11, -589792, 196608, 10, -524256, 196608, 11, -589791, 262144, 10, -524255, 262144, 11, -262112, 196608, 10, -196576, 196608, 11, -262111, 262144, 10, -196575, 262144, 11, -1048536, 196608, 10, -983000, 196608, 11, -1048535, 262144, 10, -982999, 262144, 11, -1638360, 196608, 10, -1572824, 196608, 11, -1638359, 262144, 10, -1572823, 262144, 11, -2097121, 0, 10, -2031585, 0, 11, -2097120, 65536, 10, -2031584, 65536, 11, -2097162, 196608, 10, -2031626, 196608, 11, -2097161, 262144, 10, -2031625, 262144, 11, -1638405, 131072, 10, -1638401, 131072, 10)
 
 [node name="SpawnersCarretera" type="Node2D" parent="."]
 
@@ -778,16 +781,298 @@ SpawnableNPC = Array[PackedScene]([ExtResource("2_fudcb"), ExtResource("6_6fqjk"
 script = ExtResource("3_yp5fi")
 
 [node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker"]
-position = Vector2(-718, 802)
+position = Vector2(835, 622)
 
 [node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker"]
-position = Vector2(382, 802)
+position = Vector2(1192, 622)
 
 [node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker"]
-position = Vector2(382, 997)
+position = Vector2(1192, 476)
 
 [node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker"]
+position = Vector2(835, 476)
+
+[node name="PointsStacker13" type="Node" parent="SpawnersPeatones/Spawner2"]
+script = ExtResource("3_yp5fi")
+
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker13"]
+position = Vector2(1613, -1249)
+
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker13"]
+position = Vector2(1193, -1249)
+
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker13"]
+position = Vector2(1193, -711)
+
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker13"]
+position = Vector2(1193, -698)
+
+[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker13"]
+position = Vector2(1846, -698)
+
+[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker13"]
+position = Vector2(1846, -1240)
+
+[node name="PointsStacker12" type="Node" parent="SpawnersPeatones/Spawner2"]
+script = ExtResource("3_yp5fi")
+
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker12"]
+position = Vector2(2420, -878)
+
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker12"]
+position = Vector2(2420, -504)
+
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker12"]
+position = Vector2(2224, -504)
+
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker12"]
+position = Vector2(2224, -404)
+
+[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker12"]
+position = Vector2(2428, -404)
+
+[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker12"]
+position = Vector2(2428, -138)
+
+[node name="Points7" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker12"]
+position = Vector2(2712, -138)
+
+[node name="Points8" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker12"]
+position = Vector2(2712, -236)
+
+[node name="Points9" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker12"]
+position = Vector2(2518, -236)
+
+[node name="Points10" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker12"]
+position = Vector2(2518, -872)
+
+[node name="PointsStacker11" type="Node" parent="SpawnersPeatones/Spawner2"]
+script = ExtResource("3_yp5fi")
+
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker11"]
+position = Vector2(3115, 245)
+
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker11"]
+position = Vector2(3115, -1276)
+
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker11"]
+position = Vector2(2414, -1276)
+
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker11"]
+position = Vector2(2414, -152)
+
+[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker11"]
+position = Vector2(2657, -152)
+
+[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker11"]
+position = Vector2(2657, 250)
+
+[node name="PointsStacker10" type="Node" parent="SpawnersPeatones/Spawner2"]
+script = ExtResource("3_yp5fi")
+
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker10"]
+position = Vector2(1895, 865)
+
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker10"]
+position = Vector2(2638, 865)
+
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker10"]
+position = Vector2(2638, 221)
+
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker10"]
+position = Vector2(2962, 221)
+
+[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker10"]
+position = Vector2(1733, 221)
+
+[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker10"]
+position = Vector2(1733, 516)
+
+[node name="Points7" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker10"]
+position = Vector2(1962, 516)
+
+[node name="Points8" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker10"]
+position = Vector2(1962, 862)
+
+[node name="PointsStacker9" type="Node" parent="SpawnersPeatones/Spawner2"]
+script = ExtResource("3_yp5fi")
+
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker9"]
+position = Vector2(1715, 532)
+
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker9"]
+position = Vector2(2248, 532)
+
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker9"]
+position = Vector2(2248, 227)
+
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker9"]
+position = Vector2(1727, 227)
+
+[node name="PointsStacker8" type="Node" parent="SpawnersPeatones/Spawner2"]
+script = ExtResource("3_yp5fi")
+
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker8"]
+position = Vector2(1038, 32)
+
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker8"]
+position = Vector2(1038, -334)
+
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker8"]
+position = Vector2(1242, -334)
+
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker8"]
+position = Vector2(1242, -681)
+
+[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker8"]
+position = Vector2(1604, -681)
+
+[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker8"]
+position = Vector2(1604, 40)
+
+[node name="PointsStacker7" type="Node" parent="SpawnersPeatones/Spawner2"]
+script = ExtResource("3_yp5fi")
+
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker7"]
+position = Vector2(114, -822)
+
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker7"]
+position = Vector2(454, -822)
+
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker7"]
+position = Vector2(454, -1238)
+
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker7"]
+position = Vector2(1138, -1238)
+
+[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker7"]
+position = Vector2(1138, -846)
+
+[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker7"]
+position = Vector2(1242, -846)
+
+[node name="Points7" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker7"]
+position = Vector2(1242, -698)
+
+[node name="Points8" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker7"]
+position = Vector2(1998, -698)
+
+[node name="Points9" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker7"]
+position = Vector2(1998, -1250)
+
+[node name="Points10" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker7"]
+position = Vector2(118, -1250)
+
+[node name="PointsStacker6" type="Node" parent="SpawnersPeatones/Spawner2"]
+script = ExtResource("3_yp5fi")
+
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker6"]
+position = Vector2(114, -825)
+
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker6"]
+position = Vector2(450, -825)
+
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker6"]
+position = Vector2(450, -1245)
+
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker6"]
+position = Vector2(118, -1245)
+
+[node name="PointsStacker5" type="Node" parent="SpawnersPeatones/Spawner2"]
+script = ExtResource("3_yp5fi")
+
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker5"]
+position = Vector2(-700, 264)
+
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker5"]
+position = Vector2(-319, 264)
+
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker5"]
+position = Vector2(-319, -34)
+
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker5"]
+position = Vector2(-168, -34)
+
+[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker5"]
+position = Vector2(-168, 495)
+
+[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker5"]
+position = Vector2(-330, 495)
+
+[node name="Points7" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker5"]
+position = Vector2(-330, 495)
+
+[node name="Points8" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker5"]
+position = Vector2(-319, 264)
+
+[node name="PointsStacker4" type="Node" parent="SpawnersPeatones/Spawner2"]
+script = ExtResource("3_yp5fi")
+
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker4"]
+position = Vector2(136, -84)
+
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker4"]
+position = Vector2(707, -84)
+
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker4"]
+position = Vector2(707, -378)
+
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker4"]
+position = Vector2(1038, -378)
+
+[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker4"]
+position = Vector2(1038, 172)
+
+[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker4"]
+position = Vector2(504, 172)
+
+[node name="Points7" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker4"]
+position = Vector2(504, 535)
+
+[node name="Points8" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker4"]
+position = Vector2(130, 535)
+
+[node name="PointsStacker3" type="Node" parent="SpawnersPeatones/Spawner2"]
+script = ExtResource("3_yp5fi")
+
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker3"]
+position = Vector2(-718, 802)
+
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker3"]
+position = Vector2(-718, -1323)
+
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker3"]
+position = Vector2(-291, -1323)
+
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker3"]
+position = Vector2(-291, -640)
+
+[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker3"]
+position = Vector2(-606, -640)
+
+[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker3"]
+position = Vector2(-606, 802)
+
+[node name="PointsStacker2" type="Node" parent="SpawnersPeatones/Spawner2"]
+script = ExtResource("3_yp5fi")
+
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker2"]
+position = Vector2(-718, 802)
+
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker2"]
+position = Vector2(382, 802)
+
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker2"]
+position = Vector2(382, 997)
+
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker2"]
 position = Vector2(1742, 997)
+
+[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker2"]
+position = Vector2(382, 997)
+
+[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker2"]
+position = Vector2(382, 802)
 
 [node name="Player" parent="." instance=ExtResource("4_e0gq1")]
 position = Vector2(-932, -145)
