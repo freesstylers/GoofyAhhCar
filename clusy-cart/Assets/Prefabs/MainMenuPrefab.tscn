@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://efhvylg2gaal" path="res://Assets/Sprites/LogoApruebameEsta.png" id="8_48p5g"]
 [ext_resource type="Texture2D" uid="uid://dtnaaiyoaplcr" path="res://Assets/Sprites/MonkeyTV/idle.png" id="9_6ol3d"]
 [ext_resource type="FontFile" uid="uid://bnu0s2kb4sfvc" path="res://Assets/Fonts/Larceny.ttf" id="9_spall"]
-[ext_resource type="AudioStream" uid="uid://knjuaebd8do1" path="res://Assets/Sound/SFX/mainmenu.wav" id="15_lvhoa"]
+[ext_resource type="AudioStream" uid="uid://dn2gs07pmaoag" path="res://Assets/Sound/Music/mainmenu.wav" id="10_y1my1"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -254,7 +254,7 @@ texture = ExtResource("9_6ol3d")
 stretch_mode = 5
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("15_lvhoa")
+stream = ExtResource("10_y1my1")
 autoplay = true
 
 [connection signal="button_down" from="MainButtonContainer/FreeStylers" to="." method="_on_free_stylers_button_down"]
