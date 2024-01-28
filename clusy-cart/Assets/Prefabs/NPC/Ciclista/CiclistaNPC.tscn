@@ -1,21 +1,48 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjpv8shu8ggj6"]
+[gd_scene load_steps=18 format=3 uid="uid://cjpv8shu8ggj6"]
 
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/Ciclista/CiclistaNPC.gd" id="1_d67bn"]
 [ext_resource type="PackedScene" uid="uid://xxk7y023mwn4" path="res://Assets/Prefabs/NPC/DeathParticles.tscn" id="2_n5cct"]
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/Ciclista/Zigzag.gd" id="2_ys6lk"]
 [ext_resource type="SpriteFrames" uid="uid://cfeonokj17msd" path="res://Assets/Animations/Ciclista/Ciclista.tres" id="3_lk1m0"]
-[ext_resource type="AudioStream" uid="uid://dy8jp77l7dddg" path="res://Assets/Sound/SFX/Choques/Crash1.wav" id="4_k2334"]
+[ext_resource type="AudioStream" uid="uid://dvpjf0kobqus2" path="res://Assets/Sound/SFX/NPCs/Bonk.wav" id="5_ree16"]
+[ext_resource type="AudioStream" uid="uid://dhbftxtsoudv2" path="res://Assets/Sound/SFX/NPCs/Bowang.wav" id="6_k4sia"]
+[ext_resource type="AudioStream" uid="uid://brbcif2crnimy" path="res://Assets/Sound/SFX/NPCs/Bullet Ricochet.wav" id="7_j4yun"]
+[ext_resource type="AudioStream" uid="uid://dijmidkwnh2xc" path="res://Assets/Sound/SFX/NPCs/Confused 1.wav" id="8_d8lgu"]
+[ext_resource type="AudioStream" uid="uid://cei5qwl8uksb3" path="res://Assets/Sound/SFX/NPCs/Confused 3.wav" id="9_i03ik"]
+[ext_resource type="AudioStream" uid="uid://buiys331ln4o" path="res://Assets/Sound/SFX/NPCs/Cuckoo.wav" id="10_c7lan"]
+[ext_resource type="AudioStream" uid="uid://co4knn27d88ns" path="res://Assets/Sound/SFX/NPCs/Duck.wav" id="11_j2440"]
+[ext_resource type="AudioStream" uid="uid://b4hngovbrghyq" path="res://Assets/Sound/SFX/NPCs/Explosion.wav" id="12_4ybkp"]
+[ext_resource type="AudioStream" uid="uid://281cy2d6qs15" path="res://Assets/Sound/SFX/NPCs/Head Clank.wav" id="13_lb830"]
+[ext_resource type="AudioStream" uid="uid://nu57ayxi11v1" path="res://Assets/Sound/SFX/NPCs/Pants Falling.wav" id="14_8pwux"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6f2gb"]
 radius = 13.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g01jp"]
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ikwvw"]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7ka6p"]
 random_pitch = 1.2
-streams_count = 1
-stream_0/stream = ExtResource("4_k2334")
+streams_count = 10
+stream_0/stream = ExtResource("5_ree16")
 stream_0/weight = 1.0
+stream_1/stream = ExtResource("6_k4sia")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("7_j4yun")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("8_d8lgu")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("9_i03ik")
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("10_c7lan")
+stream_5/weight = 1.0
+stream_6/stream = ExtResource("11_j2440")
+stream_6/weight = 1.0
+stream_7/stream = ExtResource("12_4ybkp")
+stream_7/weight = 1.0
+stream_8/stream = ExtResource("13_lb830")
+stream_8/weight = 1.0
+stream_9/stream = ExtResource("14_8pwux")
+stream_9/weight = 1.0
 
 [node name="CiclistaNpc" type="CharacterBody2D" node_paths=PackedStringArray("deathSound")]
 position = Vector2(442, 191)
@@ -23,7 +50,7 @@ rotation = 1.5708
 scale = Vector2(2, 2)
 script = ExtResource("1_d67bn")
 npcType = 1
-deathSound = NodePath("DeathSound")
+deathSound = NodePath("")
 
 [node name="Zigzag" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_6f2gb")
@@ -43,12 +70,12 @@ frame_progress = 0.889745
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zigzag/Area2D"]
 shape = SubResource("CircleShape2D_g01jp")
 
-[node name="DeathSound" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamRandomizer_ikwvw")
-
 [node name="DeathParticles" parent="." instance=ExtResource("2_n5cct")]
 position = Vector2(-0.5, 2)
 emitting = false
 one_shot = true
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_7ka6p")
 
 [connection signal="body_entered" from="Zigzag/Area2D" to="." method="on_collision"]
