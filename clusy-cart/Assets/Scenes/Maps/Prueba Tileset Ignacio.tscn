@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://p6a4aoanplrj"]
+[gd_scene load_steps=14 format=3 uid="uid://p6a4aoanplrj"]
 
 [ext_resource type="Texture2D" uid="uid://c6s658tlwbfog" path="res://Assets/Sprites/Tileset/Tileset.png" id="1_cocvp"]
 [ext_resource type="PackedScene" uid="uid://cokidu12u7300" path="res://Assets/Prefabs/NPC/NormalNpc.tscn" id="2_fudcb"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ce4pc01ywv3oi" path="res://Assets/Prefabs/NPC/Vieja/ViejaNPC.tscn" id="5_n53qt"]
 [ext_resource type="PackedScene" uid="uid://dmmmwaliiqy3j" path="res://Assets/Prefabs/NPC/Preso/PresoNPC.tscn" id="6_6fqjk"]
 [ext_resource type="PackedScene" uid="uid://cekqety4c6v4k" path="res://Assets/Prefabs/NPC/Butanero/ButaneroNPC.tscn" id="7_qqyi1"]
+[ext_resource type="AudioStream" uid="uid://ck64q2vx55la7" path="res://Assets/Sound/Music/gamesong.wav" id="11_ji1oj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6c7ai"]
 texture = ExtResource("1_cocvp")
@@ -1078,3 +1079,7 @@ position = Vector2(382, 802)
 position = Vector2(-932, -145)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_ji1oj")
+autoplay = true
