@@ -28,3 +28,6 @@ func die():
 	super.die()
 	canMove = false
 	($Zigzag as ZigZag).StopZigZag()
+	var particles = $DeathParticles as CPUParticles2D
+	if particles != null:
+		particles.global_position = ($Zigzag as ZigZag).global_position

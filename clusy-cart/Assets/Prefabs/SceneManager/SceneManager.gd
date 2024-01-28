@@ -1,7 +1,10 @@
 extends Node2D
 
-const level1 = preload("res://Assets/Scenes/Maps/Mapa 2.tscn")
-const level2 = preload("res://Assets/Scenes/Maps/Prueba Tileset Ignacio.tscn")
+var menu = true
+
+@export var level1 : Resource
+@export var level2 : Resource
+@export var mainMenu : Resource
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,10 +13,15 @@ func _ready():
 	pass # Replace with function body.	
 
 func loadLevel():
-	var rng = RandomNumberGenerator.new()
-	var level = rng.randi_range(0,1)
 
 	$CurrentScene.get_child(0).queue_free()
+	
+	if menu:
+		$CurrentScene.add_child(mainMenu.instantiate())
+		return
+		
+	var rng = RandomNumberGenerator.new()
+	var level = rng.randi_range(0,1)
 		
 	if level == 0:
 		$CurrentScene.add_child(level1.instantiate())
@@ -22,6 +30,13 @@ func loadLevel():
 		$CurrentScene.add_child(level2.instantiate())
 		pass
 
-func startGame(level: int):
+func startGame():
+	menu = false
+	$TransitionScreen.transition()
+	pass
+
+func backToMenu():
+	menu = true
 	$TransitionScreen.transition()
 	#currentLevel = level
+	pass

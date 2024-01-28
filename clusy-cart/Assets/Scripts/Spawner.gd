@@ -5,7 +5,7 @@ class_name Spawner
 
 @export var SpawnableNPC : Array[PackedScene]
 
-@export var type : Globals.NPCType
+@export var type : Globals.SpawnType
 
 var spawnerInitialSpawnProb = 0.5
 var rng
@@ -44,7 +44,7 @@ func spawnReady():
 			n+=1;
 	pass
 
-func spawnDesired(selected:Globals.NPCType):
+func spawnDesired(selected:Globals.SpawnType):
 	if selected == type:
 		var timer = Timer.new()
 		add_child(timer)

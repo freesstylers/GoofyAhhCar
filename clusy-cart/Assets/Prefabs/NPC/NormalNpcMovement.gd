@@ -7,8 +7,8 @@ extends Node2D
 @export var distanceThreshold := 5
 @export var npcType : Globals.NPCType = Globals.NPCType.CIVIL
 
-
 @export var deathSound : AudioStreamPlayer = null
+@export var DeathTrigger : CollisionShape2D = null
 
 var goTo: Node2D = null
 var pointBehaviour : PointsB = null
@@ -41,8 +41,11 @@ func _process(delta):
 		move(delta)
 
 func die():
-	if deathSound:
+	if deathSound and not deathSound.playing:
 		deathSound.play()
+	if DeathTrigger:
+		DeathTrigger.disabled = true
+		
 	var particles = $DeathParticles as CPUParticles2D
 	if particles != null:
 		particles.emitting = true
@@ -53,9 +56,15 @@ func spawn():
 func on_collision(other):
 	if other.is_in_group("player"):
 		Globals.npc_hit.emit(npcType)
+		if npcType == Globals.NPCType.CICLISTA || npcType == Globals.NPCType.CANINO:
+			Globals.npc_spawn.emit(Globals.SpawnType.Carretera)
+		else:
+			Globals.npc_spawn.emit(Globals.SpawnType.Acera)
+			
 		Globals.exp_gain.emit(Globals.EXP_PER_NPC_KILL[npcType],Globals.POINTS_PER_NPC_KILL[npcType])
 		die()
 		goTo = null
+		
 
 		var animLength : float = 0.5
 		var endScale : Vector2 = scale * 9

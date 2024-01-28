@@ -50,14 +50,14 @@ rotation = 1.5708
 scale = Vector2(2, 2)
 script = ExtResource("1_d67bn")
 npcType = 1
-deathSound = NodePath("")
+deathSound = NodePath("DeathSound")
 
 [node name="Zigzag" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_6f2gb")
 disabled = true
 debug_color = Color(0.886275, 0.0745098, 0.776471, 1)
 script = ExtResource("2_ys6lk")
-amplitude = 5.0
+amplitude = 2.5
 frecuency = 10.0
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Zigzag"]
