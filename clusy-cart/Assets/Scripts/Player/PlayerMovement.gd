@@ -11,7 +11,7 @@ extends CharacterBody2D
 
 var acceleration : Vector2 = Vector2.ZERO
 @export var friction : float = -0.9
-@export var drag : float = -0.0015
+@export var drag : float = -0.001
 @export var braking : float = -450
 @export var max_speed_reverse : float = 250
 @export var slip_speed : float = 400  # Speed where traction is reduced
@@ -50,6 +50,8 @@ func _ready():
 	InitDriftSoundPlayer = $InitDriftSoundPlayer
 	HornSoundPlayer = $HornSoundPlayer
 	
+	used_engine_power = engine_power
+	
 	Globals.game_init_everything.connect(on_game_init_everything)
 	Globals.kill_modifier_obtained.connect(on_kill_modifier_obtained)
 	Globals.hp_change.connect(ChangeLife)
@@ -67,8 +69,7 @@ func get_input():
 		steer_angle = turn * (steering_angle*(2*PI)/360)
 		
 	if Input.is_action_pressed("up"):
-		#TODO SONIDO
-		acceleration = transform.x * used_engine_power
+		acceleration = Vector2(1.0, 0.0).rotated(rotation) * used_engine_power
 	if Input.is_action_pressed("back"):
 		acceleration = transform.x * braking
 	if Input.is_action_pressed("drift"):
