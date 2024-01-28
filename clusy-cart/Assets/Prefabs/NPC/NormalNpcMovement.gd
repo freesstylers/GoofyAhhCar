@@ -54,7 +54,8 @@ func spawn():
 	pass
 
 func on_collision(other):
-	if other.is_in_group("player"):
+	if other.is_in_group("player") and not dead:
+		dead = true
 		Globals.npc_hit.emit(npcType)
 		if npcType == Globals.NPCType.CICLISTA || npcType == Globals.NPCType.CANINO:
 			Globals.npc_spawn.emit(Globals.SpawnType.Carretera)
