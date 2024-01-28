@@ -1,9 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://cekqety4c6v4k"]
+[gd_scene load_steps=17 format=3 uid="uid://cekqety4c6v4k"]
 
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/NormalNpcMovement.gd" id="1_py2nk"]
 [ext_resource type="SpriteFrames" uid="uid://3lnyo31q57fn" path="res://Assets/Animations/CangrejoButanero/CangrejoButanero.tres" id="2_243k6"]
 [ext_resource type="PackedScene" uid="uid://xxk7y023mwn4" path="res://Assets/Prefabs/NPC/DeathParticles.tscn" id="2_b64y2"]
-[ext_resource type="AudioStream" uid="uid://dy8jp77l7dddg" path="res://Assets/Sound/SFX/Choques/Crash1.wav" id="3_d53ua"]
+[ext_resource type="AudioStream" uid="uid://dvpjf0kobqus2" path="res://Assets/Sound/SFX/NPCs/Bonk.wav" id="4_uvxhx"]
+[ext_resource type="AudioStream" uid="uid://dhbftxtsoudv2" path="res://Assets/Sound/SFX/NPCs/Bowang.wav" id="5_mqmtm"]
+[ext_resource type="AudioStream" uid="uid://brbcif2crnimy" path="res://Assets/Sound/SFX/NPCs/Bullet Ricochet.wav" id="6_sdo4e"]
+[ext_resource type="AudioStream" uid="uid://dijmidkwnh2xc" path="res://Assets/Sound/SFX/NPCs/Confused 1.wav" id="7_2l6kf"]
+[ext_resource type="AudioStream" uid="uid://cei5qwl8uksb3" path="res://Assets/Sound/SFX/NPCs/Confused 3.wav" id="8_qcoxr"]
+[ext_resource type="AudioStream" uid="uid://buiys331ln4o" path="res://Assets/Sound/SFX/NPCs/Cuckoo.wav" id="9_gxhu7"]
+[ext_resource type="AudioStream" uid="uid://co4knn27d88ns" path="res://Assets/Sound/SFX/NPCs/Duck.wav" id="10_cgbq7"]
+[ext_resource type="AudioStream" uid="uid://b4hngovbrghyq" path="res://Assets/Sound/SFX/NPCs/Explosion.wav" id="11_dpr7g"]
+[ext_resource type="AudioStream" uid="uid://281cy2d6qs15" path="res://Assets/Sound/SFX/NPCs/Head Clank.wav" id="12_m4e2m"]
+[ext_resource type="AudioStream" uid="uid://nu57ayxi11v1" path="res://Assets/Sound/SFX/NPCs/Pants Falling.wav" id="13_li0h4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7bujn"]
 height = 42.0
@@ -11,16 +20,34 @@ height = 42.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wq4n3"]
 height = 42.0
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_upcdk"]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_cejs4"]
 random_pitch = 1.2
-streams_count = 1
-stream_0/stream = ExtResource("3_d53ua")
+streams_count = 10
+stream_0/stream = ExtResource("4_uvxhx")
 stream_0/weight = 1.0
+stream_1/stream = ExtResource("5_mqmtm")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("6_sdo4e")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("7_2l6kf")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("8_qcoxr")
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("9_gxhu7")
+stream_5/weight = 1.0
+stream_6/stream = ExtResource("10_cgbq7")
+stream_6/weight = 1.0
+stream_7/stream = ExtResource("11_dpr7g")
+stream_7/weight = 1.0
+stream_8/stream = ExtResource("12_m4e2m")
+stream_8/weight = 1.0
+stream_9/stream = ExtResource("13_li0h4")
+stream_9/weight = 1.0
 
 [node name="ButaneroNpc" type="CharacterBody2D" node_paths=PackedStringArray("deathSound")]
 script = ExtResource("1_py2nk")
 npcType = 3
-deathSound = NodePath("DeathSound")
+deathSound = NodePath("")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -37,12 +64,12 @@ sprite_frames = ExtResource("2_243k6")
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_wq4n3")
 
-[node name="DeathSound" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamRandomizer_upcdk")
-
 [node name="DeathParticles" parent="." instance=ExtResource("2_b64y2")]
 position = Vector2(-0.5, 2)
 emitting = false
 one_shot = true
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_cejs4")
 
 [connection signal="body_entered" from="Area2D" to="." method="on_collision"]

@@ -1,12 +1,46 @@
-[gd_scene load_steps=6 format=3 uid="uid://cokidu12u7300"]
+[gd_scene load_steps=17 format=3 uid="uid://cokidu12u7300"]
 
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/NormalNpcMovement.gd" id="1_hrrqi"]
 [ext_resource type="Texture2D" uid="uid://xwabevdjnvbg" path="res://Assets/Sprites/Paisano6.png" id="1_tp004"]
 [ext_resource type="PackedScene" uid="uid://xxk7y023mwn4" path="res://Assets/Prefabs/NPC/DeathParticles.tscn" id="2_v4uem"]
+[ext_resource type="AudioStream" uid="uid://dvpjf0kobqus2" path="res://Assets/Sound/SFX/NPCs/Bonk.wav" id="4_eldny"]
+[ext_resource type="AudioStream" uid="uid://dhbftxtsoudv2" path="res://Assets/Sound/SFX/NPCs/Bowang.wav" id="5_81err"]
+[ext_resource type="AudioStream" uid="uid://brbcif2crnimy" path="res://Assets/Sound/SFX/NPCs/Bullet Ricochet.wav" id="6_jhy5r"]
+[ext_resource type="AudioStream" uid="uid://dijmidkwnh2xc" path="res://Assets/Sound/SFX/NPCs/Confused 1.wav" id="7_h8kj8"]
+[ext_resource type="AudioStream" uid="uid://cei5qwl8uksb3" path="res://Assets/Sound/SFX/NPCs/Confused 3.wav" id="8_rruli"]
+[ext_resource type="AudioStream" uid="uid://buiys331ln4o" path="res://Assets/Sound/SFX/NPCs/Cuckoo.wav" id="9_b8xxr"]
+[ext_resource type="AudioStream" uid="uid://co4knn27d88ns" path="res://Assets/Sound/SFX/NPCs/Duck.wav" id="10_p5b80"]
+[ext_resource type="AudioStream" uid="uid://b4hngovbrghyq" path="res://Assets/Sound/SFX/NPCs/Explosion.wav" id="11_ix5tc"]
+[ext_resource type="AudioStream" uid="uid://281cy2d6qs15" path="res://Assets/Sound/SFX/NPCs/Head Clank.wav" id="12_5f2f3"]
+[ext_resource type="AudioStream" uid="uid://nu57ayxi11v1" path="res://Assets/Sound/SFX/NPCs/Pants Falling.wav" id="13_2secl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1k27a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uxrsf"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_n6t3e"]
+random_pitch = 1.2
+streams_count = 10
+stream_0/stream = ExtResource("4_eldny")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("5_81err")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("6_jhy5r")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("7_h8kj8")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("8_rruli")
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("9_b8xxr")
+stream_5/weight = 1.0
+stream_6/stream = ExtResource("10_p5b80")
+stream_6/weight = 1.0
+stream_7/stream = ExtResource("11_ix5tc")
+stream_7/weight = 1.0
+stream_8/stream = ExtResource("12_5f2f3")
+stream_8/weight = 1.0
+stream_9/stream = ExtResource("13_2secl")
+stream_9/weight = 1.0
 
 [node name="NormalNPC" type="CharacterBody2D"]
 position = Vector2(511, 378)
@@ -30,5 +64,8 @@ shape = SubResource("CircleShape2D_uxrsf")
 position = Vector2(-0.5, 2)
 emitting = false
 one_shot = true
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_n6t3e")
 
 [connection signal="body_entered" from="Area2D" to="." method="on_collision"]
