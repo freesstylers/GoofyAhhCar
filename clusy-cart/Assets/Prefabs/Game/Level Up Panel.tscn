@@ -1,18 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://bn0e6vrb0rly7"]
+[gd_scene load_steps=7 format=3 uid="uid://bn0e6vrb0rly7"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/gameUI/Level Up Panel.gd" id="1_nhm8p"]
+[ext_resource type="Theme" uid="uid://ccsfly34nw0wv" path="res://Assets/Themes/MainMenuTheme.tres" id="1_vu57s"]
+[ext_resource type="Texture2D" uid="uid://cescpv23d1var" path="res://Assets/Sprites/UI/Velocimetro subir de nivel.png" id="3_g2stm"]
+[ext_resource type="Texture2D" uid="uid://cqgqwyvpra8sb" path="res://Assets/Sprites/UI/Vida.png" id="3_q066g"]
+[ext_resource type="Texture2D" uid="uid://c4jq0dggffolw" path="res://Assets/Sprites/UI/Volante.png" id="3_s86ej"]
+[ext_resource type="Texture2D" uid="uid://b2l0cvbpl23ag" path="res://Assets/Sprites/UI/Motor.png" id="4_lqvrw"]
 
 [node name="level up menu" type="Panel" node_paths=PackedStringArray("hpButton")]
 process_mode = 3
 anchors_preset = -1
 anchor_left = 0.209375
-anchor_top = 0.288281
+anchor_top = 0.208594
 anchor_right = 0.790625
-anchor_bottom = 0.711719
+anchor_bottom = 0.791406
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_vu57s")
 script = ExtResource("1_nhm8p")
-hpButton = NodePath("option container/levelUpOption4")
+hpButton = NodePath("option container/hp")
 metadata/_edit_use_anchors_ = true
 
 [node name="title" type="Label" parent="."]
@@ -40,23 +46,132 @@ grow_vertical = 2
 theme_override_constants/separation = 24
 metadata/_edit_use_anchors_ = true
 
-[node name="levelUpOption" type="Button" parent="option container"]
+[node name="speed" type="Button" parent="option container"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="levelUpOption2" type="Button" parent="option container"]
+[node name="TextureRect" type="TextureRect" parent="option container/speed"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0211268
+anchor_top = 0.112069
+anchor_right = 0.219718
+anchor_bottom = 0.887931
+grow_vertical = 2
+texture = ExtResource("3_g2stm")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="option container/speed"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.212676
+anchor_top = 0.0689655
+anchor_right = 0.990141
+anchor_bottom = 0.931035
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 110
+text = "+ MAX SPEED"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="accel" type="Button" parent="option container"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="levelUpOption3" type="Button" parent="option container"]
+[node name="TextureRect" type="TextureRect" parent="option container/accel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0211268
+anchor_top = 0.112069
+anchor_right = 0.219718
+anchor_bottom = 0.887931
+grow_vertical = 2
+texture = ExtResource("4_lqvrw")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="option container/accel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.212676
+anchor_top = 0.0689655
+anchor_right = 0.990141
+anchor_bottom = 0.931035
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 110
+text = "+ ACCELERATION"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="handling" type="Button" parent="option container"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="levelUpOption4" type="Button" parent="option container"]
+[node name="TextureRect" type="TextureRect" parent="option container/handling"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0211268
+anchor_top = 0.112069
+anchor_right = 0.219718
+anchor_bottom = 0.887931
+grow_vertical = 2
+texture = ExtResource("3_s86ej")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="option container/handling"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.212676
+anchor_top = 0.0689656
+anchor_right = 0.990141
+anchor_bottom = 0.931035
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 110
+text = "+ HANDLING"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="hp" type="Button" parent="option container"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
-[connection signal="pressed" from="option container/levelUpOption" to="." method="buttonPress" binds= [0.0]]
-[connection signal="pressed" from="option container/levelUpOption2" to="." method="buttonPress" binds= [1.0]]
-[connection signal="pressed" from="option container/levelUpOption3" to="." method="buttonPress" binds= [2.0]]
-[connection signal="pressed" from="option container/levelUpOption4" to="." method="buttonPress" binds= [3.0]]
+[node name="TextureRect" type="TextureRect" parent="option container/hp"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0211268
+anchor_top = 0.112069
+anchor_right = 0.219718
+anchor_bottom = 0.887931
+grow_vertical = 2
+texture = ExtResource("3_q066g")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="option container/hp"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.209859
+anchor_top = 0.0689655
+anchor_right = 0.987324
+anchor_bottom = 0.931035
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 110
+text = "+50% HP"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="option container/speed" to="." method="buttonPress" binds= [0.0]]
+[connection signal="pressed" from="option container/accel" to="." method="buttonPress" binds= [1.0]]
+[connection signal="pressed" from="option container/handling" to="." method="buttonPress" binds= [2.0]]
+[connection signal="pressed" from="option container/hp" to="." method="buttonPress" binds= [3.0]]
