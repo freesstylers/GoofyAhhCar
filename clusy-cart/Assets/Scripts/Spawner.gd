@@ -38,7 +38,7 @@ func spawnReady():
 			var aux = PointsStackers[n].duplicate()
 			
 			#asignar int a PointsB de qué spawner le corresponde?
-			Globals.add_child(spawned)
+			self.add_child(spawned)
 			spawned.add_child(aux)
 			spawned.setReady()
 			n+=1;

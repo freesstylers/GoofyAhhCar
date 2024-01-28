@@ -19,6 +19,7 @@ func setReady():
 	pointBehaviour = get_child(get_child_count()-1)
 	goTo = pointBehaviour.get_actual_point()
 	global_position = goTo.global_position
+	self.scale *= (1280.0/720.0)
 
 
 func is_min_dist(d):
