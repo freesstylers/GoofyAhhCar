@@ -621,7 +621,6 @@ layer_2/tile_data = PackedInt32Array(-393198, 393216, 17, -327660, 393216, 17, -
 position = Vector2(97, -39)
 script = ExtResource("2_4kscq")
 SpawnableNPC = Array[PackedScene]([ExtResource("3_bth6n"), ExtResource("4_67bkb")])
-type = 1
 
 [node name="PointsStacker" type="Node" parent="SpawnersCarretera/Spawner"]
 script = ExtResource("4_11yih")
@@ -872,6 +871,7 @@ position = Vector2(-20, 463)
 position = Vector2(97, -39)
 script = ExtResource("2_4kscq")
 SpawnableNPC = Array[PackedScene]([ExtResource("5_wqlj1"), ExtResource("6_ejfu6"), ExtResource("7_sk0yo"), ExtResource("8_wvgs7")])
+type = 1
 
 [node name="PointsStacker15" type="Node" parent="SpawnersPeatones/Spawner2"]
 script = ExtResource("4_11yih")

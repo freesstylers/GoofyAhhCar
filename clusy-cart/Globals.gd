@@ -31,6 +31,7 @@ signal hp_change(num:int)
 signal hp_update(currentHP : int)
 
 signal npc_hit(whichNPC : NPCType)
+signal npc_spawn(whichNPC : SpawnType)
 enum NPCType {
 	CIVIL,
 	CICLISTA,
@@ -38,6 +39,11 @@ enum NPCType {
 	CANGREJO,
 	PRESO,
 	CANINO
+}
+
+enum SpawnType{
+	Carretera,
+	Acera
 }
 
 const EXP_PER_NPC_KILL =[1,1,1,1,1,1]

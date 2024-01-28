@@ -53,6 +53,11 @@ func spawn():
 func on_collision(other):
 	if other.is_in_group("player"):
 		Globals.npc_hit.emit(npcType)
+		if npcType == Globals.NPCType.CICLISTA || npcType == Globals.NPCType.CANINO:
+			Globals.npc_spawn.emit(Globals.SpawnType.Carretera)
+		else:
+			Globals.npc_spawn.emit(Globals.SpawnType.Acera)
+			
 		Globals.exp_gain.emit(Globals.EXP_PER_NPC_KILL[npcType],Globals.POINTS_PER_NPC_KILL[npcType])
 		die()
 		goTo = null
