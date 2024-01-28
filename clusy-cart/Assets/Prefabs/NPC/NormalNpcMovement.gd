@@ -44,11 +44,12 @@ func _process(delta):
 func die():
 	if deathSound:
 		deathSound.play()
-	var particles = particlesScene.instantiate()
-	particles.position = global_position
-	particles.rotation = global_rotation
-	particles.emitting = true
-	get_tree().current_scene.add_child(particles)
+	if particlesScene != null:
+		var particles = particlesScene.instantiate()
+		particles.position = global_position
+		particles.rotation = global_rotation
+		particles.emitting = true
+		get_tree().current_scene.add_child(particles)
 	queue_free()
 
 func spawn():
