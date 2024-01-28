@@ -454,10 +454,10 @@ traction_slow = 0.5
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="CiclistaNpc" parent="." instance=ExtResource("3_c88j1")]
-position = Vector2(872, 429)
+position = Vector2(510, 429)
 
 [node name="PresoNpc" parent="." instance=ExtResource("4_slr8p")]
-position = Vector2(856, 283)
+position = Vector2(682, 436)
 
 [node name="ViejaNpc" parent="." instance=ExtResource("5_hhi7m")]
 position = Vector2(855, 157)

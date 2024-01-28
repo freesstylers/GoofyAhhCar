@@ -10,6 +10,8 @@ extends Node2D
 var goTo: Node2D = null
 var pointBehaviour : PointsB = null
 
+var dead : bool = false
+
 func setReady():
 	pointBehaviour = get_child(get_child_count()-1)
 	goTo = pointBehaviour.get_actual_point()
@@ -44,17 +46,19 @@ func spawn():
 func on_collision(other):
 	if other.is_in_group("player"):
 		Globals.npc_hit.emit(npcType)
-		die()
-		#goTo = null
-		#get_parent().remove_child(self)
-		#other.add_child(self)
-		#position = Vector2(0,0)
-		#
-		#var animLength : float = 2
-		#var randomDir = randf() * 2*PI
-		#var dirToMove : Vector2 = Vector2(1,0).rotated(randomDir)
-		#var localTween : Tween = create_tween()
-		#localTween.set_parallel(true)
-		#localTween.tween_property(self, "position", Vector2(Globals.WINDOW_BASE_SIZE.x,0), animLength)
-		#localTween.tween_property(self, "scale", Vector2(3,3), animLength)
-		#localTween.tween_callback(self.queue_free).set_delay(animLength)
+		#die()
+		goTo = null
+
+		var animLength : float = 0.5
+		var endScale : Vector2 = scale * 9
+		var localTween : Tween = create_tween()
+		
+		var deltaMovement : Vector2 = (self.global_position- other.global_position).normalized() * 500
+		localTween.set_parallel(true)
+		localTween.tween_property(self, "position", global_position + deltaMovement , animLength)
+		localTween.tween_property(self, "scale", endScale, animLength)
+		localTween.tween_property(self, "rotation", rotation + ((2*PI)*1), animLength)	
+		localTween.tween_callback(self.queue_free).set_delay(animLength)
+		var alphaTween : Tween = create_tween()
+		alphaTween.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUAD)
+		alphaTween.tween_property(self, "modulate:a", 0, animLength)		
