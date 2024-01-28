@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ce4pc01ywv3oi" path="res://Assets/Prefabs/NPC/Vieja/ViejaNPC.tscn" id="6_ejfu6"]
 [ext_resource type="PackedScene" uid="uid://dmmmwaliiqy3j" path="res://Assets/Prefabs/NPC/Preso/PresoNPC.tscn" id="7_sk0yo"]
 [ext_resource type="PackedScene" uid="uid://cekqety4c6v4k" path="res://Assets/Prefabs/NPC/Butanero/ButaneroNPC.tscn" id="8_wvgs7"]
-[ext_resource type="AudioStream" uid="uid://ck64q2vx55la7" path="res://Assets/Sound/Music/gamesong.wav" id="11_hwch7"]
+[ext_resource type="AudioStream" uid="uid://nxa52atyq2iy" path="res://Assets/Sound/Music/gamesong.wav" id="11_hwch7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wosj7"]
 texture = ExtResource("1_gwyh6")
