@@ -6,6 +6,7 @@ func _ready():
 	Globals.exp_update.connect(expUpdate)
 	Globals.level_up.connect(levelUp)
 	max_value = Globals.GameMan.ExpNextLevel
+	value = 0
 	pass # Replace with function body.
 
 

@@ -29,6 +29,9 @@ func loadLevel():
 	elif level == 1:
 		$CurrentScene.add_child(level2.instantiate())
 		pass
+		
+	if get_tree().paused:
+		get_tree().paused = false
 
 func startGame():
 	menu = false

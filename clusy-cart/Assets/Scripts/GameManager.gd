@@ -18,11 +18,11 @@ func NextLevelCalc():
 func _init():
 	Globals.GameMan = self
 	Globals.exp_gain.connect(expGain)
+	ExpNextLevel = NextLevelCalc()
 	pass
 	
 func _ready():
 	TimeLeft = GameTime
-	ExpNextLevel = NextLevelCalc()
 	pass
 
 func _process(delta):
