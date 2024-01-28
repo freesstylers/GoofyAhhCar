@@ -1,10 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cx4xahm8ijcgd"]
+[gd_scene load_steps=6 format=3 uid="uid://cx4xahm8ijcgd"]
 
 [ext_resource type="Texture2D" uid="uid://c6s658tlwbfog" path="res://Assets/Sprites/Tileset/Tileset.png" id="1_gwyh6"]
 [ext_resource type="Script" path="res://Assets/Scripts/Spawner.gd" id="2_4kscq"]
-[ext_resource type="PackedScene" uid="uid://cjpv8shu8ggj6" path="res://Assets/Prefabs/NPC/Ciclista/CiclistaNPC.tscn" id="3_h2eju"]
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/PointsBehaviour.gd" id="4_11yih"]
-[ext_resource type="PackedScene" uid="uid://cokidu12u7300" path="res://Assets/Prefabs/NPC/NormalNpc.tscn" id="5_8u801"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wosj7"]
 texture = ExtResource("1_gwyh6")
@@ -632,7 +630,6 @@ layer_2/tile_data = PackedInt32Array(-393198, 393216, 17, -327660, 393216, 17, -
 [node name="Spawner" type="Node2D" parent="SpawnersCarretera"]
 position = Vector2(97, -39)
 script = ExtResource("2_4kscq")
-NPC = ExtResource("3_h2eju")
 
 [node name="PointsStacker" type="Node" parent="SpawnersCarretera/Spawner"]
 script = ExtResource("4_11yih")
@@ -909,7 +906,6 @@ position = Vector2(516, 652)
 [node name="Spawner2" type="Node2D" parent="SpawnersPeatones"]
 position = Vector2(97, -39)
 script = ExtResource("2_4kscq")
-NPC = ExtResource("5_8u801")
 
 [node name="PointsStacker" type="Node" parent="SpawnersPeatones/Spawner2"]
 script = ExtResource("4_11yih")

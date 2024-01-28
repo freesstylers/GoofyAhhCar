@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://p6a4aoanplrj"]
+[gd_scene load_steps=11 format=3 uid="uid://p6a4aoanplrj"]
 
 [ext_resource type="Texture2D" uid="uid://c6s658tlwbfog" path="res://Assets/Sprites/Tileset/Tileset.png" id="1_cocvp"]
 [ext_resource type="PackedScene" uid="uid://cokidu12u7300" path="res://Assets/Prefabs/NPC/NormalNpc.tscn" id="2_fudcb"]
 [ext_resource type="Script" path="res://Assets/Scripts/Spawner.gd" id="3_koax1"]
 [ext_resource type="PackedScene" uid="uid://cjpv8shu8ggj6" path="res://Assets/Prefabs/NPC/Ciclista/CiclistaNPC.tscn" id="3_rbiy5"]
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/PointsBehaviour.gd" id="3_yp5fi"]
+[ext_resource type="PackedScene" uid="uid://ce4pc01ywv3oi" path="res://Assets/Prefabs/NPC/Vieja/ViejaNPC.tscn" id="5_n53qt"]
+[ext_resource type="PackedScene" uid="uid://dmmmwaliiqy3j" path="res://Assets/Prefabs/NPC/Preso/PresoNPC.tscn" id="6_6fqjk"]
+[ext_resource type="PackedScene" uid="uid://cekqety4c6v4k" path="res://Assets/Prefabs/NPC/Butanero/ButaneroNPC.tscn" id="7_qqyi1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6c7ai"]
 texture = ExtResource("1_cocvp")
@@ -459,7 +462,7 @@ layer_2/tile_data = PackedInt32Array(-1572868, 0, 13, -1507332, 0, 13, -1441796,
 [node name="Spawner" type="Node2D" parent="SpawnersCarretera"]
 position = Vector2(97, -39)
 script = ExtResource("3_koax1")
-NPC = ExtResource("3_rbiy5")
+NPC = Array[PackedScene]([ExtResource("3_rbiy5")])
 
 [node name="PointsStacker" type="Node" parent="SpawnersCarretera/Spawner"]
 script = ExtResource("3_yp5fi")
@@ -559,7 +562,7 @@ position = Vector2(490, 388)
 [node name="Spawner2" type="Node2D" parent="SpawnersPeatones"]
 position = Vector2(97, -39)
 script = ExtResource("3_koax1")
-NPC = ExtResource("2_fudcb")
+NPC = Array[PackedScene]([ExtResource("2_fudcb"), ExtResource("5_n53qt"), ExtResource("6_6fqjk"), ExtResource("7_qqyi1")])
 
 [node name="PointsStacker" type="Node" parent="SpawnersPeatones/Spawner2"]
 script = ExtResource("3_yp5fi")
