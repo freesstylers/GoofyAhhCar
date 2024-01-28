@@ -54,7 +54,7 @@ func spawnDesired(selected:Globals.SpawnType):
 
 		var spawned = SpawnableNPC.pick_random().instantiate()		
 		var aux = PointsStackers.pick_random().duplicate()
-		Globals.add_child(spawned)
+		self.add_child(spawned)
 		spawned.add_child(aux)
 		spawned.setReady()
 		
