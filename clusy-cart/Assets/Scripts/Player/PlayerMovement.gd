@@ -35,10 +35,10 @@ var currentLife : int
 
 var reverse = false
 
-var timesCrashed = 0
+var timerCrash : float = 0.0;
+@export var cdCrash : float = 3.0;
 
 func _ready():	
-	timesCrashed = 0
 	currentLife = Globals.MAX_PLAYER_LIFE
 	
 	Globals.ThePlayer = self
@@ -94,15 +94,16 @@ func _physics_process(delta):
 	apply_friction()
 	calculate_steering(delta)
 	velocity += acceleration * delta
+	timerCrash+=delta
 	
 	var collision = move_and_collide(velocity*delta)
 	if collision:
 		var vel = velocity.length()
 		#Solo haces el sonidito si tienes una velocidad "significativa"
-		if(vel > max_speed_reverse*2):
-			timesCrashed += 1
-			Globals.hp_change.emit(-10)
-			
+		if(vel > max_speed_reverse/2):
+			if timerCrash > cdCrash:
+				Globals.hp_change.emit(-10)
+				timerCrash = 0.0
 			if(not BounceSoundPlayer.playing):
 				BounceSoundPlayer.play()
 				Globals.change_face.emit(2)
