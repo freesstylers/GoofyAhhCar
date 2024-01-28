@@ -375,4 +375,4 @@ offset_right = 95.9001
 offset_bottom = 66.5
 scale = Vector2(0.65, 0.65)
 
-[connection signal="pressed" from="game over/levelUpOption" to="." method="menu"]
+[connection signal="pressed" from="game over/levelUpOption" to="game over" method="menu"]

@@ -30,3 +30,7 @@ func TurnOn(dead : bool):
 	TimesCrashed.text = str(pl.timesCrashed)
 	
 	pass
+	
+func menu():
+	get_tree().root.get_node("SceneManager").backToMenu()
+	pass

@@ -67,7 +67,7 @@ process_mode = 1
 [node name="MainMenu" parent="CurrentScene" instance=ExtResource("1_3ccln")]
 
 [node name="TransitionScreen" parent="." instance=ExtResource("1_glc8e")]
-process_mode = 1
+process_mode = 3
 
 [node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
 process_mode = 1
