@@ -44,7 +44,7 @@ stream_8/weight = 1.0
 stream_9/stream = ExtResource("14_8pwux")
 stream_9/weight = 1.0
 
-[node name="CiclistaNpc" type="CharacterBody2D"]
+[node name="CiclistaNpc" type="CharacterBody2D" node_paths=PackedStringArray("DeathTrigger")]
 z_index = 1
 position = Vector2(442, 191)
 rotation = 1.5708
@@ -52,6 +52,7 @@ scale = Vector2(2, 2)
 script = ExtResource("1_d67bn")
 npcType = 1
 deathSound = NodePath("DeathSound")
+DeathTrigger = NodePath("Zigzag/Area2D/CollisionShape2D")
 
 [node name="Zigzag" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_6f2gb")
