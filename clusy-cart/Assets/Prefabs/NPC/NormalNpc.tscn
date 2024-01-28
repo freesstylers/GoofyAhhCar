@@ -9,10 +9,12 @@
 
 [node name="NormalNPC" type="CharacterBody2D"]
 position = Vector2(511, 378)
+scale = Vector2(2, 2)
 script = ExtResource("1_hrrqi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1k27a")
+disabled = true
 
 [node name="AnimatedSprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708

@@ -17,6 +17,7 @@ stream_0/stream = ExtResource("3_t5rxj")
 stream_0/weight = 1.0
 
 [node name="Perro" type="CharacterBody2D" node_paths=PackedStringArray("deathSound")]
+scale = Vector2(2, 2)
 script = ExtResource("1_203eq")
 npcType = 5
 deathSound = NodePath("DeathSound")
