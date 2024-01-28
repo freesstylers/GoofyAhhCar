@@ -17,7 +17,7 @@ func FreeStylers():
 
 func Jam():
 	get_tree().root.get_node("SceneManager/ButtonSFX").play()
-	OS.shell_open("https://itch.io/jam/gift-jam-2023")
+	OS.shell_open("https://globalgamejam.org/")
 	pass # Replace with function body.
 
 func Twitter():
@@ -60,8 +60,7 @@ func _on_credits_back_button_down():
 
 func TogglePlayMenu(state: bool):
 	get_tree().root.get_node("SceneManager/ButtonSFX").play()
-	$"level container".visible = state;
-	$"MainButtonContainer".visible = not state;
+	get_tree().root.get_node("SceneManager").startGame()
 	pass # Replace with function body.
 
 
