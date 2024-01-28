@@ -7,7 +7,12 @@ extends CollisionShape2D
 var lapsed = 0
 var realocate = false
 
+var stop = false
+
 func _process(delta):
+	if stop:
+		return
+	
 	if realocate:
 		return_origin(delta)
 		return
@@ -20,3 +25,6 @@ func return_origin(delta):
 	if position.y < 0:
 		rot = 90
 	rotation = deg_to_rad(rot)
+
+func StopZigZag():
+	stop = true

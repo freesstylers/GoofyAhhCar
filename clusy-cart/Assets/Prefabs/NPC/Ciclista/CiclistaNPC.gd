@@ -6,10 +6,7 @@ var canMove : bool = true
 func move(delta):
 	if not canMove:
 		return
-		
 	super.move(delta)
-		
-	
 
 func  finish_move():
 	canMove = false
@@ -26,3 +23,8 @@ func start_move():
 	canMove = true
 	var z = $Zigzag as ZigZag
 	z.realocate = false
+
+func die():
+	super.die()
+	canMove = false
+	($Zigzag as ZigZag).StopZigZag()

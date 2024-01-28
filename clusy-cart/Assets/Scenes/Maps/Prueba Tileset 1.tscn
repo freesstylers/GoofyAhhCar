@@ -458,6 +458,11 @@ position = Vector2(510, 429)
 
 [node name="PresoNpc" parent="." instance=ExtResource("4_slr8p")]
 position = Vector2(682, 436)
+min = 1.0
+points = 100
+bonus = ""
+speed = 300.0
+distanceThreshold = 5
 
 [node name="ViejaNpc" parent="." instance=ExtResource("5_hhi7m")]
 position = Vector2(855, 157)

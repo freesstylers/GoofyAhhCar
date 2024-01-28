@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cekqety4c6v4k"]
+[gd_scene load_steps=7 format=3 uid="uid://cekqety4c6v4k"]
 
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/NormalNpcMovement.gd" id="1_py2nk"]
 [ext_resource type="SpriteFrames" uid="uid://3lnyo31q57fn" path="res://Assets/Animations/CangrejoButanero/CangrejoButanero.tres" id="2_243k6"]
+[ext_resource type="AudioStream" uid="uid://dy8jp77l7dddg" path="res://Assets/Sound/SFX/Choques/Crash1.wav" id="3_d53ua"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7bujn"]
 height = 42.0
@@ -9,9 +10,16 @@ height = 42.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wq4n3"]
 height = 42.0
 
-[node name="ButaneroNpc" type="CharacterBody2D"]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_upcdk"]
+random_pitch = 1.2
+streams_count = 1
+stream_0/stream = ExtResource("3_d53ua")
+stream_0/weight = 1.0
+
+[node name="ButaneroNpc" type="CharacterBody2D" node_paths=PackedStringArray("deathSound")]
 script = ExtResource("1_py2nk")
 npcType = 3
+deathSound = NodePath("DeathSound")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -27,5 +35,8 @@ sprite_frames = ExtResource("2_243k6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_wq4n3")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_upcdk")
 
 [connection signal="body_entered" from="Area2D" to="." method="on_collision"]

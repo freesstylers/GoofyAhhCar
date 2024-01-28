@@ -1,19 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjpv8shu8ggj6"]
+[gd_scene load_steps=8 format=3 uid="uid://cjpv8shu8ggj6"]
 
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/Ciclista/CiclistaNPC.gd" id="1_d67bn"]
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/Ciclista/Zigzag.gd" id="2_ys6lk"]
 [ext_resource type="SpriteFrames" uid="uid://cfeonokj17msd" path="res://Assets/Animations/Ciclista/Ciclista.tres" id="3_lk1m0"]
+[ext_resource type="AudioStream" uid="uid://dy8jp77l7dddg" path="res://Assets/Sound/SFX/Choques/Crash1.wav" id="4_k2334"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6f2gb"]
 radius = 13.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g01jp"]
 
-[node name="CiclistaNpc" type="CharacterBody2D"]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ikwvw"]
+random_pitch = 1.2
+streams_count = 1
+stream_0/stream = ExtResource("4_k2334")
+stream_0/weight = 1.0
+
+[node name="CiclistaNpc" type="CharacterBody2D" node_paths=PackedStringArray("deathSound")]
 position = Vector2(442, 191)
 rotation = 1.5708
 script = ExtResource("1_d67bn")
 npcType = 1
+deathSound = NodePath("DeathSound")
 
 [node name="Zigzag" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_6f2gb")
@@ -32,5 +40,8 @@ frame_progress = 0.889745
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zigzag/Area2D"]
 shape = SubResource("CircleShape2D_g01jp")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_ikwvw")
 
 [connection signal="body_entered" from="Zigzag/Area2D" to="." method="on_collision"]

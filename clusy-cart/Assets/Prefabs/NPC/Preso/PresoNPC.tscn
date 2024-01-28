@@ -1,16 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmmmwaliiqy3j"]
+[gd_scene load_steps=7 format=3 uid="uid://dmmmwaliiqy3j"]
 
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/Preso/PresoNPC.gd" id="1_pxjf7"]
 [ext_resource type="SpriteFrames" uid="uid://cxvnr724ina32" path="res://Assets/Animations/PresoDeGuerra/PresoDeGuerra.tres" id="2_6bis6"]
+[ext_resource type="AudioStream" uid="uid://dy8jp77l7dddg" path="res://Assets/Sound/SFX/Choques/Crash1.wav" id="3_o4oki"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qb4gd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3wsw7"]
 
-[node name="PresoNpc" type="CharacterBody2D"]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tmw0l"]
+random_pitch = 1.2
+streams_count = 1
+stream_0/stream = ExtResource("3_o4oki")
+stream_0/weight = 1.0
+
+[node name="PresoNpc" type="CharacterBody2D" node_paths=PackedStringArray("deathSound")]
 script = ExtResource("1_pxjf7")
 max = 2.0
 npcType = 4
+deathSound = NodePath("DeathSound")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -24,5 +32,8 @@ sprite_frames = ExtResource("2_6bis6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_3wsw7")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_tmw0l")
 
 [connection signal="body_entered" from="Area2D" to="." method="on_collision"]

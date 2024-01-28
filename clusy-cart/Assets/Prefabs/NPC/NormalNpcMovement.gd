@@ -7,6 +7,8 @@ extends Node2D
 @export var distanceThreshold := 5
 @export var npcType : Globals.NPCType = Globals.NPCType.CIVIL
 
+@export var deathSound : AudioStreamPlayer = null
+
 var goTo: Node2D = null
 var pointBehaviour : PointsB = null
 
@@ -38,7 +40,8 @@ func _process(delta):
 		move(delta)
 
 func die():
-	queue_free()
+	if deathSound:
+		deathSound.play()
 
 func spawn():
 	pass
@@ -46,7 +49,7 @@ func spawn():
 func on_collision(other):
 	if other.is_in_group("player"):
 		Globals.npc_hit.emit(npcType)
-		#die()
+		die()
 		goTo = null
 
 		var animLength : float = 0.5

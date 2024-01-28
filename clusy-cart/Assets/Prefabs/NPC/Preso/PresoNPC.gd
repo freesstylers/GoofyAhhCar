@@ -19,7 +19,6 @@ func _ready():
 func move(delta):
 	if canMove:
 		super.move(delta)
-		
 
 func togle_move():
 	canMove = not canMove

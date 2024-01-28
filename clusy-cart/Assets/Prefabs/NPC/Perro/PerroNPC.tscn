@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dw4basda8fkct"]
+[gd_scene load_steps=7 format=3 uid="uid://dw4basda8fkct"]
 
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/NormalNpcMovement.gd" id="1_203eq"]
 [ext_resource type="SpriteFrames" uid="uid://dt5kq1xcldnrh" path="res://Assets/Animations/Escalapendra/Escalapendra.tres" id="2_aht12"]
+[ext_resource type="AudioStream" uid="uid://dy8jp77l7dddg" path="res://Assets/Sound/SFX/Choques/Crash1.wav" id="3_t5rxj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oxqfg"]
 height = 104.0
@@ -9,9 +10,16 @@ height = 104.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vxvui"]
 height = 102.0
 
-[node name="Perro" type="CharacterBody2D"]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_yy1va"]
+random_pitch = 1.2
+streams_count = 1
+stream_0/stream = ExtResource("3_t5rxj")
+stream_0/weight = 1.0
+
+[node name="Perro" type="CharacterBody2D" node_paths=PackedStringArray("deathSound")]
 script = ExtResource("1_203eq")
 npcType = 5
+deathSound = NodePath("DeathSound")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -26,5 +34,8 @@ rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_vxvui")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_yy1va")
 
 [connection signal="body_entered" from="Area2D" to="." method="on_collision"]

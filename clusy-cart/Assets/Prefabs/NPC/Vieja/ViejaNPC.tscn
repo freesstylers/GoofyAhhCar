@@ -1,17 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://ce4pc01ywv3oi"]
+[gd_scene load_steps=7 format=3 uid="uid://ce4pc01ywv3oi"]
 
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/NormalNpcMovement.gd" id="1_s0j2i"]
 [ext_resource type="SpriteFrames" uid="uid://cy2v5wou6pwdm" path="res://Assets/Animations/AncianaInofensiva/AncianaInofensiva.tres" id="2_xfohl"]
+[ext_resource type="AudioStream" uid="uid://dy8jp77l7dddg" path="res://Assets/Sound/SFX/Choques/Crash1.wav" id="3_gv0cl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hgwgr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vtcta"]
 
-[node name="ViejaNpc" type="CharacterBody2D"]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_01pr7"]
+random_pitch = 1.2
+streams_count = 1
+stream_0/stream = ExtResource("3_gv0cl")
+stream_0/weight = 1.0
+
+[node name="ViejaNpc" type="CharacterBody2D" node_paths=PackedStringArray("deathSound")]
 position = Vector2(249, 76)
 script = ExtResource("1_s0j2i")
 speed = 150.0
 npcType = 2
+deathSound = NodePath("DeathSound")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -25,5 +33,8 @@ sprite_frames = ExtResource("2_xfohl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_vtcta")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_01pr7")
 
 [connection signal="body_entered" from="Area2D" to="." method="on_collision"]
