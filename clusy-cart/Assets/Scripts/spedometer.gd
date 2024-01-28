@@ -3,6 +3,7 @@ extends Control
 @export var Rect : Control
 @export var MinAngle : float
 @export var MaxAngle : float
+@export var MaxAngleRev : float
 
 
 func _ready():
@@ -26,7 +27,7 @@ func _process(delta):
 	var deg : float
 	
 	if(Globals.ThePlayer.reverse):
-		deg = lerp(MinAngle + 360, MaxAngle, speed / Globals.ThePlayer.max_speed_reverse)
+		deg = lerp(MinAngle, MaxAngleRev, speed / Globals.ThePlayer.max_speed_reverse)
 		pass
 	else:
 		deg = lerp(MinAngle, MaxAngle, speed / 550)
@@ -34,6 +35,6 @@ func _process(delta):
 		
 	Rect.rotation_degrees = deg
 	
-	print("speed: {0} || angle: {1}".format([speed, deg]))
+	#print("speed: {0} || angle: {1}".format([speed, deg]))
 	
 	pass

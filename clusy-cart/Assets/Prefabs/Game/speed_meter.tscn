@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c57gjs6f7y1rs"]
+[gd_scene load_steps=4 format=3 uid="uid://c57gjs6f7y1rs"]
 
-[ext_resource type="Texture2D" uid="uid://d1476h2y35as0" path="res://Assets/Sprites/MainMenu/LogoFreestylers.png" id="1_fnpr3"]
+[ext_resource type="Texture2D" uid="uid://balttk4nxri3v" path="res://Assets/Sprites/UI/Velocimetro.png" id="1_mfp35"]
 [ext_resource type="Script" path="res://Assets/Scripts/spedometer.gd" id="2_gwepd"]
+[ext_resource type="Texture2D" uid="uid://bghh2dblur5ui" path="res://Assets/Sprites/UI/Aguja.png" id="3_j58gx"]
 
 [node name="speed meter" type="TextureRect" node_paths=PackedStringArray("Rect")]
 anchors_preset = -1
@@ -10,25 +11,25 @@ anchor_right = 0.328
 anchor_bottom = 1.0
 offset_right = 0.159973
 grow_vertical = 0
-texture = ExtResource("1_fnpr3")
+texture = ExtResource("1_mfp35")
 stretch_mode = 5
 script = ExtResource("2_gwepd")
 Rect = NodePath("speed stick thing")
-MinAngle = -231.0
-MaxAngle = 38.2
+MinAngle = -50.0
+MaxAngle = 50.0
+MaxAngleRev = -110.0
 metadata/_edit_use_anchors_ = true
 
-[node name="speed stick thing" type="ColorRect" parent="."]
+[node name="speed stick thing" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.77181
-anchor_bottom = 0.524191
-offset_right = -0.160019
-offset_bottom = -0.160019
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 11.0
+offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 1.25838
-pivot_offset = Vector2(0, 5)
-metadata/_edit_use_anchors_ = true
+rotation = -1.91986
+pivot_offset = Vector2(207.85, 317.23)
+texture = ExtResource("3_j58gx")
+stretch_mode = 5
