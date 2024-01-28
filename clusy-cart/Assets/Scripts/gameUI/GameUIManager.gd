@@ -29,3 +29,7 @@ func gameOver(dead : bool):
 	GameOverMenu.TurnOn(dead)
 	get_tree().paused = true
 	pass
+	
+func menu():
+	get_tree().root.get_node("SceneManager").backToMenu()
+	pass

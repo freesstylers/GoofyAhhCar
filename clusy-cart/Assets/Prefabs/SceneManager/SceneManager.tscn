@@ -47,12 +47,14 @@ sampling_rate = 48000.0
 packet_sequence = SubResource("OggPacketSequence_p5rrj")
 
 [node name="SceneManager" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_d07kg")
 level1 = ExtResource("2_bd3ns")
 level2 = ExtResource("3_utxg5")
 mainMenu = ExtResource("1_3ccln")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+process_mode = 1
 position = Vector2(640, 360)
 scale = Vector2(2.666, 2.666)
 sprite_frames = SubResource("SpriteFrames_vnqq6")
@@ -60,10 +62,13 @@ autoplay = "default"
 frame_progress = 0.656875
 
 [node name="CurrentScene" type="Node2D" parent="."]
+process_mode = 1
 
 [node name="MainMenu" parent="CurrentScene" instance=ExtResource("1_3ccln")]
 
 [node name="TransitionScreen" parent="." instance=ExtResource("1_glc8e")]
+process_mode = 1
 
 [node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 1
 stream = SubResource("AudioStreamOggVorbis_paxnb")
