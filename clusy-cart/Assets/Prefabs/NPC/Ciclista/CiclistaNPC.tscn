@@ -44,7 +44,7 @@ stream_8/weight = 1.0
 stream_9/stream = ExtResource("14_8pwux")
 stream_9/weight = 1.0
 
-[node name="CiclistaNpc" type="CharacterBody2D" node_paths=PackedStringArray("DeathTrigger")]
+[node name="CiclistaNpc" type="CharacterBody2D" node_paths=PackedStringArray("deathSound", "DeathTrigger")]
 z_index = 1
 position = Vector2(442, 191)
 rotation = 1.5708
