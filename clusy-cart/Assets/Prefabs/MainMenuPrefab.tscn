@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://ccsfly34nw0wv" path="res://Assets/Themes/MainMenuTheme.tres" id="1_hmyp4"]
 [ext_resource type="Script" path="res://Assets/Scripts/MainMenuScript.gd" id="2_12wsh"]
-[ext_resource type="SpriteFrames" uid="uid://b4o4idok2krco" path="res://Assets/Sprites/BG/BackgroundAnimation.tres" id="3_7cwp0"]
+[ext_resource type="Texture2D" uid="uid://b1l724au31ru4" path="res://Assets/Sprites/BackgroundMenu.png" id="3_fsus5"]
 [ext_resource type="Theme" uid="uid://dg651pgtwypi2" path="res://Assets/Themes/ImgButton.tres" id="4_n67yd"]
 [ext_resource type="Texture2D" uid="uid://d1476h2y35as0" path="res://Assets/Sprites/MainMenu/LogoFreestylers.png" id="5_s57c6"]
 [ext_resource type="Texture2D" uid="uid://blkf47ej3kxja" path="res://Assets/Sprites/LogoDGT.png" id="7_3syl5"]
@@ -22,12 +22,14 @@ grow_vertical = 2
 theme = ExtResource("1_hmyp4")
 script = ExtResource("2_12wsh")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(639.92, 640.045)
-scale = Vector2(2.66633, 4.74041)
-sprite_frames = ExtResource("3_7cwp0")
-autoplay = "default"
-frame_progress = 0.656875
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_fsus5")
 
 [node name="MainButtonContainer" type="Control" parent="."]
 layout_mode = 1
