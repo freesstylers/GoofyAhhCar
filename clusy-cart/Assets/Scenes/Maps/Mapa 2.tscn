@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cx4xahm8ijcgd"]
+[gd_scene load_steps=13 format=3 uid="uid://cx4xahm8ijcgd"]
 
 [ext_resource type="Texture2D" uid="uid://c6s658tlwbfog" path="res://Assets/Sprites/Tileset/Tileset.png" id="1_gwyh6"]
 [ext_resource type="Script" path="res://Assets/Scripts/Spawner.gd" id="2_4kscq"]
 [ext_resource type="PackedScene" uid="uid://cjpv8shu8ggj6" path="res://Assets/Prefabs/NPC/Ciclista/CiclistaNPC.tscn" id="3_bth6n"]
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/PointsBehaviour.gd" id="4_11yih"]
+[ext_resource type="PackedScene" uid="uid://dw4basda8fkct" path="res://Assets/Prefabs/NPC/Perro/PerroNPC.tscn" id="4_67bkb"]
 [ext_resource type="PackedScene" uid="uid://csms6l2yxn245" path="res://Assets/Scenes/Player.tscn" id="4_vlnr4"]
 [ext_resource type="PackedScene" uid="uid://cokidu12u7300" path="res://Assets/Prefabs/NPC/NormalNpc.tscn" id="5_wqlj1"]
 [ext_resource type="PackedScene" uid="uid://ce4pc01ywv3oi" path="res://Assets/Prefabs/NPC/Vieja/ViejaNPC.tscn" id="6_ejfu6"]
@@ -619,278 +620,251 @@ layer_2/tile_data = PackedInt32Array(-393198, 393216, 17, -327660, 393216, 17, -
 [node name="Spawner" type="Node2D" parent="SpawnersCarretera"]
 position = Vector2(97, -39)
 script = ExtResource("2_4kscq")
-SpawnableNPC = Array[PackedScene]([ExtResource("3_bth6n")])
+SpawnableNPC = Array[PackedScene]([ExtResource("3_bth6n"), ExtResource("4_67bkb")])
 type = 1
 
 [node name="PointsStacker" type="Node" parent="SpawnersCarretera/Spawner"]
 script = ExtResource("4_11yih")
 
 [node name="Points0" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker"]
-position = Vector2(333, 873)
+position = Vector2(3270, -715)
 
 [node name="Points1" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker"]
-position = Vector2(514, 873)
+position = Vector2(3270, -1105)
 
 [node name="Points2" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker"]
-position = Vector2(514, 749)
+position = Vector2(1550, -1105)
 
 [node name="Points3" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker"]
-position = Vector2(329, 749)
+position = Vector2(1550, -656)
 
-[node name="PointsStacker2" type="Node" parent="SpawnersCarretera/Spawner"]
-script = ExtResource("4_11yih")
+[node name="Points4" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker"]
+position = Vector2(2359, -656)
 
-[node name="Points0" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker2"]
-position = Vector2(352, 601)
+[node name="Points5" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker"]
+position = Vector2(2359, -141)
 
-[node name="Points1" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker2"]
-position = Vector2(352, 445)
+[node name="Points6" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker"]
+position = Vector2(3120, -141)
 
-[node name="Points2" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker2"]
-position = Vector2(187, 445)
+[node name="Points7" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker"]
+position = Vector2(3120, -405)
 
-[node name="Points3" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker2"]
-position = Vector2(187, 597)
-
-[node name="PointsStacker3" type="Node" parent="SpawnersCarretera/Spawner"]
-script = ExtResource("4_11yih")
-
-[node name="Points1" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker3"]
-position = Vector2(250, 332)
-
-[node name="Points2" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker3"]
-position = Vector2(250, 255)
-
-[node name="Points3" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker3"]
-position = Vector2(119, 255)
-
-[node name="Points4" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker3"]
-position = Vector2(119, 331)
-
-[node name="PointsStacker4" type="Node" parent="SpawnersCarretera/Spawner"]
-script = ExtResource("4_11yih")
-
-[node name="Points1" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker4"]
-position = Vector2(388, 253)
-
-[node name="Points2" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker4"]
-position = Vector2(467, 253)
-
-[node name="Points3" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker4"]
-position = Vector2(467, 407)
-
-[node name="Points4" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker4"]
-position = Vector2(599, 407)
-
-[node name="Points5" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker4"]
-position = Vector2(599, 118)
-
-[node name="Points6" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker4"]
-position = Vector2(394, 118)
-
-[node name="PointsStacker5" type="Node" parent="SpawnersCarretera/Spawner"]
-script = ExtResource("4_11yih")
-
-[node name="Points1" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker5"]
-position = Vector2(629, 233)
-
-[node name="Points2" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker5"]
-position = Vector2(629, 345)
-
-[node name="Points3" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker5"]
-position = Vector2(800, 345)
-
-[node name="Points4" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker5"]
-position = Vector2(800, 471)
-
-[node name="Points5" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker5"]
-position = Vector2(998, 471)
-
-[node name="Points6" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker5"]
-position = Vector2(998, 379)
-
-[node name="Points7" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker5"]
-position = Vector2(1060, 379)
-
-[node name="Points8" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker5"]
-position = Vector2(1060, 236)
-
-[node name="PointsStacker6" type="Node" parent="SpawnersCarretera/Spawner"]
-script = ExtResource("4_11yih")
-
-[node name="Points1" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
-position = Vector2(803, 620)
-
-[node name="Points2" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
-position = Vector2(1031, 620)
-
-[node name="Points3" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
-position = Vector2(1031, 512)
-
-[node name="Points4" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
-position = Vector2(968, 512)
-
-[node name="Points5" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
-position = Vector2(968, 444)
-
-[node name="Points6" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
-position = Vector2(802, 444)
-
-[node name="PointsStacker7" type="Node" parent="SpawnersCarretera/Spawner"]
-script = ExtResource("4_11yih")
-
-[node name="Points0" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker7"]
-position = Vector2(88, 711)
-
-[node name="Points1" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker7"]
-position = Vector2(289, 711)
-
-[node name="Points2" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker7"]
-position = Vector2(289, 574)
-
-[node name="Points3" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker7"]
-position = Vector2(356, 574)
-
-[node name="Points4" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker7"]
-position = Vector2(356, 447)
-
-[node name="Points5" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker7"]
-position = Vector2(250, 447)
-
-[node name="Points6" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker7"]
-position = Vector2(250, 255)
-
-[node name="Points7" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker7"]
-position = Vector2(120, 255)
-
-[node name="Points8" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker7"]
-position = Vector2(120, 357)
-
-[node name="Points9" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker7"]
-position = Vector2(59, 357)
-
-[node name="Points10" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker7"]
-position = Vector2(88, 537)
-
-[node name="PointsStacker8" type="Node" parent="SpawnersCarretera/Spawner"]
-script = ExtResource("4_11yih")
-
-[node name="Points0" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker8"]
-position = Vector2(968, 533)
-
-[node name="Points1" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker8"]
-position = Vector2(1095, 533)
-
-[node name="Points2" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker8"]
-position = Vector2(1095, 381)
-
-[node name="Points3" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker8"]
-position = Vector2(972, 381)
-
-[node name="PointsStacker9" type="Node" parent="SpawnersCarretera/Spawner"]
-script = ExtResource("4_11yih")
-
-[node name="Points0" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(1059, 645)
-
-[node name="Points1" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(1059, 534)
-
-[node name="Points2" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(1119, 534)
-
-[node name="Points3" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(1119, 382)
-
-[node name="Points4" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(1031, 382)
-
-[node name="Points5" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(1031, 206)
-
-[node name="Points6" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(601, 206)
-
-[node name="Points7" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(601, 121)
-
-[node name="Points8" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(365, 121)
-
-[node name="Points9" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(365, 280)
-
-[node name="Points10" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(123, 280)
-
-[node name="Points11" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(123, 360)
-
-[node name="Points12" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(289, 360)
-
-[node name="Points13" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(289, 455)
-
-[node name="Points14" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(186, 455)
-
-[node name="Points15" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(186, 598)
-
-[node name="Points16" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(289, 598)
-
-[node name="Points17" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(289, 772)
-
-[node name="Points18" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(353, 772)
-
-[node name="Points19" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(353, 872)
-
-[node name="Points20" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(516, 872)
-
-[node name="Points21" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(516, 678)
-
-[node name="Points22" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(792, 678)
-
-[node name="Points23" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(792, 466)
-
-[node name="Points24" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(967, 466)
-
-[node name="Points25" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(967, 642)
-
-[node name="Points26" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
-position = Vector2(967, 642)
+[node name="Points8" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker"]
+position = Vector2(3288, -405)
 
 [node name="PointsStacker10" type="Node" parent="SpawnersCarretera/Spawner"]
 script = ExtResource("4_11yih")
 
 [node name="Points0" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker10"]
-position = Vector2(773, 654)
+position = Vector2(2356, 670)
 
 [node name="Points1" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker10"]
-position = Vector2(773, 447)
+position = Vector2(3286, 670)
 
 [node name="Points2" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker10"]
-position = Vector2(603, 447)
+position = Vector2(3286, 111)
 
 [node name="Points3" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker10"]
-position = Vector2(603, 382)
+position = Vector2(3013, 111)
 
 [node name="Points4" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker10"]
-position = Vector2(516, 382)
+position = Vector2(3013, -146)
 
 [node name="Points5" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker10"]
-position = Vector2(516, 652)
+position = Vector2(2359, -146)
+
+[node name="PointsStacker9" type="Node" parent="SpawnersCarretera/Spawner"]
+script = ExtResource("4_11yih")
+
+[node name="Points0" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
+position = Vector2(134, -483)
+
+[node name="Points1" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
+position = Vector2(134, -913)
+
+[node name="Points2" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
+position = Vector2(-376, -913)
+
+[node name="Points3" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker9"]
+position = Vector2(-376, -483)
+
+[node name="PointsStacker8" type="Node" parent="SpawnersCarretera/Spawner"]
+script = ExtResource("4_11yih")
+
+[node name="Points0" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker8"]
+position = Vector2(2341, 777)
+
+[node name="Points1" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker8"]
+position = Vector2(2341, -547)
+
+[node name="Points2" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker8"]
+position = Vector2(1566, -547)
+
+[node name="Points3" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker8"]
+position = Vector2(1566, -287)
+
+[node name="Points4" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker8"]
+position = Vector2(1096, -287)
+
+[node name="Points5" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker8"]
+position = Vector2(1096, 805)
+
+[node name="PointsStacker7" type="Node" parent="SpawnersCarretera/Spawner"]
+script = ExtResource("4_11yih")
+
+[node name="Points0" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker7"]
+position = Vector2(129, 926)
+
+[node name="Points1" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker7"]
+position = Vector2(129, 477)
+
+[node name="Points2" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker7"]
+position = Vector2(-120, 477)
+
+[node name="Points3" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker7"]
+position = Vector2(-120, 213)
+
+[node name="Points4" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker7"]
+position = Vector2(-505, 213)
+
+[node name="Points5" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker7"]
+position = Vector2(-505, 908)
+
+[node name="PointsStacker6" type="Node" parent="SpawnersCarretera/Spawner"]
+script = ExtResource("4_11yih")
+
+[node name="Points0" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
+position = Vector2(-129, 478)
+
+[node name="Points1" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
+position = Vector2(131, 478)
+
+[node name="Points2" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
+position = Vector2(131, 1188)
+
+[node name="Points3" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
+position = Vector2(1212, 1188)
+
+[node name="Points4" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
+position = Vector2(1212, 683)
+
+[node name="Points5" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
+position = Vector2(3380, 683)
+
+[node name="Points6" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
+position = Vector2(3380, 222)
+
+[node name="Points7" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
+position = Vector2(3629, 222)
+
+[node name="Points8" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
+position = Vector2(3629, -291)
+
+[node name="Points9" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
+position = Vector2(3274, -291)
+
+[node name="Points10" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
+position = Vector2(3274, -1005)
+
+[node name="Points11" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
+position = Vector2(1533, -1005)
+
+[node name="Points12" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
+position = Vector2(1533, -1462)
+
+[node name="Points13" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
+position = Vector2(597, -1462)
+
+[node name="Points14" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
+position = Vector2(597, -809)
+
+[node name="Points15" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
+position = Vector2(-388, -809)
+
+[node name="Points16" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
+position = Vector2(-388, -496)
+
+[node name="Points17" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
+position = Vector2(-633, -496)
+
+[node name="Points18" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
+position = Vector2(-633, 206)
+
+[node name="Points19" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker6"]
+position = Vector2(-112, 206)
+
+[node name="PointsStacker5" type="Node" parent="SpawnersCarretera/Spawner"]
+script = ExtResource("4_11yih")
+
+[node name="Points0" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker5"]
+position = Vector2(1561, -296)
+
+[node name="Points1" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker5"]
+position = Vector2(1561, -1284)
+
+[node name="Points2" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker5"]
+position = Vector2(581, -1284)
+
+[node name="Points3" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker5"]
+position = Vector2(581, -803)
+
+[node name="Points4" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker5"]
+position = Vector2(1005, -803)
+
+[node name="Points5" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker5"]
+position = Vector2(1005, -306)
+
+[node name="PointsStacker4" type="Node" parent="SpawnersCarretera/Spawner"]
+script = ExtResource("4_11yih")
+
+[node name="Points0" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker4"]
+position = Vector2(3014, 205)
+
+[node name="Points1" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker4"]
+position = Vector2(3627, 205)
+
+[node name="Points2" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker4"]
+position = Vector2(3627, -311)
+
+[node name="Points3" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker4"]
+position = Vector2(3012, -311)
+
+[node name="PointsStacker3" type="Node" parent="SpawnersCarretera/Spawner"]
+script = ExtResource("4_11yih")
+
+[node name="Points0" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker3"]
+position = Vector2(448, 1557)
+
+[node name="Points1" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker3"]
+position = Vector2(1190, 1557)
+
+[node name="Points2" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker3"]
+position = Vector2(1190, 1191)
+
+[node name="Points3" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker3"]
+position = Vector2(1788, 1191)
+
+[node name="Points4" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker3"]
+position = Vector2(1788, 1074)
+
+[node name="Points5" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker3"]
+position = Vector2(442, 1074)
+
+[node name="PointsStacker2" type="Node" parent="SpawnersCarretera/Spawner"]
+script = ExtResource("4_11yih")
+
+[node name="Points0" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker2"]
+position = Vector2(568, 477)
+
+[node name="Points1" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker2"]
+position = Vector2(568, -154)
+
+[node name="Points2" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker2"]
+position = Vector2(-20, -154)
+
+[node name="Points3" type="Node2D" parent="SpawnersCarretera/Spawner/PointsStacker2"]
+position = Vector2(-20, 463)
 
 [node name="SpawnersPeatones" type="Node2D" parent="."]
 
@@ -899,179 +873,304 @@ position = Vector2(97, -39)
 script = ExtResource("2_4kscq")
 SpawnableNPC = Array[PackedScene]([ExtResource("5_wqlj1"), ExtResource("6_ejfu6"), ExtResource("7_sk0yo"), ExtResource("8_wvgs7")])
 
-[node name="PointsStacker" type="Node" parent="SpawnersPeatones/Spawner2"]
+[node name="PointsStacker15" type="Node" parent="SpawnersPeatones/Spawner2"]
 script = ExtResource("4_11yih")
 
-[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker"]
-position = Vector2(472, 729)
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker15"]
+position = Vector2(589, -1597)
 
-[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker"]
-position = Vector2(472, 554)
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker15"]
+position = Vector2(1253, -1597)
 
-[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker"]
-position = Vector2(374, 554)
-
-[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker"]
-position = Vector2(374, 618)
-
-[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker"]
-position = Vector2(309, 618)
-
-[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker"]
-position = Vector2(309, 730)
-
-[node name="PointsStacker2" type="Node" parent="SpawnersPeatones/Spawner2"]
+[node name="PointsStacker16" type="Node" parent="SpawnersPeatones/Spawner2"]
 script = ExtResource("4_11yih")
 
-[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker2"]
-position = Vector2(162, 490)
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker16"]
+position = Vector2(3226, -183)
 
-[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker2"]
-position = Vector2(162, 425)
+[node name="Points8" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker16"]
+position = Vector2(3429, -183)
 
-[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker2"]
-position = Vector2(228, 425)
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker16"]
+position = Vector2(3226, 14)
 
-[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker2"]
-position = Vector2(228, 381)
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker16"]
+position = Vector2(3436, 14)
 
-[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker2"]
-position = Vector2(102, 381)
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker16"]
+position = Vector2(3436, -154)
 
-[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker2"]
-position = Vector2(102, 489)
+[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker16"]
+position = Vector2(3728, -154)
 
-[node name="PointsStacker3" type="Node" parent="SpawnersPeatones/Spawner2"]
+[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker16"]
+position = Vector2(3728, -27)
+
+[node name="Points7" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker16"]
+position = Vector2(3433, -27)
+
+[node name="PointsStacker14" type="Node" parent="SpawnersPeatones/Spawner2"]
 script = ExtResource("4_11yih")
 
-[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker3"]
-position = Vector2(787, 298)
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker14"]
+position = Vector2(2551, 772)
 
-[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker3"]
-position = Vector2(787, 252)
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker14"]
+position = Vector2(3476, 772)
 
-[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker3"]
-position = Vector2(645, 252)
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker14"]
+position = Vector2(3476, 291)
 
-[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker3"]
-position = Vector2(645, 297)
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker14"]
+position = Vector2(3745, 291)
 
-[node name="PointsStacker4" type="Node" parent="SpawnersPeatones/Spawner2"]
+[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker14"]
+position = Vector2(3745, -456)
+
+[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker14"]
+position = Vector2(3745, 291)
+
+[node name="Points7" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker14"]
+position = Vector2(3476, 291)
+
+[node name="Points8" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker14"]
+position = Vector2(3476, 772)
+
+[node name="PointsStacker13" type="Node" parent="SpawnersPeatones/Spawner2"]
 script = ExtResource("4_11yih")
 
-[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker4"]
-position = Vector2(853, 680)
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker13"]
+position = Vector2(2875, -742)
 
-[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker4"]
-position = Vector2(1061, 680)
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker13"]
+position = Vector2(2875, -526)
 
-[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker4"]
-position = Vector2(1061, 670)
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker13"]
+position = Vector2(3195, -526)
 
-[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker4"]
-position = Vector2(853, 670)
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker13"]
+position = Vector2(3195, -730)
 
-[node name="PointsStacker5" type="Node" parent="SpawnersPeatones/Spawner2"]
+[node name="PointsStacker12" type="Node" parent="SpawnersPeatones/Spawner2"]
 script = ExtResource("4_11yih")
 
-[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker5"]
-position = Vector2(853, 680)
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker12"]
+position = Vector2(2555, 796)
 
-[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker5"]
-position = Vector2(1061, 680)
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker12"]
+position = Vector2(3381, 796)
 
-[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker5"]
-position = Vector2(1061, 670)
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker12"]
+position = Vector2(3381, 749)
 
-[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker5"]
-position = Vector2(965, 670)
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker12"]
+position = Vector2(3006, 749)
 
-[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker5"]
-position = Vector2(965, 559)
+[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker12"]
+position = Vector2(3006, 298)
 
-[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker5"]
-position = Vector2(951, 559)
+[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker12"]
+position = Vector2(2943, 298)
 
-[node name="Points7" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker5"]
-position = Vector2(951, 667)
+[node name="Points7" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker12"]
+position = Vector2(2943, 747)
 
-[node name="Points8" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker5"]
-position = Vector2(853, 667)
+[node name="Points8" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker12"]
+position = Vector2(2564, 747)
 
-[node name="PointsStacker6" type="Node" parent="SpawnersPeatones/Spawner2"]
+[node name="PointsStacker11" type="Node" parent="SpawnersPeatones/Spawner2"]
 script = ExtResource("4_11yih")
 
-[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker6"]
-position = Vector2(377, 488)
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker11"]
+position = Vector2(2456, 53)
 
-[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker6"]
-position = Vector2(468, 488)
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker11"]
+position = Vector2(2456, 461)
 
-[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker6"]
-position = Vector2(468, 429)
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker11"]
+position = Vector2(2880, 461)
 
-[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker6"]
-position = Vector2(419, 429)
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker11"]
+position = Vector2(2880, 57)
 
-[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker6"]
-position = Vector2(419, 324)
-
-[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker6"]
-position = Vector2(502, 324)
-
-[node name="Points7" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker6"]
-position = Vector2(502, 358)
-
-[node name="Points8" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker6"]
-position = Vector2(551, 358)
-
-[node name="Points9" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker6"]
-position = Vector2(551, 428)
-
-[node name="Points10" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker6"]
-position = Vector2(377, 428)
-
-[node name="PointsStacker7" type="Node" parent="SpawnersPeatones/Spawner2"]
+[node name="PointsStacker10" type="Node" parent="SpawnersPeatones/Spawner2"]
 script = ExtResource("4_11yih")
 
-[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker7"]
-position = Vector2(647, 425)
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker10"]
+position = Vector2(1720, -738)
 
-[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker7"]
-position = Vector2(756, 425)
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker10"]
+position = Vector2(1720, -913)
 
-[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker7"]
-position = Vector2(756, 365)
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker10"]
+position = Vector2(2300, -913)
 
-[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker7"]
-position = Vector2(645, 365)
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker10"]
+position = Vector2(2300, -667)
+
+[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker10"]
+position = Vector2(1729, -667)
+
+[node name="PointsStacker9" type="Node" parent="SpawnersPeatones/Spawner2"]
+script = ExtResource("4_11yih")
+
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker9"]
+position = Vector2(1293, -220)
+
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker9"]
+position = Vector2(1293, 578)
+
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker9"]
+position = Vector2(2130, 578)
+
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker9"]
+position = Vector2(2130, 75)
+
+[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker9"]
+position = Vector2(1471, 75)
+
+[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker9"]
+position = Vector2(1471, -216)
 
 [node name="PointsStacker8" type="Node" parent="SpawnersPeatones/Spawner2"]
 script = ExtResource("4_11yih")
 
 [node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker8"]
-position = Vector2(562, 622)
+position = Vector2(704, 608)
 
 [node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker8"]
-position = Vector2(632, 622)
+position = Vector2(704, 1363)
 
 [node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker8"]
-position = Vector2(632, 633)
+position = Vector2(1000, 1363)
 
 [node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker8"]
-position = Vector2(599, 633)
+position = Vector2(1000, 1263)
 
 [node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker8"]
-position = Vector2(599, 682)
+position = Vector2(701, 1263)
 
-[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker8"]
-position = Vector2(599, 630)
+[node name="PointsStacker7" type="Node" parent="SpawnersPeatones/Spawner2"]
+script = ExtResource("4_11yih")
 
-[node name="Points7" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker8"]
-position = Vector2(563, 630)
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker7"]
+position = Vector2(-212, 23)
+
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker7"]
+position = Vector2(-212, -229)
+
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker7"]
+position = Vector2(48, -229)
+
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker7"]
+position = Vector2(48, -410)
+
+[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker7"]
+position = Vector2(-444, -410)
+
+[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker7"]
+position = Vector2(-444, 26)
+
+[node name="PointsStacker6" type="Node" parent="SpawnersPeatones/Spawner2"]
+script = ExtResource("4_11yih")
+
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker6"]
+position = Vector2(648, 31)
+
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker6"]
+position = Vector2(1011, 31)
+
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker6"]
+position = Vector2(1011, -208)
+
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker6"]
+position = Vector2(821, -208)
+
+[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker6"]
+position = Vector2(821, -706)
+
+[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker6"]
+position = Vector2(414, -706)
+
+[node name="Points7" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker6"]
+position = Vector2(414, -249)
+
+[node name="Points8" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker6"]
+position = Vector2(648, -249)
+
+[node name="PointsStacker5" type="Node" parent="SpawnersPeatones/Spawner2"]
+script = ExtResource("4_11yih")
+
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker5"]
+position = Vector2(-615, 475)
+
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker5"]
+position = Vector2(-615, 1028)
+
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker5"]
+position = Vector2(-136, 738)
+
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker5"]
+position = Vector2(-312, 738)
+
+[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker5"]
+position = Vector2(-312, 492)
+
+[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker5"]
+position = Vector2(-312, 486)
+
+[node name="PointsStacker4" type="Node" parent="SpawnersPeatones/Spawner2"]
+script = ExtResource("4_11yih")
+
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker4"]
+position = Vector2(46, 731)
+
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker4"]
+position = Vector2(46, 487)
+
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker4"]
+position = Vector2(-308, 487)
+
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker4"]
+position = Vector2(-308, 731)
+
+[node name="PointsStacker3" type="Node" parent="SpawnersPeatones/Spawner2"]
+script = ExtResource("4_11yih")
+
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker3"]
+position = Vector2(1308, 1561)
+
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker3"]
+position = Vector2(1308, 1282)
+
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker3"]
+position = Vector2(1878, 1282)
+
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker3"]
+position = Vector2(1878, 1082)
+
+[node name="Points5" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker3"]
+position = Vector2(1878, 1282)
+
+[node name="Points6" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker3"]
+position = Vector2(1308, 1282)
+
+[node name="PointsStacker2" type="Node" parent="SpawnersPeatones/Spawner2"]
+script = ExtResource("4_11yih")
+
+[node name="Points1" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker2"]
+position = Vector2(393, 976)
+
+[node name="Points2" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker2"]
+position = Vector2(1014, 976)
+
+[node name="Points3" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker2"]
+position = Vector2(1014, 547)
+
+[node name="Points4" type="Node2D" parent="SpawnersPeatones/Spawner2/PointsStacker2"]
+position = Vector2(387, 547)
 
 [node name="Player" parent="." instance=ExtResource("4_vlnr4")]
 position = Vector2(-434, 138)
-drag = -0.001
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
