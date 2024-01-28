@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://cokidu12u7300"]
 
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/NormalNpcMovement.gd" id="1_hrrqi"]
-[ext_resource type="Texture2D" uid="uid://xwabevdjnvbg" path="res://Assets/Sprites/Paisano6.png" id="1_tp004"]
+[ext_resource type="SpriteFrames" uid="uid://bsvod3bhqhp0" path="res://Assets/Animations/Paisano/Paisano.tres" id="2_qajmk"]
 [ext_resource type="PackedScene" uid="uid://xxk7y023mwn4" path="res://Assets/Prefabs/NPC/DeathParticles.tscn" id="2_v4uem"]
 [ext_resource type="AudioStream" uid="uid://dvpjf0kobqus2" path="res://Assets/Sound/SFX/NPCs/Bonk.wav" id="4_eldny"]
 [ext_resource type="AudioStream" uid="uid://dhbftxtsoudv2" path="res://Assets/Sound/SFX/NPCs/Bowang.wav" id="5_81err"]
@@ -54,9 +54,10 @@ DeathTrigger = NodePath("Area2D/CollisionShape2D")
 shape = SubResource("CircleShape2D_1k27a")
 disabled = true
 
-[node name="AnimatedSprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
-texture = ExtResource("1_tp004")
+sprite_frames = ExtResource("2_qajmk")
+autoplay = "default"
 
 [node name="Area2D" type="Area2D" parent="."]
 

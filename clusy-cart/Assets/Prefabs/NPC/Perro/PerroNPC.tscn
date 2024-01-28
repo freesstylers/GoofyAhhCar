@@ -59,6 +59,7 @@ disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
 sprite_frames = ExtResource("2_aht12")
+autoplay = "default"
 
 [node name="Area2D" type="Area2D" parent="."]
 rotation = 1.5708
