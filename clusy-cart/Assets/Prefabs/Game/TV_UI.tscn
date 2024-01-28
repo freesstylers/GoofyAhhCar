@@ -74,7 +74,7 @@ animations = [{
 anchors_preset = -1
 anchor_right = 0.428125
 anchor_bottom = 0.296875
-pivot_offset = Vector2(274, 190)
+pivot_offset = Vector2(154.125, 106.875)
 texture = ExtResource("1_6tnxy")
 expand_mode = 1
 script = ExtResource("2_2w2fi")
@@ -82,7 +82,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Monkey" type="AnimatedSprite2D" parent="."]
 z_index = -1
-position = Vector2(226, 186)
-scale = Vector2(0.7, 0.582635)
+position = Vector2(128, 105)
+scale = Vector2(0.404, 0.336264)
 sprite_frames = SubResource("SpriteFrames_dxsxa")
 script = ExtResource("10_x0qgq")

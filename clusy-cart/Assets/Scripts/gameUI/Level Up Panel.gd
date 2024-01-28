@@ -4,11 +4,15 @@ enum Skills { MAX_SPEED, ACCEL, HANDLING, HP }
 
 @export var hpButton : Button
 
-func WakeUp():
+var ColorFade : Control
+
+func WakeUp(fade):
 	hpButton.visible = Globals.ThePlayer.currentLife < Globals.MAX_PLAYER_LIFE
+	ColorFade = fade
 	pass
 
 func buttonPress(btn : int):
+	get_tree().root.get_node("SceneManager/ButtonSFX").play()
 	
 	var s : Skills
 	s = btn
@@ -31,4 +35,5 @@ func buttonPress(btn : int):
 	
 	get_tree().paused = false
 	visible = false
+	ColorFade.visible = false
 	pass

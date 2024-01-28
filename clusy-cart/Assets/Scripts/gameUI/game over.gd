@@ -33,4 +33,5 @@ func TurnOn(dead : bool):
 	
 func menu():
 	get_tree().root.get_node("SceneManager").backToMenu()
+	
 	pass

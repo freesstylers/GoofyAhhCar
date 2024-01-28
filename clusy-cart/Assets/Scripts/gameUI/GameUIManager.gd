@@ -2,6 +2,7 @@ extends Control
 
 @export var LevelUpMenu : Control
 @export var GameOverMenu : Control
+@export var ColorFade : Control
 
 
 # Called when the node enters the scene tree for the first time.
@@ -9,6 +10,8 @@ func _ready():
 	Globals.level_up.connect(levelUp)
 	Globals.game_over.connect(gameOver)
 	LevelUpMenu.visible = false
+	GameOverMenu.visible = false
+	ColorFade.visible = false
 	pass # Replace with function body.
 
 
@@ -18,16 +21,16 @@ func _input(event):
 		#Globals.hp_change.emit(-100)
 	pass
 	
-	
-	
 func levelUp():
 	LevelUpMenu.visible = true
-	LevelUpMenu.WakeUp()
+	LevelUpMenu.WakeUp(ColorFade)
 	get_tree().paused = true
+	ColorFade.visible = true
 	pass
 	
 func gameOver(dead : bool):
 	GameOverMenu.visible = true
 	GameOverMenu.TurnOn(dead)
 	get_tree().paused = true
+	ColorFade.visible = true
 	pass

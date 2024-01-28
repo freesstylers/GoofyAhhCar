@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://ccsfly34nw0wv" path="res://Assets/Themes/MainMenuTheme.tres" id="1_hmyp4"]
 [ext_resource type="Script" path="res://Assets/Scripts/MainMenuScript.gd" id="2_12wsh"]
-[ext_resource type="Texture2D" uid="uid://b1l724au31ru4" path="res://Assets/Sprites/BackgroundMenu.png" id="3_fsus5"]
+[ext_resource type="Texture2D" uid="uid://v3y17xiiwxpj" path="res://Assets/Sprites/BackgroundMenu.png" id="3_fsus5"]
 [ext_resource type="Theme" uid="uid://dg651pgtwypi2" path="res://Assets/Themes/ImgButton.tres" id="4_n67yd"]
 [ext_resource type="Texture2D" uid="uid://d1476h2y35as0" path="res://Assets/Sprites/MainMenu/LogoFreestylers.png" id="5_s57c6"]
 [ext_resource type="Texture2D" uid="uid://blkf47ej3kxja" path="res://Assets/Sprites/LogoDGT.png" id="7_3syl5"]
@@ -42,8 +42,8 @@ grow_vertical = 2
 [node name="FreeStylers" type="Button" parent="MainButtonContainer"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.680469
-anchor_top = 0.747656
+anchor_left = 0.7625
+anchor_top = 0.8125
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 0
@@ -56,10 +56,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Twitter" type="Button" parent="MainButtonContainer"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.749963
-anchor_top = 0.56243
-anchor_right = 0.929057
-anchor_bottom = 0.741523
+anchor_left = 0.822737
+anchor_top = 0.675948
+anchor_right = 0.94946
+anchor_bottom = 0.80267
 offset_right = -0.240005
 offset_bottom = -0.240005
 size_flags_horizontal = 0
@@ -72,10 +72,10 @@ metadata/_edit_use_anchors_ = true
 [node name="jam" type="Button" parent="MainButtonContainer"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.00930117
-anchor_top = 0.812413
-anchor_right = 0.274332
-anchor_bottom = 0.991506
+anchor_left = 0.00972222
+anchor_top = 0.845833
+anchor_right = 0.226722
+anchor_bottom = 0.992
 offset_right = -0.240005
 offset_bottom = -0.240005
 size_flags_horizontal = 0
@@ -87,10 +87,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="MainButtonContainer"]
 layout_mode = 2
-offset_left = 180.0
-offset_top = 88.0
-offset_right = 1101.0
-offset_bottom = 532.0
+offset_left = 162.0
+offset_top = 51.1875
+offset_right = 560.0
+offset_bottom = 243.188
 texture = ExtResource("7_3syl5")
 stretch_mode = 5
 
@@ -106,36 +106,37 @@ offset_top = -0.440002
 offset_right = 0.319946
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 40
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="play" type="Button" parent="MainButtonContainer/MainButtonContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("9_spall")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 40
 text = "Play"
 
 [node name="tutorial" type="Button" parent="MainButtonContainer/MainButtonContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("9_spall")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 40
 text = "Tutorial
 "
 
 [node name="Credits" type="Button" parent="MainButtonContainer/MainButtonContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("9_spall")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 40
 text = "Credits"
 
 [node name="credits" type="Panel" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.221094
-anchor_top = 0.285156
-anchor_right = 0.778906
-anchor_bottom = 0.714844
+anchor_left = 0.177778
+anchor_top = 0.234722
+anchor_right = 0.822222
+anchor_bottom = 0.766667
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -157,7 +158,7 @@ alignment = 1
 [node name="Label" type="Label" parent="credits/container/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("9_spall")
-theme_override_font_sizes/font_size = 52
+theme_override_font_sizes/font_size = 32
 text = "CREDITS
 --------
 Gonzalo cidoncha - silly goofy
@@ -196,11 +197,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 142
+theme_override_font_sizes/font_size = 75
 text = "---------------------"
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="tutorial"]
 layout_mode = 1
@@ -223,7 +223,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 145
+theme_override_font_sizes/font_size = 75
 text = "TUTORIAL"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -245,7 +245,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 45
 text = "STEER:
 ACCELERATE:
 BRAKE:
@@ -259,7 +259,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 45
 text = "A/D
 W
 S
@@ -271,26 +271,27 @@ metadata/_edit_use_anchors_ = true
 [node name="TextureRect" type="TextureRect" parent="tutorial"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.523063
-anchor_right = 0.995037
-anchor_bottom = 0.639514
+anchor_left = 0.0180668
+anchor_top = 0.520267
+anchor_right = 1.30826
+anchor_bottom = 0.520267
 offset_right = 1955.88
 offset_bottom = 583.767
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(0.3336, 0.3336)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("9_4fa3o")
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="tutorial"]
 layout_mode = 2
-anchor_left = 0.0172764
-anchor_top = 0.741564
-anchor_right = 0.982724
-anchor_bottom = 0.924221
+anchor_left = 0.0180668
+anchor_top = 0.734727
+anchor_right = 0.982836
+anchor_bottom = 0.902009
 theme_override_colors/font_color = Color(0.890196, 0.0705882, 0, 1)
-theme_override_font_sizes/font_size = 62
+theme_override_font_sizes/font_size = 35
 text = "FUN IS DEAD
 BLOOD IS FUEL
 STREETS ARE FULL"
@@ -307,7 +308,7 @@ anchor_right = 0.96748
 anchor_bottom = 0.986162
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 67
+theme_override_font_sizes/font_size = 40
 text = "Close"
 metadata/_edit_use_anchors_ = true
 
@@ -322,5 +323,5 @@ autoplay = true
 [connection signal="button_down" from="MainButtonContainer/MainButtonContainer/tutorial" to="." method="_on_tutorial_button_down"]
 [connection signal="button_down" from="MainButtonContainer/MainButtonContainer/Credits" to="." method="_on_credits_button_down"]
 [connection signal="button_down" from="credits/container/VBoxContainer/CreditsBack" to="." method="_on_credits_back_button_down"]
-[connection signal="button_down" from="tutorial/CreditsBack" to="." method="_on_credits_back_button_down"]
 [connection signal="button_down" from="tutorial/CreditsBack" to="." method="_on_tutorial_back_button_down"]
+[connection signal="button_down" from="tutorial/CreditsBack" to="." method="_on_credits_back_button_down"]

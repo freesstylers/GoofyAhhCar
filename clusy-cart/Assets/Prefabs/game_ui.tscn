@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bstnh7hielj7e" path="res://Assets/Prefabs/Game/point_particle.tscn" id="10_iu3rp"]
 [ext_resource type="PackedScene" uid="uid://bste7jyrt8w8n" path="res://Assets/Prefabs/Game/TV_UI.tscn" id="11_jkdus"]
 
-[node name="Game UI" type="Control" node_paths=PackedStringArray("LevelUpMenu", "GameOverMenu")]
+[node name="Game UI" type="Control" node_paths=PackedStringArray("LevelUpMenu", "GameOverMenu", "ColorFade")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,6 +25,7 @@ theme = ExtResource("1_8o1ty")
 script = ExtResource("2_dukw8")
 LevelUpMenu = NodePath("level up menu")
 GameOverMenu = NodePath("game over")
+ColorFade = NodePath("ColorRect")
 metadata/_edit_use_anchors_ = true
 
 [node name="HP_Bar" parent="." instance=ExtResource("3_utivj")]
@@ -48,16 +49,76 @@ offset_bottom = 0.0
 theme_type_variation = &"exp"
 metadata/_edit_use_anchors_ = true
 
-[node name="speed meter" parent="." instance=ExtResource("5_fsn16")]
+[node name="speed meter2" parent="." instance=ExtResource("5_fsn16")]
 layout_mode = 1
-anchor_left = 0.79375
-anchor_top = 0.79375
-anchor_right = 0.990625
-anchor_bottom = 0.990625
-offset_right = 168.0
-offset_bottom = 168.0
+anchor_left = 0.670833
+anchor_top = 0.730556
+anchor_right = 0.998833
+anchor_bottom = 1.05868
 grow_vertical = 1
-scale = Vector2(0.6, 0.6)
+
+[node name="points" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.738889
+anchor_top = 0.0583333
+anchor_right = 0.984722
+anchor_bottom = 0.102778
+theme_override_font_sizes/font_size = 35
+text = "?????????????"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_ck5ba")
+metadata/_edit_use_anchors_ = true
+
+[node name="timer" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3625
+anchor_top = 0.0569444
+anchor_right = 0.638889
+anchor_bottom = 0.166667
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 90
+text = "00:00"
+horizontal_alignment = 1
+script = ExtResource("8_xwcvf")
+metadata/_edit_use_anchors_ = true
+
+[node name="ParticleSpawner" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.45
+anchor_top = 0.470313
+anchor_right = 0.45
+anchor_bottom = 0.470313
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_mtrn8")
+particle = ExtResource("10_iu3rp")
+metadata/_edit_use_anchors_ = true
+
+[node name="TV" parent="." instance=ExtResource("11_jkdus")]
+layout_mode = 1
+anchor_left = 0.0276997
+anchor_top = 0.799175
+anchor_right = 0.311172
+anchor_bottom = 0.995981
+offset_left = -53.9438
+offset_top = -37.4063
+offset_right = 55.9563
+offset_bottom = 38.8937
+scale = Vector2(0.65, 0.65)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.427451)
+metadata/_edit_use_anchors_ = true
 
 [node name="level up menu" parent="." instance=ExtResource("6_4cnsr")]
 visible = false
@@ -72,10 +133,10 @@ visible = false
 z_index = 70
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.209375
-anchor_top = 0.288281
-anchor_right = 0.790625
-anchor_bottom = 0.711719
+anchor_left = 0.209722
+anchor_top = 0.288889
+anchor_right = 0.791667
+anchor_bottom = 0.765278
 script = ExtResource("8_roufx")
 Title = NodePath("title")
 TotalPoints = NodePath("hb/VBoxContainer2/val 1")
@@ -94,7 +155,7 @@ anchor_top = 0.0258302
 anchor_right = 0.978495
 anchor_bottom = 0.206642
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 90
+theme_override_font_sizes/font_size = 60
 text = "Level up!"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -108,7 +169,7 @@ anchor_right = 0.715054
 anchor_bottom = 0.966789
 offset_bottom = -1.0
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 41
+theme_override_font_sizes/font_size = 25
 text = "Back To Menu"
 metadata/_edit_use_anchors_ = true
 
@@ -133,7 +194,7 @@ metadata/_edit_use_anchors_ = true
 [node name="title2" type="Label" parent="game over/hb/VBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 30
 text = "TOTAL POINTS"
 horizontal_alignment = 2
 vertical_alignment = 1
@@ -142,7 +203,7 @@ metadata/_edit_use_anchors_ = true
 [node name="title3" type="Label" parent="game over/hb/VBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 30
 text = "LEVEL"
 horizontal_alignment = 2
 vertical_alignment = 1
@@ -151,7 +212,7 @@ metadata/_edit_use_anchors_ = true
 [node name="title4" type="Label" parent="game over/hb/VBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 30
 text = "MAX SPEED"
 horizontal_alignment = 2
 vertical_alignment = 1
@@ -160,7 +221,7 @@ metadata/_edit_use_anchors_ = true
 [node name="title5" type="Label" parent="game over/hb/VBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 30
 text = "ACCELERATION"
 horizontal_alignment = 2
 vertical_alignment = 1
@@ -169,7 +230,7 @@ metadata/_edit_use_anchors_ = true
 [node name="title6" type="Label" parent="game over/hb/VBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 30
 text = "HANDLING"
 horizontal_alignment = 2
 vertical_alignment = 1
@@ -178,7 +239,7 @@ metadata/_edit_use_anchors_ = true
 [node name="title7" type="Label" parent="game over/hb/VBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 30
 text = "CASUALTIES"
 horizontal_alignment = 2
 vertical_alignment = 1
@@ -187,7 +248,7 @@ metadata/_edit_use_anchors_ = true
 [node name="title8" type="Label" parent="game over/hb/VBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 30
 text = "TIMES CRASHED"
 horizontal_alignment = 2
 vertical_alignment = 1
@@ -201,7 +262,7 @@ metadata/_edit_use_anchors_ = true
 [node name="title2" type="Label" parent="game over/hb/VBoxContainer4"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 30
 text = "-"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -210,7 +271,7 @@ metadata/_edit_use_anchors_ = true
 [node name="title3" type="Label" parent="game over/hb/VBoxContainer4"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 30
 text = "-"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -219,7 +280,7 @@ metadata/_edit_use_anchors_ = true
 [node name="title4" type="Label" parent="game over/hb/VBoxContainer4"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 30
 text = "-"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -228,7 +289,7 @@ metadata/_edit_use_anchors_ = true
 [node name="title5" type="Label" parent="game over/hb/VBoxContainer4"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 30
 text = "-"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -237,7 +298,7 @@ metadata/_edit_use_anchors_ = true
 [node name="title6" type="Label" parent="game over/hb/VBoxContainer4"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 30
 text = "-"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -246,7 +307,7 @@ metadata/_edit_use_anchors_ = true
 [node name="title7" type="Label" parent="game over/hb/VBoxContainer4"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 30
 text = "-"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -255,7 +316,7 @@ metadata/_edit_use_anchors_ = true
 [node name="title8" type="Label" parent="game over/hb/VBoxContainer4"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 30
 text = "-"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -270,7 +331,7 @@ metadata/_edit_use_anchors_ = true
 [node name="val 1" type="Label" parent="game over/hb/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 30
 text = "Level up!"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -278,7 +339,7 @@ metadata/_edit_use_anchors_ = true
 [node name="title3" type="Label" parent="game over/hb/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 30
 text = "Level up!"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -286,7 +347,7 @@ metadata/_edit_use_anchors_ = true
 [node name="title4" type="Label" parent="game over/hb/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 30
 text = "Level up!"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -294,7 +355,7 @@ metadata/_edit_use_anchors_ = true
 [node name="title5" type="Label" parent="game over/hb/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 30
 text = "Level up!"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -302,7 +363,7 @@ metadata/_edit_use_anchors_ = true
 [node name="title6" type="Label" parent="game over/hb/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 30
 text = "Level up!"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -310,7 +371,7 @@ metadata/_edit_use_anchors_ = true
 [node name="title7" type="Label" parent="game over/hb/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 30
 text = "Level up!"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -318,61 +379,9 @@ metadata/_edit_use_anchors_ = true
 [node name="title8" type="Label" parent="game over/hb/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 30
 text = "Level up!"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
-
-[node name="points" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.726563
-anchor_top = 0.0421875
-anchor_right = 0.996094
-anchor_bottom = 0.1
-theme_override_font_sizes/font_size = 60
-text = "?????????????"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("7_ck5ba")
-metadata/_edit_use_anchors_ = true
-
-[node name="timer" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.271094
-anchor_top = 0.0484375
-anchor_right = 0.728906
-anchor_bottom = 0.172656
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 141
-text = "00:00"
-horizontal_alignment = 1
-script = ExtResource("8_xwcvf")
-metadata/_edit_use_anchors_ = true
-
-[node name="ParticleSpawner" type="Control" parent="."]
-layout_mode = 1
-anchor_left = 0.45
-anchor_top = 0.470313
-anchor_right = 0.45
-anchor_bottom = 0.470313
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("9_mtrn8")
-particle = ExtResource("10_iu3rp")
-metadata/_edit_use_anchors_ = true
-
-[node name="TV" parent="." instance=ExtResource("11_jkdus")]
-layout_mode = 1
-anchor_left = 0.0303906
-anchor_top = 0.796484
-anchor_right = 0.308672
-anchor_bottom = 0.989453
-offset_left = -95.9
-offset_top = -66.5
-offset_right = 95.9001
-offset_bottom = 66.5
-scale = Vector2(0.65, 0.65)
 
 [connection signal="pressed" from="game over/levelUpOption" to="game over" method="menu"]
