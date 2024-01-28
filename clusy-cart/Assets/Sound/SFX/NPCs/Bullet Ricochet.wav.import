@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://brbcif2crnimy"
+path="res://.godot/imported/Bullet Ricochet.wav-5fb5b2c7317f305dc88faed1fb0c994e.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/SFX/NPCs/Bullet Ricochet.wav"
+dest_files=["res://.godot/imported/Bullet Ricochet.wav-5fb5b2c7317f305dc88faed1fb0c994e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://nu57ayxi11v1"
+path="res://.godot/imported/Pants Falling.wav-306655182afef2790d2b6e57f4367a0f.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/SFX/NPCs/Pants Falling.wav"
+dest_files=["res://.godot/imported/Pants Falling.wav-306655182afef2790d2b6e57f4367a0f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
