@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmmmwaliiqy3j"]
+[gd_scene load_steps=8 format=3 uid="uid://dmmmwaliiqy3j"]
 
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/Preso/PresoNPC.gd" id="1_pxjf7"]
 [ext_resource type="SpriteFrames" uid="uid://cxvnr724ina32" path="res://Assets/Animations/PresoDeGuerra/PresoDeGuerra.tres" id="2_6bis6"]
+[ext_resource type="PackedScene" uid="uid://xxk7y023mwn4" path="res://Assets/Prefabs/NPC/DeathParticles.tscn" id="2_gfvg2"]
 [ext_resource type="AudioStream" uid="uid://dy8jp77l7dddg" path="res://Assets/Sound/SFX/Choques/Crash1.wav" id="3_o4oki"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qb4gd"]
@@ -36,5 +37,10 @@ shape = SubResource("CircleShape2D_3wsw7")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_tmw0l")
+
+[node name="DeathParticles" parent="." instance=ExtResource("2_gfvg2")]
+position = Vector2(-0.5, 2)
+emitting = false
+one_shot = true
 
 [connection signal="body_entered" from="Area2D" to="." method="on_collision"]

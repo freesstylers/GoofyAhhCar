@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ce4pc01ywv3oi"]
+[gd_scene load_steps=8 format=3 uid="uid://ce4pc01ywv3oi"]
 
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/NormalNpcMovement.gd" id="1_s0j2i"]
+[ext_resource type="PackedScene" uid="uid://xxk7y023mwn4" path="res://Assets/Prefabs/NPC/DeathParticles.tscn" id="2_kimkh"]
 [ext_resource type="SpriteFrames" uid="uid://cy2v5wou6pwdm" path="res://Assets/Animations/AncianaInofensiva/AncianaInofensiva.tres" id="2_xfohl"]
 [ext_resource type="AudioStream" uid="uid://dy8jp77l7dddg" path="res://Assets/Sound/SFX/Choques/Crash1.wav" id="3_gv0cl"]
 
@@ -37,5 +38,10 @@ shape = SubResource("CircleShape2D_vtcta")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_01pr7")
+
+[node name="DeathParticles" parent="." instance=ExtResource("2_kimkh")]
+position = Vector2(-0.5, 2)
+emitting = false
+one_shot = true
 
 [connection signal="body_entered" from="Area2D" to="." method="on_collision"]

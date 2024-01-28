@@ -40,4 +40,7 @@ enum NPCType {
 	CANINO
 }
 
+const EXP_PER_NPC_KILL =[1,1,1,1,1,1]
+const POINTS_PER_NPC_KILL =[10,10,10,10,10,10]
+
 signal loadLevel()

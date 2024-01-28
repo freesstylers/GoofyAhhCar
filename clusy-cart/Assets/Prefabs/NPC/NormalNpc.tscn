@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cokidu12u7300"]
+[gd_scene load_steps=6 format=3 uid="uid://cokidu12u7300"]
 
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/NormalNpcMovement.gd" id="1_hrrqi"]
 [ext_resource type="Texture2D" uid="uid://xwabevdjnvbg" path="res://Assets/Sprites/Paisano6.png" id="1_tp004"]
+[ext_resource type="PackedScene" uid="uid://xxk7y023mwn4" path="res://Assets/Prefabs/NPC/DeathParticles.tscn" id="2_v4uem"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1k27a"]
 
@@ -24,5 +25,10 @@ texture = ExtResource("1_tp004")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_uxrsf")
+
+[node name="DeathParticles" parent="." instance=ExtResource("2_v4uem")]
+position = Vector2(-0.5, 2)
+emitting = false
+one_shot = true
 
 [connection signal="body_entered" from="Area2D" to="." method="on_collision"]

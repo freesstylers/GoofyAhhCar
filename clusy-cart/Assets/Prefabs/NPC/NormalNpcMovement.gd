@@ -6,7 +6,6 @@ extends Node2D
 @export var speed := 300.0
 @export var distanceThreshold := 5
 @export var npcType : Globals.NPCType = Globals.NPCType.CIVIL
-@export var particlesScene : PackedScene = null
 
 
 @export var deathSound : AudioStreamPlayer = null
@@ -44,13 +43,9 @@ func _process(delta):
 func die():
 	if deathSound:
 		deathSound.play()
-	if particlesScene != null:
-		var particles = particlesScene.instantiate()
-		particles.position = global_position
-		particles.rotation = global_rotation
+	var particles = $DeathParticles as CPUParticles2D
+	if particles != null:
 		particles.emitting = true
-		get_tree().current_scene.add_child(particles)
-	queue_free()
 
 func spawn():
 	pass
@@ -58,6 +53,7 @@ func spawn():
 func on_collision(other):
 	if other.is_in_group("player"):
 		Globals.npc_hit.emit(npcType)
+		Globals.exp_gain.emit(Globals.EXP_PER_NPC_KILL[npcType],Globals.POINTS_PER_NPC_KILL[npcType])
 		die()
 		goTo = null
 

@@ -1,20 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://xxk7y023mwn4"]
+[gd_scene load_steps=3 format=3 uid="uid://xxk7y023mwn4"]
 
 [sub_resource type="Curve" id="Curve_ddsc6"]
 min_value = 1.0
-max_value = 2.0
+max_value = 3.0
 _data = [Vector2(0.00306749, 0.116505), 0.0, 0.0, 0, 0, Vector2(0.990798, 2.39078), 0.0, 0.0, 0, 0]
 point_count = 2
 metadata/_snap_enabled = true
 metadata/_snap_count = 20
 
+[sub_resource type="Gradient" id="Gradient_3bo5s"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="DeathParticles" type="CPUParticles2D"]
 amount = 100
-lifetime = 0.2
+lifetime = 0.5
 explosiveness = 1.0
 spread = 180.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 50.0
-initial_velocity_max = 150.0
+initial_velocity_min = 25.0
+initial_velocity_max = 100.0
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+scale_amount_min = 4.0
+scale_amount_max = 8.0
 scale_amount_curve = SubResource("Curve_ddsc6")
 color = Color(0.756863, 0, 0.141176, 1)
+color_ramp = SubResource("Gradient_3bo5s")

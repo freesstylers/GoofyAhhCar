@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cekqety4c6v4k"]
+[gd_scene load_steps=8 format=3 uid="uid://cekqety4c6v4k"]
 
 [ext_resource type="Script" path="res://Assets/Prefabs/NPC/NormalNpcMovement.gd" id="1_py2nk"]
 [ext_resource type="SpriteFrames" uid="uid://3lnyo31q57fn" path="res://Assets/Animations/CangrejoButanero/CangrejoButanero.tres" id="2_243k6"]
+[ext_resource type="PackedScene" uid="uid://xxk7y023mwn4" path="res://Assets/Prefabs/NPC/DeathParticles.tscn" id="2_b64y2"]
 [ext_resource type="AudioStream" uid="uid://dy8jp77l7dddg" path="res://Assets/Sound/SFX/Choques/Crash1.wav" id="3_d53ua"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7bujn"]
@@ -38,5 +39,10 @@ shape = SubResource("CapsuleShape2D_wq4n3")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_upcdk")
+
+[node name="DeathParticles" parent="." instance=ExtResource("2_b64y2")]
+position = Vector2(-0.5, 2)
+emitting = false
+one_shot = true
 
 [connection signal="body_entered" from="Area2D" to="." method="on_collision"]
