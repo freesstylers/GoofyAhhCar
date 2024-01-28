@@ -1,7 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dg3v0djbveeid"]
+[gd_scene load_steps=10 format=3 uid="uid://dg3v0djbveeid"]
 
 [ext_resource type="Texture2D" uid="uid://c6s658tlwbfog" path="res://Assets/Sprites/Tileset/Tileset.png" id="1_hb5mi"]
 [ext_resource type="PackedScene" uid="uid://csms6l2yxn245" path="res://Assets/Scenes/Player.tscn" id="2_qr6q7"]
+[ext_resource type="PackedScene" uid="uid://cjpv8shu8ggj6" path="res://Assets/Prefabs/NPC/Ciclista/CiclistaNPC.tscn" id="3_c88j1"]
+[ext_resource type="PackedScene" uid="uid://dmmmwaliiqy3j" path="res://Assets/Prefabs/NPC/Preso/PresoNPC.tscn" id="4_slr8p"]
+[ext_resource type="PackedScene" uid="uid://ce4pc01ywv3oi" path="res://Assets/Prefabs/NPC/Vieja/ViejaNPC.tscn" id="5_hhi7m"]
+[ext_resource type="PackedScene" uid="uid://dw4basda8fkct" path="res://Assets/Prefabs/NPC/Perro/PerroNPC.tscn" id="6_0qonv"]
+[ext_resource type="PackedScene" uid="uid://cekqety4c6v4k" path="res://Assets/Prefabs/NPC/Butanero/ButaneroNPC.tscn" id="7_33w5h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6c7ai"]
 texture = ExtResource("1_hb5mi")
@@ -447,3 +452,18 @@ drag = -0.001
 traction_slow = 0.5
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="CiclistaNpc" parent="." instance=ExtResource("3_c88j1")]
+position = Vector2(872, 429)
+
+[node name="PresoNpc" parent="." instance=ExtResource("4_slr8p")]
+position = Vector2(856, 283)
+
+[node name="ViejaNpc" parent="." instance=ExtResource("5_hhi7m")]
+position = Vector2(855, 157)
+
+[node name="Perro" parent="." instance=ExtResource("6_0qonv")]
+position = Vector2(873, 16)
+
+[node name="ButaneroNpc" parent="." instance=ExtResource("7_33w5h")]
+position = Vector2(875, -91)

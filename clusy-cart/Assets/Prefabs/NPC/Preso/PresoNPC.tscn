@@ -15,6 +15,7 @@ npcType = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CircleShape2D_qb4gd")
+disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
 sprite_frames = ExtResource("2_6bis6")

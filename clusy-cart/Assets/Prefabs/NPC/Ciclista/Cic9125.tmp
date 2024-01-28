@@ -12,7 +12,12 @@ radius = 13.0
 [node name="CiclistaNpc" type="CharacterBody2D"]
 position = Vector2(442, 191)
 rotation = 1.5708
+scale = Vector2(0.3, 0.3)
 script = ExtResource("1_d67bn")
+points = null
+bonus = null
+speed = null
+distanceThreshold = null
 npcType = 1
 
 [node name="Zigzag" type="CollisionShape2D" parent="."]
@@ -28,9 +33,12 @@ rotation = 1.5708
 sprite_frames = ExtResource("3_lk1m0")
 frame_progress = 0.889745
 
-[node name="Area2D" type="Area2D" parent="Zigzag"]
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Zigzag/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_g01jp")
 
-[connection signal="body_entered" from="Zigzag/Area2D" to="." method="on_collision"]
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="body_entered" from="Area2D" to="." method="on_collision"]
