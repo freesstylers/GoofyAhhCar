@@ -50,7 +50,7 @@ rotation = 1.5708
 scale = Vector2(2, 2)
 script = ExtResource("1_d67bn")
 npcType = 1
-deathSound = NodePath("")
+deathSound = NodePath("DeathSound")
 
 [node name="Zigzag" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_6f2gb")

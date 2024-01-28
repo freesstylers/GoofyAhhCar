@@ -47,7 +47,7 @@ stream_9/weight = 1.0
 [node name="ButaneroNpc" type="CharacterBody2D" node_paths=PackedStringArray("deathSound")]
 script = ExtResource("1_py2nk")
 npcType = 3
-deathSound = NodePath("")
+deathSound = NodePath("DeathSound")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

@@ -41,7 +41,7 @@ func _process(delta):
 		move(delta)
 
 func die():
-	if deathSound:
+	if deathSound and not deathSound.playing:
 		deathSound.play()
 	var particles = $DeathParticles as CPUParticles2D
 	if particles != null:
