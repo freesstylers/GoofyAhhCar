@@ -6,6 +6,8 @@ extends Node2D
 @export var speed := 300.0
 @export var distanceThreshold := 5
 @export var npcType : Globals.NPCType = Globals.NPCType.CIVIL
+@export var particlesScene : PackedScene = null
+
 
 @export var deathSound : AudioStreamPlayer = null
 
@@ -42,6 +44,12 @@ func _process(delta):
 func die():
 	if deathSound:
 		deathSound.play()
+	var particles = particlesScene.instantiate()
+	particles.position = global_position
+	particles.rotation = global_rotation
+	particles.emitting = true
+	get_tree().current_scene.add_child(particles)
+	queue_free()
 
 func spawn():
 	pass
