@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://csms6l2yxn245"]
+[gd_scene load_steps=20 format=3 uid="uid://csms6l2yxn245"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Player/PlayerMovement.gd" id="1_a0fay"]
 [ext_resource type="SpriteFrames" uid="uid://cy23rbgoxbhds" path="res://Assets/Animations/MonoTricicloMotorizado3000/PlayerAnimation.tres" id="2_ulsy8"]
@@ -16,8 +16,6 @@
 [ext_resource type="AudioStream" uid="uid://44hum133cn7k" path="res://Assets/Sound/SFX/Misc/initdrift.mp3" id="14_0qhaw"]
 [ext_resource type="AudioStream" uid="uid://cg44o6lqquwor" path="res://Assets/Sound/SFX/Misc/drift.mp3" id="14_q7f2t"]
 [ext_resource type="AudioStream" uid="uid://bq1w6y4fmsjn4" path="res://Assets/Sound/SFX/Misc/horn.wav" id="16_fdmgb"]
-[ext_resource type="PackedScene" uid="uid://dwb23gaj5yft2" path="res://Assets/Prefabs/game_ui.tscn" id="17_growk"]
-[ext_resource type="PackedScene" uid="uid://df5a7fpwactp3" path="res://Assets/Prefabs/game_manager.tscn" id="18_m28c8"]
 
 [sub_resource type="Curve" id="Curve_m3yul"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -4.52685, 0.0, 0, 0]
@@ -57,6 +55,7 @@ polygon = PackedVector2Array(29, -3, 29, 3, 9, 3, 9, 30, -25, 30, -25, -30, 9, -
 
 [node name="PlayerVisualizer" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
+scale = Vector2(1.7, 1.7)
 sprite_frames = ExtResource("2_ulsy8")
 autoplay = "default"
 frame_progress = 0.0755935
@@ -113,11 +112,5 @@ stream = ExtResource("14_q7f2t")
 
 [node name="HornSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_fdmgb")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Game UI" parent="CanvasLayer" instance=ExtResource("17_growk")]
-
-[node name="GameManager" parent="." instance=ExtResource("18_m28c8")]
 
 [connection signal="timeout" from="SpeedTimer" to="." method="on_speed_timer_ended"]
